@@ -21,8 +21,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<artifactId>Hello-World</artifactId>
-	<!-- <version>X.Y.Z</version> --> <!-- Omit the version tag unless it's different from the parent version -->
+	<name>Acme-ANS</name>
+	<description>Acme project from DP2</description>
+
+	<artifactId>Acme-ANS</artifactId>
+	<version>D01</version>
+	
 	<packaging>war</packaging>
 	
 	<parent>
