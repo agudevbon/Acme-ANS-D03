@@ -23,6 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-mig" action="https://pointerpointer.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juanma" action="https://theuselessweb.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fabrobher" action="https://restaurantebilios.es/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ra" action="https://www.youtube.com/channel/UCBCD1nIuiH-d10_l6Q-8rRg"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
