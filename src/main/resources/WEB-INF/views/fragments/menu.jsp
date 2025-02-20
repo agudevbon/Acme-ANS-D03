@@ -20,6 +20,8 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-agus" action="https://donpollocarmona.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-mig" action="https://pointerpointer.com/"/>
+		
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
