@@ -9,3 +9,4 @@
 # they accept any liabilities with respect to them.
 
 - Agustin Devos Bono (agudevbon@alum.us.es)
+- Juan Manuel Romero Ruiz (juaromrui@alum.us.es)
