@@ -21,6 +21,7 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-agus" action="https://donpollocarmona.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juanma" action="https://theuselessweb.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fabrobher" action="https://restaurantebilios.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
