@@ -10,6 +10,7 @@
 
 ** Year 2025
 
+25.2.0	Upgraded to the new version of the Acme framework.
 25.1.0	Upgraded to the new version of the Acme framework. Fixed a bug that allowed
 to get the same role twice.
 
