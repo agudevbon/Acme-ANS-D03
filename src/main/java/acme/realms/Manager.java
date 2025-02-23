@@ -46,14 +46,13 @@ public class Manager extends AbstractRole {
 	private String				company;
 
 	@Mandatory
-	private int					experience;
+	private Integer				experience;
 
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				dueDate;
+	private Date				birthDate;
 
-	@Mandatory
 	@URL
 	@Length(max = 255)
 	private String				link;
