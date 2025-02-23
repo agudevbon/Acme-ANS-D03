@@ -25,7 +25,7 @@
 	<description>Acme project from DP2</description>
 
 	<artifactId>Acme-ANS</artifactId>
-	<version>D01</version>
+	<version>D02</version>
 	
 	<packaging>war</packaging>
 	
