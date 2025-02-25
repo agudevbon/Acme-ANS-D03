@@ -10,6 +10,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Positive;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import lombok.Getter;
@@ -27,6 +28,7 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Column(unique = true)
+	@Automapped
 	private String				flightNumber;
 
 	@Mandatory
@@ -41,18 +43,23 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Positive
+	@Automapped
 	private Integer				duration;
 
 	@Mandatory
+	@Automapped
 	private LegStatus			status;
 
 	@Mandatory
+	@Automapped
 	private String				departure;
 
 	@Mandatory
+	@Automapped
 	private String				arrival;
 
 	@Mandatory
+	@Automapped
 	private String				aircraft;
 
 }
