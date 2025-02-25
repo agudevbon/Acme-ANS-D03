@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.flights;
 
 import javax.persistence.Entity;
 
