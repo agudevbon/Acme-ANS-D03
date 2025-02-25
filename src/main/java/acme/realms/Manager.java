@@ -41,7 +41,7 @@ public class Manager extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Pattern(regexp = "[A-Z]{2}")
+	@Pattern(regexp = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
 	private String				company;
 
