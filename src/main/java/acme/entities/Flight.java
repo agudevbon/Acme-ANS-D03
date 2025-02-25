@@ -9,6 +9,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,6 +37,7 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private Money				cost;
 
+	@Optional
 	@Length(max = 255)
 	@Automapped
 	private String				description;
