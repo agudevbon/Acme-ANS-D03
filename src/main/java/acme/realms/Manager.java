@@ -20,12 +20,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
-
 import acme.client.components.basis.AbstractRole;
+import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -43,18 +43,19 @@ public class Manager extends AbstractRole {
 	@Mandatory
 	@Pattern(regexp = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
-	private String				company;
+	private String				identifier;
 
 	@Mandatory
+	@Automapped
 	private Integer				experience;
 
 	@Mandatory
-	@ValidMoment
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				birthDate;
 
-	@URL
-	@Length(max = 255)
+	@Optional
+	@ValidUrl
 	private String				link;
 
 }
