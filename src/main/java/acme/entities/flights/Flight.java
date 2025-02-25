@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.flights;
 
 import javax.persistence.Entity;
 
@@ -10,6 +10,7 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoney;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +35,7 @@ public class Flight extends AbstractEntity {
 	private boolean				indication;
 
 	@Mandatory
+	@ValidMoney
 	@Automapped
 	private Money				cost;
 
