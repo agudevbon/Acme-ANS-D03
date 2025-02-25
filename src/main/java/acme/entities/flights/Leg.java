@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.flights;
 
 import java.util.Date;
 
@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Positive;
+
+import acme.entities.airports.Airport
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -52,11 +54,11 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private String				departure;
+	private Airport				departure;
 
 	@Mandatory
 	@Automapped
-	private String				arrival;
+	private Airport				arrival;
 
 	@Mandatory
 	@Automapped
