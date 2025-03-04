@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
@@ -49,7 +50,9 @@ public class Aircraft extends AbstractRole {
 	@Automapped
 	private AircraftStatus		status;
 
+	@Optional
 	@ValidString(max = 255)
+	@Automapped
 	private String				details;
 
 }
