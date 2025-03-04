@@ -19,6 +19,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidLanguagesList;
 
 public class AssistanceAgent extends AbstractEntity {
 
@@ -29,12 +30,12 @@ public class AssistanceAgent extends AbstractEntity {
 	// Attributes
 
 	@Mandatory
-	//	@Pattern(regexp = "^[A-Z]{2-3}\d{6}$")
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
 	private String				code;
 
 	@Mandatory
-	@Valid
+	@ValidLanguagesList
 	@Automapped
 	private List<String>		languages;
 
@@ -60,7 +61,7 @@ public class AssistanceAgent extends AbstractEntity {
 
 	@Optional
 	@ValidUrl
-	@Automapped
+	@Automapped // must be stored somewhere else?
 	private String				photoLink;
 
 }
