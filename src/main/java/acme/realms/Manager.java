@@ -18,7 +18,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Pattern;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -26,6 +25,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIdentifier;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -41,7 +41,7 @@ public class Manager extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Pattern(regexp = "^[A-Z]{2-3}\\d{6}$")
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				identifier;
 
@@ -56,6 +56,7 @@ public class Manager extends AbstractRole {
 
 	@Optional
 	@ValidUrl
+	@Automapped
 	private String				link;
 
 }
