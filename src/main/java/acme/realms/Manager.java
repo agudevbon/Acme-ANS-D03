@@ -24,6 +24,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidIdentifier;
 import lombok.Getter;
@@ -46,6 +47,7 @@ public class Manager extends AbstractRole {
 	private String				identifier;
 
 	@Mandatory
+	@ValidNumber(min = 0, max = 75)
 	@Automapped
 	private Integer				experience;
 
