@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z]{2-3}\\d{6}$")
+@Pattern(regexp = "^[A-Z]{2,3}\\d{6}$")
 
 public @interface ValidIdentifier {
 

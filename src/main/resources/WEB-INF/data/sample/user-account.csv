@@ -5,3 +5,17 @@ user-account-consumer-03,true,"UserIdentity{name: 'Manolo', surname: '之乎路�
 user-account-provider-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",provider1,provider1
 user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза თხა', email: 'martina@acme.com'}",provider2,provider2
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,provider3
+user-account-manager-01,true,"UserIdentity{name: 'Juan', surname: 'Ramirez', email: 'jramirez@acme.com'}",manager1,manager1
+user-account-manager-02,true,"UserIdentity{name: 'Mariam', surname: 'Smith', email: 'marsmith@acme.com'}",manager2,manager2
+user-account-manager-03,true,"UserIdentity{name: 'Carlos', surname: 'Gomez', email: 'cgomez@acme.com'}",manager3,manager3
+user-account-manager-04,true,"UserIdentity{name: 'Laura', surname: 'Martinez', email: 'lmartinez@acme.com'}",manager4,manager4
+user-account-manager-05,true,"UserIdentity{name: 'Pedro', surname: 'Lopez', email: 'plopez@acme.com'}",manager5,manager5
+user-account-manager-06,true,"UserIdentity{name: 'Ana', surname: 'Perez', email: 'aperez@acme.com'}",manager6,manager6
+user-account-manager-07,true,"UserIdentity{name: 'David', surname: 'Sanchez', email: 'dsanchez@acme.com'}",manager7,manager7
+user-account-manager-08,true,"UserIdentity{name: 'Elena', surname: 'Garcia', email: 'egarcia@acme.com'}",manager8,manager8
+user-account-manager-09,true,"UserIdentity{name: 'Luis', surname: 'Fernandez', email: 'lfernandez@acme.com'}",manager9,manager9
+user-account-manager-10,true,"UserIdentity{name: 'Sofia', surname: 'Diaz', email: 'sdiaz@acme.com'}",manager10,manager10
+user-account-manager-11,true,"UserIdentity{name: 'Jorge', surname: 'Ruiz', email: 'jruiz@acme.com'}",manager11,manager11
+user-account-manager-12,true,"UserIdentity{name: 'Isabel', surname: 'Hernandez', email: 'ihernandez@acme.com'}",manager12,manager12
+user-account-manager-13,true,"UserIdentity{name: 'Oscar', surname: 'Jimenez', email: 'ojimenez@acme.com'}",manager13,manager13
+user-account-manager-14,true,"UserIdentity{name: 'Victoria', surname: 'Moreno', email: 'vmoreno@acme.com'}",manager14,manager14
