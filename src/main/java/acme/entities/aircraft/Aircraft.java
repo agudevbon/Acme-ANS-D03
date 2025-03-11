@@ -5,7 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractRole;
+
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -17,7 +17,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Aircraft extends AbstractRole {
+public class Aircraft extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -36,7 +36,8 @@ public class Aircraft extends AbstractRole {
 	private String				registrationNumber;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 1, max = 400)
+
 	@Automapped
 	private Integer				capacity;
 
@@ -54,5 +55,4 @@ public class Aircraft extends AbstractRole {
 	@ValidString(max = 255)
 	@Automapped
 	private String				details;
-
 }
