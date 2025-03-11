@@ -6,8 +6,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+
+import org.checkerframework.common.value.qual.IntRange;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -45,8 +45,7 @@ public class ActivityLog extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@Min(0)
-	@Max(10)
+	@IntRange(from = 0, to = 10)
 	@Automapped
 	private Integer				severityLevel;
 }
