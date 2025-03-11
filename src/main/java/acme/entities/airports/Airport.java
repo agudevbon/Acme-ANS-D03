@@ -1,23 +1,23 @@
 
-package acme.entities.aircraft;
+package acme.entities.airports;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.Valid;
 
-
+import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidString;
+import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Aircraft extends AbstractEntity {
+public class Airport extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -26,33 +26,41 @@ public class Aircraft extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private String				model;
+	private String				name;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(pattern = "^[A-Z]{3}")
 	@Column(unique = true)
-	private String				registrationNumber;
+	private String				iataCode;
 
 	@Mandatory
-	@ValidNumber(min = 1, max = 400)
-
 	@Automapped
-	private Integer				capacity;
+	private OperationalScope	scope;
 
 	@Mandatory
-	@ValidNumber(min = 2000, max = 50000)
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private Integer				cargoWeight;
+	private String				city;
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private AircraftStatus		status;
+	private String				country;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidUrl
 	@Automapped
-	private String				details;
+	private String				website;
+
+	@Optional
+	@ValidEmail
+	@Automapped
+	private String				email;
+
+	@Optional
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@Automapped
+	private String				phoneNumber;
 }
