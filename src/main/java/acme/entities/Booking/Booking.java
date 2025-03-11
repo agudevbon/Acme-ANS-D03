@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
@@ -12,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,9 +39,10 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	private Date				purchaseMoment;
 
-	// Clase de viaje (Economy o Business)
+	// Clase de viaje (Economy o Business) Enumerado
 	@Mandatory
-	private String				travelClass; // Se recomienda usar un Enum, pero en este caso lo dejamos como String
+	@Enumerated(EnumType.STRING)
+	private TravelClass			travelClass;
 
 	// Precio (debe ser positivo)
 	@Positive
@@ -46,6 +50,8 @@ public class Booking extends AbstractEntity {
 	private Double				price;
 
 	// Últimos 4 dígitos de la tarjeta de crédito (opcional)
+	@Optional
 	@Size(min = 4, max = 4)
+	@Pattern(regexp = "^\\d{4}$", message = "{booking.lastCardNibble.pattern}")
 	private String				lastCardNibble;
 }
