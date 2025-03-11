@@ -1,0 +1,51 @@
+key,name,iataCode,scope,city,country,website,email,phoneNumber
+airport-01,Lorem ipsum dolor sit ame,LAX,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-02,L,LAG,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,
+airport-03,Lo,LAH,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,,763731626
+airport-04,Esto es ,LAI,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-05,Esto es un texto de ejemplo,LAJ,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-06,1234 .-$%&/()?¿!1ª,LAK,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-07,โลเร็ม อิปซัม,LAA,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-08,وريم إيبسوم,LAB,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-09,洛伦·伊普森,LAC,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-10,<marquee>Hacked</marquee>,LAD,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-11,<script>alert(‘Hacked!’);</script>,LAE,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-12,' or 'A' = 'A,LAF,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-13,Lorem ipsum dolor sit amet consectetur adipiscina,AAA,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-14,Lorem ipsum dolor sit amet consectetur adipiscinga,VGC,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-15,Lorem ipsum dolor sit ame,LNP,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-16,Lorem ipsum dolor sit ame,MVF,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-17,Lorem ipsum dolor sit ame,ZZZ,INTERNATIONAL,Los Ángeles,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-18,Lorem ipsum dolor sit ame,LAL,DOMESTIC,S,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-19,Lorem ipsum dolor sit ame,LAM,REGIONAL,Se,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-20,Lorem ipsum dolor sit ame,AAN,REGIONAL,Almeria,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-21,Lorem ipsum dolor sit ame,LAO,REGIONAL,Malaga,Estados Unidos,http://lorem.com/ipsum,acme@lorem-ipsum.org,763731626
+airport-22,Lorem ipsum dolor sit ame,LAP,REGIONAL,Santiago de Chile,C,,,
+airport-23,Lorem ipsum dolor sit ame,LAQ,REGIONAL,Una ciudad perdida por ahi en el campo 49 caracte,Un,,,
+airport-24,Lorem ipsum dolor sit ame,LAR,REGIONAL,Una ciudad perdida por ahi en el campo 50 caracter,Algun pais,,,
+airport-25,Lorem ipsum dolor sit ame,LAT,REGIONAL,Nueva York,Algun pais remoto con aeropuerto para 49 caracter,,,
+airport-26,Lorem ipsum dolor sit ame,LAU,REGIONAL,Londres,Algun pais remoto con aeropuerto para 49 caractere,,,
+airport-27,Lorem ipsum dolor sit ame,LAV,REGIONAL,París,Francia,ftp://a.b,,
+airport-28,Lorem ipsum dolor sit ame,LAW,INTERNATIONAL,Tokio,Japón,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",,
+airport-29,Lorem ipsum dolor sit ame,LAY,INTERNATIONAL,Sevilla,España,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",,
+airport-30,Lorem ipsum dolor sit ame,LAZ,INTERNATIONAL,Dubai,Emiratos Árabes Unidos,ftp://a,,
+airport-31,Lorem ipsum dolor sit ame,LBX,INTERNATIONAL,Hong Kong,China,,acme:password@lorem-ipsum.org,
+airport-32,Lorem ipsum dolor sit ame,LCX,INTERNATIONAL,Ámsterdam,Países Bajos,,a@b.e,
+airport-33,Lorem ipsum dolor sit ame,LDX,INTERNATIONAL,Istanbul,Turquía,,a@b.es,
+airport-34,Lorem ipsum dolor sit ame,LEX,INTERNATIONAL,Río de Janeiro,Brasil,,a@b.esx,
+airport-35,Lorem ipsum dolor sit ame,LFX,DOMESTIC,Múnich,Alemania,,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,
+airport-36,Lorem ipsum dolor sit ame,LGX,DOMESTIC,Sídney,Australia,,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,
+airport-37,Lorem ipsum dolor sit ame,LHX,DOMESTIC,Madrid,España,,,+123456
+airport-38,Lorem ipsum dolor sit ame,LIX,DOMESTIC,Toronto,Canadá,,,1234567
+airport-39,Lorem ipsum dolor sit ame,LJX,DOMESTIC,São Paulo,Brasil,,,+9876543210
+airport-40,Lorem ipsum dolor sit ame,LKX,DOMESTIC,Cairo,Egipto,,,5555555555555
+airport-41,Lorem ipsum dolor sit ame,LLX,DOMESTIC,Roma,Italia,,,+123456789012345
+airport-42,Lorem ipsum dolor sit ame,LMX,DOMESTIC,Bangkok,Tailandia,,,987654321
+airport-43,Lorem ipsum dolor sit ame,LNX,REGIONAL,Seúl,Corea del Sur,,,+00123456789
+airport-44,Lorem ipsum dolor sit ame,ANX,REGIONAL,Singapur,Singapur,,,12345678912345
+airport-45,Lorem ipsum dolor sit ame,LOX,REGIONAL,Los Ángeles,Estados Unidos,,,+987654321098765
+airport-46,Lorem ipsum dolor sit ame,LPX,REGIONAL,Buenos Aires,Argentina,,,123456
+airport-47,Lorem ipsum dolor sit ame,LQX,REGIONAL,Ciudad de México,México,,,
+airport-48,Lorem ipsum dolor sit ame,LRX,REGIONAL,Beijing,China,,,
+airport-49,Lorem ipsum dolor sit ame,LSX,REGIONAL,Delhi,India,,,
+airport-50,Lorem ipsum dolor sit ame,LTX,REGIONAL,Moscú,Rusia,,,
