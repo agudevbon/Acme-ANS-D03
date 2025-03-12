@@ -1,14 +1,21 @@
 
-package acme.entities.airports;
+package acme.entities.airlines;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.validator.constraints.Length;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
@@ -17,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Airport extends AbstractEntity {
+public class Airline extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -26,7 +33,7 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@Length(max = 50)
 	@Automapped
 	private String				name;
 
@@ -36,23 +43,18 @@ public class Airport extends AbstractEntity {
 	private String				iataCode;
 
 	@Mandatory
-	@Automapped
-	private OperationalScope	scope;
-
-	@Mandatory
-	@ValidString(min = 1, max = 50)
-	@Automapped
-	private String				city;
-
-	@Mandatory
-	@ValidString(min = 1, max = 50)
-	@Automapped
-	private String				country;
-
-	@Optional
 	@ValidUrl
 	@Automapped
 	private String				website;
+
+	@Mandatory
+	@Automapped
+	private AirlineType			type;
+
+	@Mandatory
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				foundationMoment;
 
 	@Optional
 	@ValidEmail
