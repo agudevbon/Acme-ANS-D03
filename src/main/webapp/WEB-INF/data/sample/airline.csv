@@ -1,0 +1,46 @@
+key,name,iataCode,website,type,foundationMoment,email,phoneNumber
+airline-01,Lorem ipsum dolor sit ame,LAX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-02,L,MAX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,
+airline-03,Lo,GAX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,,876543456
+airline-04,Lorem ipsum dolor sit amet consectetur adipiscina,LEX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-05,Lorem ipsum dolor sit amet consectetur adipiscinga,MIX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-06,โลเร็ม อิปซัม,BGX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-07,لوريم إيبسوم,ASX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-08,洛伦·伊普森,CHX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-09,<marquee>Hacked</marquee>,HKX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-10,<script>alert(‘Hacked!’);</script>,ALX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-11,' or 'A' = 'A,ORX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-12,Lorem ipsum dolor sit ame,AAX,ftp://a,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-13,Lorem ipsum dolor sit ame,ABX,ftp://a.b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-14,Lorem ipsum dolor sit ame,ACX,ftp://a.b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-15,Lorem ipsum dolor sit ame,LIX,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-16,Lorem ipsum dolor sit ame,IPX,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-17,Lorem ipsum dolor sit ame,OJX,https://www.lorem-ipsum.org,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-18,Lorem ipsum dolor sit ame,FTX,ftp://www.lorem-ipsum.org,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-19,Lorem ipsum dolor sit ame,HTX,http://www.lorem-ipsum.org/dolor/sit.html,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-20,Lorem ipsum dolor sit ame,DOX,http://www.lorem-ipsum.org/dolor/sit.html#dolor,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-21,Lorem ipsum dolor sit ame,EXX,http://example.org?a=1&b=2,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-22,Lorem ipsum dolor sit ame,AMX,http://example.org?,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-23,Lorem ipsum dolor sit ame,OAX,http://example.org?a,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-24,Lorem ipsum dolor sit ame,EOX,http://example.org?a&b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-25,Lorem ipsum dolor sit ame,MKX,http://example.org/,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-26,Lorem ipsum dolor sit ame,LPX,http://example.org/a,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-27,Lorem ipsum dolor sit ame,LYX,http://example.org/a/b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-28,Lorem ipsum dolor sit ame,LMX,http://example.org/a/b?,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-29,Lorem ipsum dolor sit ame,LSX,http://example.org/a/b?a&b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-30,Lorem ipsum dolor sit ame,SDX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme:password@lorem-ipsum.org,876543456
+airline-31,Lorem ipsum dolor sit ame,SSX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,a@b.e,876543456
+airline-32,Lorem ipsum dolor sit ame,SWX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,a@b.es,876543456
+airline-33,Lorem ipsum dolor sit ame,OSX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,a@b.esx,876543456
+airline-34,Lorem ipsum dolor sit ame,ZAX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,876543456
+airline-35,Lorem ipsum dolor sit ame,ZSX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,876543456
+airline-36,Lorem ipsum dolor sit ame,DFX,http://lorem.com/ipsum,STANDARD,01/01/2000 0:00,acme@lorem-ipsum.org,876543456
+airline-37,Lorem ipsum dolor sit ame,NJX,http://lorem.com/ipsum,STANDARD,01/01/2000 0:01,acme@lorem-ipsum.org,876543456
+airline-38,Lorem ipsum dolor sit ame,MUX,http://lorem.com/ipsum,STANDARD,31/12/2024 23:59,acme@lorem-ipsum.org,876543456
+airline-39,Lorem ipsum dolor sit ame,CAX,http://lorem.com/ipsum,STANDARD,01/01/2025 0:00,acme@lorem-ipsum.org,876543456
+airline-40,Lorem ipsum dolor sit ame,RSX,http://lorem.com/ipsum,LUXURY,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-41,Lorem ipsum dolor sit ame,BAX,http://lorem.com/ipsum,LUXURY,02/07/2012 0:00,,876543456
+airline-42,Lorem ipsum dolor sit ame,BEX,http://lorem.com/ipsum,LUXURY,02/07/2012 0:00,acme@lorem-ipsum.org,
+airline-43,Lorem ipsum dolor sit ame,SEX,http://lorem.com/ipsum,LOW_COST,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-44,Lorem ipsum dolor sit ame,SPX,http://lorem.com/ipsum,LOW_COST,02/07/2012 0:00,,876543456
+airline-45,Lorem ipsum dolor sit ame,MLX,http://lorem.com/ipsum,LOW_COST,02/07/2012 0:00,acme@lorem-ipsum.org,
