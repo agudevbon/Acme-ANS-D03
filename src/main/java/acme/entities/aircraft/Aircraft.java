@@ -1,23 +1,25 @@
 
-package acme.entities.airports;
+package acme.entities.aircraft;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.client.components.validation.ValidUrl;
+import acme.entities.airlines.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Airport extends AbstractEntity {
+public class Aircraft extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -26,41 +28,39 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(max = 50)
 	@Automapped
-	private String				name;
+	private String				model;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}")
+	@ValidString(max = 50)
 	@Column(unique = true)
-	private String				iataCode;
+	private String				registrationNumber;
 
 	@Mandatory
+	@ValidNumber(min = 1, max = 400)
+
 	@Automapped
-	private OperationalScope	scope;
+	private Integer				capacity;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidNumber(min = 2000, max = 50000)
 	@Automapped
-	private String				city;
+	private Integer				cargoWeight;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@Valid
 	@Automapped
-	private String				country;
+	private AircraftStatus		status;
 
 	@Optional
-	@ValidUrl
+	@ValidString(max = 255)
 	@Automapped
-	private String				website;
+	private String				details;
 
-	@Optional
-	@ValidEmail
-	@Automapped
-	private String				email;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
-	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Automapped
-	private String				phoneNumber;
 }
