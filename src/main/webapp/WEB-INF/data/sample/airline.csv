@@ -12,10 +12,10 @@ airline-10,<script>alert(‘Hacked!’);</script>,ALX,http://lorem.com/ipsum,STA
 airline-11,' or 'A' = 'A,ORX,http://lorem.com/ipsum,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-12,Lorem ipsum dolor sit ame,AAX,ftp://a,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-13,Lorem ipsum dolor sit ame,ABX,ftp://a.b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
-airline-14,Lorem ipsum dolor sit ame,ABX,ftp://a.b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-14,Lorem ipsum dolor sit ame,ACX,ftp://a.b,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-15,Lorem ipsum dolor sit ame,LIX,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-16,Lorem ipsum dolor sit ame,IPX,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
-airline-17,Lorem ipsum dolor sit ame,ORX,https://www.lorem-ipsum.org,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
+airline-17,Lorem ipsum dolor sit ame,OJX,https://www.lorem-ipsum.org,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-18,Lorem ipsum dolor sit ame,FTX,ftp://www.lorem-ipsum.org,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-19,Lorem ipsum dolor sit ame,HTX,http://www.lorem-ipsum.org/dolor/sit.html,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
 airline-20,Lorem ipsum dolor sit ame,DOX,http://www.lorem-ipsum.org/dolor/sit.html#dolor,STANDARD,02/07/2012 0:00,acme@lorem-ipsum.org,876543456
