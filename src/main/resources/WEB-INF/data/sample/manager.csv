@@ -1,0 +1,4 @@
+key,key:userAccount,identifier,experience,birthDate,picture
+manager-01,user-account-manager-01,JR123456,12,2012/02/07 00:00,http://lorem.com/ipsum
+manager-02,user-account-manager-02,MS765456,7,2000/07/12 00:00,http://lorem.com/ipsum
+manager-03,user-account-manager-03,CGZ000000,34,2008/07/12 00:00,

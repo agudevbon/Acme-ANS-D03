@@ -1,0 +1,4 @@
+key,key:userAccount,licenseNumber,phoneNumber,specialisation,annualTestPassed,yearsExperience,certifications
+technician-01,user-account-technician-01,AB123456,+34123456789,Electricidad,True,5,Instalaciones Eléctricas de Baja Tensión
+technician-02,user-account-technician-02,CD234567,+441632960961,Mecánica,False,0,Inspección de Aeronaves y Componentes
+technician-03,user-account-technician-03,CD234587,0000000,"-",FALSE,0,

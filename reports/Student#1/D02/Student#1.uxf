@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>172</x>
+      <y>380</y>
+      <w>208</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Manager
+--
++ identifier: String {Mandatory, ValidIdentifier, Column(unique=true)}
++ experience: Integer {Mandatory, ValidNumber(min=0,max=75), Automapped}
++ birthDate: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
++ picture: String {Mandatory, ValidUrl, Automapped)}
+
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>276</y>
+      <w>224</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+--
++ tag: String {Mandatory, ValidString(min=1,max=50), Automapped}
++ indication: boolean {Mandatory, Valid, Automapped}
++ cost: Money {Mandatory, ValidMoney(min = 0.00, max = 1000000.00), Automapped}
++ description: String {Optional, ValidString(min=0,max=255), Automapped}
+--
++ scheduledDeparture(): Date
++ scheduledArrival(): Date
++ departureCity(): String
++ arrivalCity(): String
++ layovers(): Integer
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>304</y>
+      <w>144</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=*
+&lt; managed by </panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;20.0;340.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>476</x>
+      <y>428</y>
+      <w>224</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg
+--
++ flightNumber: String {Mandatory, ValidFlightNumber, Column(unique=true)}
++ scheduledDeparture: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
++ scheduledArrival: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
++ duration: Integer {Mandatory, ValidNumber(min=1,max=1000), Automapped}
++ status: LegStatus {Mandatory, Valid, Automapped}
++ departureCity(): String
++ arrivalCity(): String
++ layovers(): Integer
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>424</y>
+      <w>140</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+
+m2=*
+&lt; managed by</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;330.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>532</x>
+      <y>576</y>
+      <w>116</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airport
+--
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>504</y>
+      <w>48</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=*
+m2=1
+took off from &gt;
+
+
+
++ departure</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>628</x>
+      <y>504</y>
+      <w>40</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=*
+m2=1
+landed at &gt;
+
+
+
++ arrival</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>452</y>
+      <w>116</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft
+--
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>460</y>
+      <w>120</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=*
+using airpline &gt;</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>352</y>
+      <w>52</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=*
+composed by &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+</diagram>
