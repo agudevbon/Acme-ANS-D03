@@ -7,9 +7,11 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -51,8 +53,11 @@ public class FlightCrewMember extends AbstractEntity {
 	private String				airline;
 
 	@Mandatory
-	private Double				salary;
+	@ValidMoney
+	@Automapped
+	private Money				salary;
 
 	@Optional
+	@Automapped
 	private Integer				yearsOfExperience;
 }
