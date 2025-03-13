@@ -1,0 +1,6 @@
+key,key:userAccount,employeeCode,phoneNumber,languageSkills,availabilityStatus,key:airline,salary,yearsOfExperience
+member1,user-account-member-01,JM123456,123456789,SPANISH,AVAILABLE,airline-01,2500.00,5
+member2,user-account-member-02,JL234567,123456789,ENGLISH,ON_VACATION,airline-02,5000.00,12
+member3,user-account-member-03,JK345678,123456789,GERMAN,AVAILABLE,airline-03,10000.00,30
+member4,user-account-member-04,JJ456789,123456789,FRENCH,ON_LEAVE,airline-01,1750.00,2
+member,user-account-member-05,JH567890,123456789,SPANISH,ON_VACATION,airline-03,1500.00,

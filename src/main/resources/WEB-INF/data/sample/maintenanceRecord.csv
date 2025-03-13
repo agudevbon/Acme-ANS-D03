@@ -1,0 +1,14 @@
+key,moment,status,inspectionDueDate,estimatedCost,notes,key:aircraft
+maintenanceR-01, 2012/02/07 18:30,PENDING,2012/04/07 18:30,0.00 EUR,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",aircraft-01
+maintenanceR-02, 2000/01/01 00:01,IN_PROGRESS,2001/04/07 20:30,500000.00 EUR,"L",aircraft-02
+maintenanceR-03, 2011/04/16 0:00,COMPLETED,2023/07/29 23:59,999999.99 EUR,"Lo" ,aircraft-03
+maintenanceR-04, 2012/02/07 18:30,IN_PROGRESS,2012/04/07 18:30,0.00 EUR,"洛伦·伊普森",aircraft-04
+maintenanceR-05, 2022/07/30 0:00,PENDING,2023/04/07 18:30,1000000.00  EUR,<script>alert(‘Hacked!’);</script>,aircraft-05
+maintenanceR-06, 2012/02/07 18:30,COMPLETED,2012/04/07 18:30,0.00 EUR,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",aircraft-06
+maintenanceR-07, 2012/02/07 18:30,IN_PROGRESS,2030/04/07 18:30,0.00 EUR,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo",aircraft-07
+maintenanceR-08, 2012/02/07 18:30,PENDING,2024/02/27 18:30,0.00 EUR,"โลเร็ม อิปซัม" ,aircraft-08
+maintenanceR-09, 2003/01/19 11:35,COMPLETED,2004/04/07 18:30,0.00 EUR,"لوريم إيبسوم" ,aircraft-09
+maintenanceR-10, 2012/02/07 18:30,PENDING,2012/04/07 18:30,0.00 EUR,<marquee>Hacked</marquee> ,aircraft-10
+maintenanceR-11, 2012/02/07 18:30,PENDING,2012/04/07 18:30,0.01 EUR,<script>alert(‘Hacked!’);</script>,aircraft-11
+maintenanceR-12, 2012/02/07 18:30,PENDING,2012/04/07 18:30,0.00 EUR,"' or 'A' = 'A ",aircraft-12
+

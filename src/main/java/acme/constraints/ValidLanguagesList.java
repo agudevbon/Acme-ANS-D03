@@ -11,11 +11,10 @@ import javax.validation.Payload;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ManagerValidator.class)
+@Constraint(validatedBy = LanguagesListValidator.class)
+public @interface ValidLanguagesList {
 
-public @interface ValidManager {
-
-	// Standard validation properties -----------------------------------------
+	// Standard validation properties
 
 	String message() default "";
 
