@@ -15,13 +15,18 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLeg;
+import acme.entities.aircraft.Aircraft;
 import acme.entities.airports.Airport;
+import acme.realms.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@ValidLeg
 public class Leg extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
@@ -30,6 +35,7 @@ public class Leg extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Column(unique = true)
 	private String				flightNumber;
 
@@ -49,29 +55,35 @@ public class Leg extends AbstractEntity {
 	private Integer				duration;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private LegStatus			status;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private Airport				departure;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private Airport				arrival;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private String				aircraft;
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
+	private Airport				departure;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airport				arrival;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Aircraft			aircraft;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
 	private Flight				flight;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Manager				manager;
 
 }
