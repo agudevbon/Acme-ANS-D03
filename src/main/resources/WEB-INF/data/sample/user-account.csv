@@ -30,3 +30,4 @@ user-account-member-02,true,"UserIdentity{name: 'Cedric', surname: 'Bakambu', em
 user-account-member-03,true,"UserIdentity{name: 'Sergio', surname: 'Altimira', email: 'saltimira@acme.com'}",member3,member3
 user-account-member-04,true,"UserIdentity{name: 'Romain', surname: 'Perraud', email: 'rperraud@acme.com'}",member4,member4
 user-account-member-05,true,"UserIdentity{name: 'Hector', surname: 'Bellerin', email: 'hbellerin@acme.com'}",member,member
+
