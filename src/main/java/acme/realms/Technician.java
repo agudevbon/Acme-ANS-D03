@@ -31,7 +31,7 @@ public class Technician extends AbstractRole {
 	private String				licenseNumber;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	private String				phoneNumber;
 
 	@Mandatory
