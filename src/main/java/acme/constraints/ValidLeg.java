@@ -11,9 +11,9 @@ import javax.validation.Payload;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ManagerValidator.class)
+@Constraint(validatedBy = LegValidator.class)
 
-public @interface ValidManager {
+public @interface ValidLeg {
 
 	// Standard validation properties -----------------------------------------
 
