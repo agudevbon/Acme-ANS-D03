@@ -2,15 +2,16 @@
 package acme.entities.assistanceAgents;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
@@ -19,9 +20,16 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidLanguagesList;
+import acme.constraints.ValidIdentifier;
+import acme.entities.airlines.Airline;
+import lombok.Getter;
+import lombok.Setter;
 
-public class AssistanceAgent extends AbstractEntity {
+@Getter
+@Setter
+@Entity
+@Table(name = "assistanceAgent")
+public class AssistanceAgent extends AbstractRole {
 
 	// Serialisation version 
 
@@ -30,14 +38,14 @@ public class AssistanceAgent extends AbstractEntity {
 	// Attributes
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				code;
 
 	@Mandatory
-	@ValidLanguagesList
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	private List<String>		languages;
+	private String				languages;
 
 	@Mandatory
 	@Valid
@@ -50,18 +58,19 @@ public class AssistanceAgent extends AbstractEntity {
 	private Date				moment;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				bio;
 
 	@Optional
-	@ValidMoney
+	@ValidMoney(min = 1, max = 10000)
 	@Automapped
 	private Money				salary;
 
 	@Optional
 	@ValidUrl
-	@Automapped // must be stored somewhere else?
+	@Automapped
+	@Column(columnDefinition = "TEXT")
 	private String				photoLink;
 
 }
