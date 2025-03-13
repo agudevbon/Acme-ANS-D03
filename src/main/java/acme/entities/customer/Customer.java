@@ -1,5 +1,5 @@
 
-package acme.entities.Customer;
+package acme.entities.customer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.entities.Booking.Booking;
+import acme.entities.booking.Booking;
 import lombok.Getter;
 import lombok.Setter;
 

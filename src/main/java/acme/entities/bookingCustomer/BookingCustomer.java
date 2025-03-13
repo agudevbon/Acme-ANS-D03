@@ -1,5 +1,5 @@
 
-package acme.entities.Booking_Customer;
+package acme.entities.bookingCustomer;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -8,8 +8,8 @@ import javax.persistence.Table;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
-import acme.entities.Booking.Booking;
-import acme.entities.Customer.Customer;
+import acme.entities.booking.Booking;
+import acme.entities.customer.Customer;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
