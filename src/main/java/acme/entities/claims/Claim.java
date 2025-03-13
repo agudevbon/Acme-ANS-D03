@@ -4,7 +4,8 @@ package acme.entities.claims;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -12,15 +13,19 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.entities.assistanceAgents.AssistanceAgent;
+import acme.entities.flights.Leg;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Table(name = "claim")
 public class Claim extends AbstractEntity {
 
 	// Serialisation version
@@ -28,8 +33,6 @@ public class Claim extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes
-
-	// Assistance agents ¿?
 
 	@Mandatory
 	@ValidMoment(past = true)
@@ -42,12 +45,12 @@ public class Claim extends AbstractEntity {
 	private String				passengerEmail;
 
 	@Mandatory
-	@ValidString
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				description;
 
 	@Mandatory
-	@Enumerated
+	@Valid
 	@Automapped
 	private ClaimType			type;
 
@@ -55,5 +58,17 @@ public class Claim extends AbstractEntity {
 	@Valid
 	@Automapped
 	private Boolean				isAccepted;
+
+	// Relationships
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private AssistanceAgent		agents;
+
+	@Optional
+	@Valid
+	@ManyToOne
+	private Leg					flightLeg;
 
 }
