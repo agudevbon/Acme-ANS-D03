@@ -1,0 +1,5 @@
+key,key:booking,key:customer
+booking-passenger-01,booking-01,customer-01
+booking-passenger-02,booking-01,customer-02
+booking-passenger-03,booking-02,customer-01
+booking-passenger-04,booking-03,customer-01

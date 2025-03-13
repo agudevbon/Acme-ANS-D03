@@ -2,7 +2,9 @@
 package acme.entities.services;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -18,6 +20,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(name = "service")
 public class Service extends AbstractEntity {
 
 	//Serialisation version -----------------------------------------------------
@@ -26,12 +29,14 @@ public class Service extends AbstractEntity {
 
 	// Attributes ---------------------------------------------------------------
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50, min = 1)
 	@Automapped
 	private String				name;
 
 	@Mandatory
 	@ValidUrl
+	@Size(max = 255)
+	@Automapped
 	private String				pictureUrl;
 
 	@Mandatory
@@ -42,6 +47,7 @@ public class Service extends AbstractEntity {
 	@Optional
 	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
 	@Automapped
+
 	private String				promotionCode;
 
 	@Optional

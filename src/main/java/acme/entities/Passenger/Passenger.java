@@ -3,37 +3,42 @@ package acme.entities.Passenger;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.Booking.Booking;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "passenger")
 public class Passenger extends AbstractEntity {
 
+	//-------------------------------------------------------------------------------------
 	private static final long	serialVersionUID	= 1L;
-
+	//-------------------------------------------------------------------------------------
+	// RELACIONARLO CON BOOKING 
 	@Mandatory
 	@ValidString(max = 255)
 	@Automapped
 	private String				fullName;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z]{2,}$")
+	@ValidEmail
+	//@ValidString(pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z]{2,}$")
 	@Automapped
+	@Column(length = 255)
 	private String				email;
 
 	@Mandatory
@@ -51,8 +56,13 @@ public class Passenger extends AbstractEntity {
 	@Automapped
 	private String				specialNeeds;
 
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Booking				booking;
+	/*
+	 * @Mandatory
+	 * 
+	 * @Valid
+	 * 
+	 * @ManyToOne(optional = false)
+	 * private Booking booking;
+	 * 
+	 */
 }
