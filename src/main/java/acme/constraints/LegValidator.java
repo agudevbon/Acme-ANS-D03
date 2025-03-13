@@ -8,12 +8,12 @@ import acme.client.components.validation.Validator;
 import acme.entities.flights.Leg;
 
 @Validator
-public class LegValidator extends AbstractValidator<ValidManager, Leg> {
+public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 	// ConstraintValidator interface ------------------------------------------
 
 	@Override
-	protected void initialise(final ValidManager annotation) {
+	protected void initialise(final ValidLeg annotation) {
 		assert annotation != null;
 	}
 
@@ -29,8 +29,23 @@ public class LegValidator extends AbstractValidator<ValidManager, Leg> {
 			boolean rightOrder;
 
 			rightOrder = leg.getScheduledArrival().after(leg.getScheduledDeparture());
-			super.state(context, rightOrder, "ticker", "acme.validation.manager.duplicated-identifier.message");
+			super.state(context, rightOrder, "*", "acme.validation.leg.wrong-date-order.message");
 		}
+		{
+			boolean rightFlightNumber;
+
+			String iataCode = leg.getAircraft().getAirline().getIataCode();
+			rightFlightNumber = leg.getFlightNumber().substring(0, 3).equals(iataCode);
+			super.state(context, rightFlightNumber, "flightNmuber", "acme.validation.leg.wrong-iata.message");
+		}
+		{
+			boolean rightManager;
+
+			String manager = leg.getFlight().getManager().getIdentifier();
+			rightManager = leg.getManager().getIdentifier().equals(manager);
+			super.state(context, rightManager, "manager", "acme.validation.leg.diferent-manager.message");
+		}
+
 		result = !super.hasErrors(context);
 
 		return result;
