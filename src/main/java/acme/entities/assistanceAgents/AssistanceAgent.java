@@ -38,7 +38,7 @@ public class AssistanceAgent extends AbstractRole {
 	// Attributes
 
 	@Mandatory
-	@ValidIdentifier
+  @ValidIdentifier
 	@Column(unique = true)
 	private String				code;
 
