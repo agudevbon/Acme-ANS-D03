@@ -1,7 +1,7 @@
 key,name,iataCode,website,type,foundationMoment,email,phoneNumber
 airline-01,Lorem ipsum dolor sit ame,LAX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline01@acme.com,8765434560
-airline-02,L,MAX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline02@acme.com,123456789
-airline-03,Lo,GAX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline03@acme.com,8765434560
+airline-02,L,MAX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline02@acme.com,""
+airline-03,Lo,GAX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,"",8765434560
 airline-04,Lorem ipsum dolor sit amet consectetur adipiscina,LEX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline04@acme.com,8765434560
 airline-05,Lorem ipsum dolor sit amet consectetur adipiscinga,MIX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline05@acme.com,8765434560
 airline-06,โลเร็ม อิปซัม,BGX,http://lorem.com/ipsum,STANDARD,2012/02/07 00:00,airline06@acme.com,8765434560
@@ -39,8 +39,8 @@ airline-37,Lorem ipsum dolor sit ame,NJX,http://lorem.com/ipsum,STANDARD,2000/01
 airline-38,Lorem ipsum dolor sit ame,MUX,http://lorem.com/ipsum,STANDARD,2022/07/30 00:00,airline38@acme.com,8765434560
 airline-39,Lorem ipsum dolor sit ame,CAX,http://lorem.com/ipsum,STANDARD,2022/07/30 00:00,airline39@acme.com,8765434560
 airline-40,Lorem ipsum dolor sit ame,RSX,http://lorem.com/ipsum,LUXURY,2012/02/07 00:00,airline40@acme.com,8765434560
-airline-41,Lorem ipsum dolor sit ame,BAX,http://lorem.com/ipsum,LUXURY,2012/02/07 00:00,airline41@acme.com,8765434560
-airline-42,Lorem ipsum dolor sit ame,BEX,http://lorem.com/ipsum,LUXURY,2012/02/07 00:00,airline42@acme.com,123456789
+airline-41,Lorem ipsum dolor sit ame,BAX,http://lorem.com/ipsum,LUXURY,2012/02/07 00:00,"",8765434560
+airline-42,Lorem ipsum dolor sit ame,BEX,http://lorem.com/ipsum,LUXURY,2012/02/07 00:00,airline42@acme.com,""
 airline-43,Lorem ipsum dolor sit ame,SEX,http://lorem.com/ipsum,LOW_COST,2012/02/07 00:00,airline43@acme.com,8765434560
-airline-44,Lorem ipsum dolor sit ame,SPX,http://lorem.com/ipsum,LOW_COST,2012/02/07 00:00,airline44@acme.com,8765434560
-airline-45,Lorem ipsum dolor sit ame,MLX,http://lorem.com/ipsum,LOW_COST,2012/02/07 00:00,airline45@acme.com,123456789
+airline-44,Lorem ipsum dolor sit ame,SPX,http://lorem.com/ipsum,LOW_COST,2012/02/07 00:00,"",8765434560
+airline-45,Lorem ipsum dolor sit ame,MLX,http://lorem.com/ipsum,LOW_COST,2012/02/07 00:00,airline45@acme.com,""

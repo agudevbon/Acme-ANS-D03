@@ -1,0 +1,6 @@
+key,key:member,duty,lastUpdateMoment,status,remarks,key:leg
+assignment-01,member1,PILOT,2012/02/07 00:00,CONFIRMED,Lorem ipsum dolor sit ame,leg-01
+assignment-02,member2,COPILOT,2012/02/07 00:00,PENDING,Lorem ipsum dolor sit ame,leg-02
+assignment-03,member3,LEAD_ATTENDANT,2012/02/07 00:00,CANCELED,Lorem ipsum dolor sit ame,leg-03
+assignment-04,member4,CABIN_ATTENDANT,2012/02/07 00:00,CONFIRMED,Lorem ipsum dolor sit ame,leg-04
+assignment-05,member,PILOT,2012/02/07 00:00,PENDING,Lorem ipsum dolor sit ame,leg-05

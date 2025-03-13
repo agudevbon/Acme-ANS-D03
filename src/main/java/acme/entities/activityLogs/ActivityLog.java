@@ -15,7 +15,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.flightCrewMembers.FlightCrewMember;
+import acme.entities.flightAssignments.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -55,5 +55,5 @@ public class ActivityLog extends AbstractEntity {
 
 	@Mandatory
 	@ManyToOne
-	private FlightCrewMember	flightCrewMember;
+	private FlightAssignment	flightAssignment;
 }

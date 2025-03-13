@@ -1,25 +1,28 @@
 
-package acme.entities.flightCrewMembers;
+package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Money;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidIdentifier;
+import acme.entities.airlines.Airline;
+import acme.entities.flightCrewMembers.AvailabilityStatus;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class FlightCrewMember extends AbstractEntity {
+public class Member extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -28,7 +31,7 @@ public class FlightCrewMember extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				employeeCode;
 
@@ -48,14 +51,14 @@ public class FlightCrewMember extends AbstractEntity {
 	private AvailabilityStatus	availabilityStatus;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
-	@Automapped
-	private String				airline;
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 	@Mandatory
-	@ValidMoney
+	@Valid
 	@Automapped
-	private Money				salary;
+	private Double				salary;
 
 	@Optional
 	@Automapped
