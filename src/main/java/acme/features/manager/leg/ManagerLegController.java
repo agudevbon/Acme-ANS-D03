@@ -16,13 +16,17 @@ public class ManagerLegController extends AbstractGuiController<Manager, Leg> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private ManagerLegShowService showService;
+	private ManagerLegShowService	showService;
+
+	@Autowired
+	private ManagerLegListService	listService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
+		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 	}
 }
