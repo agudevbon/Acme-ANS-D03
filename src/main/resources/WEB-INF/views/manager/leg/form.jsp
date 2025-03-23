@@ -18,6 +18,7 @@
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="manager.leg.form.button.publish" action="/manager/leg/publish"/>
+			<acme:submit code="manager.leg.form.button.delete" action="/manager/leg/delete"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:input-checkbox code="manager.leg.form.label.confirmation" path="confirmation"/>
