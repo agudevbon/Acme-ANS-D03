@@ -47,7 +47,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 			String iataCode = leg.getAircraft().getAirline().getIataCode();
 			rightFlightNumber = leg.getFlightNumber().substring(0, 3).equals(iataCode);
-			super.state(context, rightFlightNumber, "flightNmuber", "acme.validation.leg.wrong-iata.message");
+			super.state(context, rightFlightNumber, "flightNumber", "acme.validation.leg.wrong-iata.message");
 		}
 		{
 			boolean rightManager;
@@ -75,6 +75,13 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 					break;
 				}
 			super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
+		}
+		{
+			boolean sameAirport;
+
+			sameAirport = leg.getDeparture() != leg.getArrival();
+
+			super.state(context, sameAirport, "*", "acme.validation.leg.same-airport.message");
 		}
 		result = !super.hasErrors(context);
 

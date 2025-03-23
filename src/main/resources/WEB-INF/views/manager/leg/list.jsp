@@ -10,3 +10,4 @@
 	<acme:list-column code="manager.leg.list.label.status" path="status" width="25%"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
+<acme:button code="manager.leg.form.button.create" action="/manager/leg/create"/>
