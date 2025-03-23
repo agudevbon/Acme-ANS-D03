@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -35,6 +36,7 @@ public class Leg extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	@NotBlank
 	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Column(unique = true)
 	private String				flightNumber;
@@ -58,6 +60,11 @@ public class Leg extends AbstractEntity {
 	@Valid
 	@Automapped
 	private LegStatus			status;
+
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
