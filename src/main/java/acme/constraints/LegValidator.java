@@ -37,51 +37,62 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		if (leg == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			boolean rightOrder;
+			{
+				boolean uniqueLeg;
+				Leg existingLeg;
 
-			rightOrder = leg.getScheduledArrival().after(leg.getScheduledDeparture());
-			super.state(context, rightOrder, "*", "acme.validation.leg.wrong-date-order.message");
-		}
-		{
-			boolean rightFlightNumber;
+				existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				uniqueLeg = existingLeg == null || existingLeg.equals(leg);
 
-			String iataCode = leg.getAircraft().getAirline().getIataCode();
-			rightFlightNumber = leg.getFlightNumber().substring(0, 3).equals(iataCode);
-			super.state(context, rightFlightNumber, "flightNumber", "acme.validation.leg.wrong-iata.message");
-		}
-		{
-			boolean rightManager;
+				super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.duplicated-flight-number.message");
+			}
+			{
+				boolean rightOrder;
 
-			String manager = leg.getFlight().getManager().getIdentifier();
-			rightManager = leg.getManager().getIdentifier().equals(manager);
-			super.state(context, rightManager, "manager", "acme.validation.leg.diferent-manager.message");
-		}
-		{
-			boolean rightDuration;
+				rightOrder = leg.getScheduledArrival().after(leg.getScheduledDeparture());
+				super.state(context, rightOrder, "*", "acme.validation.leg.wrong-date-order.message");
+			}
+			{
+				boolean rightFlightNumber;
 
-			long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
-			long diferenciaEnMinutos = longDuration / (1000 * 60);
-			rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
-			super.state(context, rightDuration, "duration", "acme.validation.leg.wrong-duration.message");
-		}
-		{
-			boolean overlapedAircraft = false;
+				String iataCode = leg.getAircraft().getAirline().getIataCode();
+				rightFlightNumber = leg.getFlightNumber().substring(0, 3).equals(iataCode);
+				super.state(context, rightFlightNumber, "flightNumber", "acme.validation.leg.wrong-iata.message");
+			}
+			{
+				boolean rightManager;
 
-			List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
+				String manager = leg.getFlight().getManager().getIdentifier();
+				rightManager = leg.getManager().getIdentifier().equals(manager);
+				super.state(context, rightManager, "manager", "acme.validation.leg.diferent-manager.message");
+			}
+			{
+				boolean rightDuration;
 
-			for (Leg objetoExistente : legsWSameAircraft)
-				if (leg.getScheduledDeparture().before(objetoExistente.getScheduledArrival()) && leg.getScheduledArrival().after(objetoExistente.getScheduledDeparture())) {
-					overlapedAircraft = true;
-					break;
-				}
-			super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
-		}
-		{
-			boolean sameAirport;
+				long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
+				long diferenciaEnMinutos = longDuration / (1000 * 60);
+				rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
+				super.state(context, rightDuration, "duration", "acme.validation.leg.wrong-duration.message");
+			}
+			{
+				boolean overlapedAircraft = false;
 
-			sameAirport = leg.getDeparture() != leg.getArrival();
+				List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
 
-			super.state(context, sameAirport, "*", "acme.validation.leg.same-airport.message");
+				for (Leg objetoExistente : legsWSameAircraft)
+					if (leg.getScheduledDeparture().before(objetoExistente.getScheduledArrival()) && leg.getScheduledArrival().after(objetoExistente.getScheduledDeparture())) {
+						overlapedAircraft = true;
+						break;
+					}
+				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
+			}
+			{
+				boolean sameAirport;
+
+				sameAirport = leg.getDeparture() != leg.getArrival();
+
+				super.state(context, sameAirport, "*", "acme.validation.leg.same-airport.message");
+			}
 		}
 		result = !super.hasErrors(context);
 
