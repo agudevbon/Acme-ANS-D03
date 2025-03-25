@@ -53,11 +53,16 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private String				description;
 
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 
 	@Transient
-	public Date scheduledDeparture() {
+	public Date getScheduledDeparture() {
 		Date result;
 		FlightRepository repository;
 
@@ -74,7 +79,7 @@ public class Flight extends AbstractEntity {
 	}
 
 	@Transient
-	public Date scheduledArrival() {
+	public Date getScheduledArrival() {
 		Date result;
 		FlightRepository repository;
 
@@ -92,7 +97,7 @@ public class Flight extends AbstractEntity {
 	}
 
 	@Transient
-	public String departureCity() {
+	public String getDepartureCity() {
 		String result;
 		FlightRepository repository;
 
@@ -108,7 +113,7 @@ public class Flight extends AbstractEntity {
 	}
 
 	@Transient
-	public String arrivalCity() {
+	public String getArrivalCity() {
 		String result;
 		FlightRepository repository;
 
@@ -124,7 +129,7 @@ public class Flight extends AbstractEntity {
 	}
 
 	@Transient
-	public Integer layovers() {
+	public Integer getLayovers() {
 		Integer result;
 		FlightRepository repository;
 
