@@ -1,8 +1,6 @@
 
 package acme.constraints;
 
-import java.util.List;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +45,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.duplicated-flight-number.message");
 			}
 			{
+
 				boolean rightOrder;
 
 				rightOrder = leg.getScheduledArrival().after(leg.getScheduledDeparture());
@@ -86,6 +85,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 					}
 				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
 			}
+
 			{
 				boolean sameAirport;
 
