@@ -36,6 +36,16 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			{
+				boolean uniqueLeg;
+				Leg existingLeg;
+
+				existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				uniqueLeg = existingLeg == null || existingLeg.equals(leg);
+
+				super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.duplicated-flight-number.message");
+			}
+			{
+
 				boolean rightOrder;
 
 				rightOrder = leg.getScheduledArrival().after(leg.getScheduledDeparture());
@@ -62,6 +72,18 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				long diferenciaEnMinutos = longDuration / (1000 * 60);
 				rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
 				super.state(context, rightDuration, "duration", "acme.validation.leg.wrong-duration.message");
+			}
+			{
+				boolean overlapedAircraft = false;
+
+				List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
+
+				for (Leg objetoExistente : legsWSameAircraft)
+					if (leg.getScheduledDeparture().before(objetoExistente.getScheduledArrival()) && leg.getScheduledArrival().after(objetoExistente.getScheduledDeparture())) {
+						overlapedAircraft = true;
+						break;
+					}
+				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
 			}
 
 			{
