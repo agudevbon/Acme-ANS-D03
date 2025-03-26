@@ -22,7 +22,6 @@
 			<acme:submit code="manager.leg.form.button.update" action="/manager/leg/update"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:input-checkbox code="manager.leg.form.label.confirmation" path="confirmation"/>
 			<acme:submit code="manager.leg.form.button.create" action="/manager/leg/create"/> 
 		</jstl:when>		
 	</jstl:choose>	
