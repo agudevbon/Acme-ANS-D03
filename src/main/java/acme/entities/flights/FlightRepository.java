@@ -11,6 +11,6 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface FlightRepository extends AbstractRepository {
 
-	@Query("select l from Leg l where l.flight = :id")
+	@Query("select l from Leg l where l.flight.id = :id")
 	List<Leg> findLegsByFlight(Integer id);
 }

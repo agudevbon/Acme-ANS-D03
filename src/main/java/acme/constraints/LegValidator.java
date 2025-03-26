@@ -36,38 +36,61 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			{
+				boolean uniqueLeg;
+				Leg existingLeg;
+
+				existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				uniqueLeg = existingLeg == null || existingLeg.equals(leg);
+
+				super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.duplicated-flight-number.message");
+			}
+			{
+
 				boolean rightOrder;
 
-				rightOrder = leg.getScheduledArrival().after(leg.getScheduledDeparture());
+				rightOrder = leg.getScheduledArrival() == null || leg.getScheduledDeparture() == null || leg.getScheduledArrival().after(leg.getScheduledDeparture());
 				super.state(context, rightOrder, "*", "acme.validation.leg.wrong-date-order.message");
 			}
 			{
 				boolean rightFlightNumber;
 
-				String iataCode = leg.getAircraft().getAirline().getIataCode();
-				rightFlightNumber = leg.getFlightNumber().substring(0, 3).equals(iataCode);
+				rightFlightNumber = leg.getFlightNumber() != null ? true : leg.getFlightNumber().substring(0, 3).equals(leg.getAircraft().getAirline().getIataCode());
 				super.state(context, rightFlightNumber, "flightNumber", "acme.validation.leg.wrong-iata.message");
 			}
 			{
 				boolean rightManager;
 
-				String manager = leg.getFlight().getManager().getIdentifier();
-				rightManager = leg.getManager().getIdentifier().equals(manager);
+				rightManager = leg.getManager() != null ? true : leg.getManager().getIdentifier().equals(leg.getFlight().getManager().getIdentifier());
 				super.state(context, rightManager, "manager", "acme.validation.leg.diferent-manager.message");
 			}
 			{
-				boolean rightDuration;
-
-				long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
-				long diferenciaEnMinutos = longDuration / (1000 * 60);
-				rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
+				boolean rightDuration = true;
+				if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
+					long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
+					long diferenciaEnMinutos = longDuration / (1000 * 60);
+					rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
+				}
 				super.state(context, rightDuration, "duration", "acme.validation.leg.wrong-duration.message");
 			}
-
+			//			{
+			//				boolean overlapedAircraft = true;
+			//
+			//				if (leg.getAircraft() != null) {
+			//					List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
+			//
+			//					for (Leg objetoExistente : legsWSameAircraft)
+			//						if (leg.getScheduledDeparture().before(objetoExistente.getScheduledArrival()) && leg.getScheduledDeparture().after(objetoExistente.getScheduledDeparture())
+			//							|| leg.getScheduledArrival().after(objetoExistente.getScheduledDeparture()) && leg.getScheduledArrival().before(objetoExistente.getScheduledArrival())) {
+			//							overlapedAircraft = false;
+			//							break;
+			//						}
+			//				}
+			//				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
+			//			}
 			{
 				boolean sameAirport;
 
-				sameAirport = leg.getDeparture() != leg.getArrival();
+				sameAirport = leg.getDeparture() == null && leg.getArrival() == null ? true : leg.getDeparture() != leg.getArrival();
 
 				super.state(context, sameAirport, "*", "acme.validation.leg.same-airport.message");
 			}

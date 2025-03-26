@@ -17,7 +17,7 @@ import acme.entities.flights.LegStatus;
 import acme.realms.Manager;
 
 @GuiService
-public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
+public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -83,7 +83,6 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void perform(final Leg leg) {
-		leg.setDraftMode(false);
 		this.repository.save(leg);
 	}
 
