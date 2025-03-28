@@ -52,14 +52,27 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Automapped
 	private Money				estimatedCost;
 
+
+	public Double getTotalEstimatedCost() {
+		String eC = this.estimatedCost.getCurrency().replace("EUR", "");
+		Double estiCost = Double.parseDouble(eC);
+		return this.estimatedCost.getAmount() * estiCost;
+	}
+
+
 	@Optional
 	@ValidString(max = 255)
 	@Automapped
-	private String				notes;
+	private String		notes;
+
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean		draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft			aircraft;
+	private Aircraft	aircraft;
 
 }
