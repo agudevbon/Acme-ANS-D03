@@ -7,7 +7,9 @@
 	<acme:input-textbox code="manager.leg.form.label.flightNumber" path="flightNumber" />
 	<acme:input-moment code="manager.leg.form.label.scheduledDeparture" path="scheduledDeparture" />
 	<acme:input-moment code="manager.leg.form.label.scheduledArrival" path="scheduledArrival" />
-	<acme:input-integer code="manager.leg.form.label.duration" path="duration" readonly="true"/>
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+		<acme:input-integer code="manager.leg.form.label.duration" path="duration" readonly="true"/>
+	</jstl:if>
 	<acme:input-select code="manager.leg.form.label.status" path="status" choices="${statuss}" />
 	<acme:input-select code="manager.leg.form.label.departure" path="departure" choices="${departures}"/>
 	<acme:input-select code="manager.leg.form.label.arrival" path="arrival" choices="${arrivals}"/>
