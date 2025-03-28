@@ -16,7 +16,6 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
@@ -51,11 +50,6 @@ public class Leg extends AbstractEntity {
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				scheduledArrival;
-
-	@Mandatory
-	@ValidNumber(min = 1, max = 1000)
-	@Automapped
-	private Integer				duration;
 
 	@Mandatory
 	@Valid
