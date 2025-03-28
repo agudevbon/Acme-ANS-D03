@@ -1,6 +1,7 @@
 
 package acme.entities.flights;
 
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -66,31 +67,43 @@ public class Leg extends AbstractEntity {
 	@Automapped
 	private Boolean				draftMode;
 
+	// Derived attributes -----------------------------------------------------
+
+
+	@Transient
+	public Integer getDuration() {
+		long longDuration = this.getScheduledArrival().getTime() - this.getScheduledDeparture().getTime();
+		long diferenciaEnMinutos = longDuration / (1000 * 60);
+
+		return (int) diferenciaEnMinutos;
+	}
+
 	// Relationships ----------------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Airport				departure;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airport				arrival;
+	private Airport		departure;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft			aircraft;
+	private Airport		arrival;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Flight				flight;
+	private Aircraft	aircraft;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Manager				manager;
+	private Flight		flight;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Manager		manager;
 
 }

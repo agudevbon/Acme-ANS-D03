@@ -67,15 +67,15 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				rightManager = leg.getManager() != null ? true : leg.getManager().getIdentifier().equals(leg.getFlight().getManager().getIdentifier());
 				super.state(context, rightManager, "manager", "acme.validation.leg.diferent-manager.message");
 			}
-			//			{
-			//				boolean rightDuration = true;
-			//				if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
-			//					long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
-			//					long diferenciaEnMinutos = longDuration / (1000 * 60);
-			//					rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
-			//				}
-			//				super.state(context, rightDuration, "duration", "acme.validation.leg.wrong-duration.message");
-			//			}
+			{
+				boolean rightDuration = true;
+				if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
+					long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
+					long diferenciaEnMinutos = longDuration / (1000 * 60);
+					rightDuration = (int) diferenciaEnMinutos >= 1 && (int) diferenciaEnMinutos <= 1000;
+				}
+				super.state(context, rightDuration, "scheduledArrival", "acme.validation.leg.wrong-duration.message");
+			}
 			{
 				boolean overlapedAircraft = true;
 

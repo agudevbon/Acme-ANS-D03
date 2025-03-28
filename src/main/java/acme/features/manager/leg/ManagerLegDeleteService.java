@@ -58,7 +58,7 @@ public class ManagerLegDeleteService extends AbstractGuiService<Manager, Leg> {
 	public void bind(final Leg leg) {
 		assert leg != null;
 
-		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "duration", "status");
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
 	}
 
 	@Override
@@ -91,8 +91,9 @@ public class ManagerLegDeleteService extends AbstractGuiService<Manager, Leg> {
 		SelectChoices statusChoices;
 		statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "duration", "status");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
 
+		dataset.put("duration", leg.getDuration());
 		dataset.put("statuss", statusChoices);
 		dataset.put("flights", flightChoices);
 		dataset.put("flight", flightChoices.getSelected().getKey());
