@@ -47,6 +47,8 @@ public class ManagerLegListService extends AbstractGuiService<Manager, Leg> {
 			dataset.put("draftMode", "✔");
 		else
 			dataset.put("draftMode", "✖");
+
+		super.addPayload(dataset, leg, "status", "departure.iataCode", "arrival.iataCode", "aircraft.registrationNumber", "flight.tag");
 		super.getResponse().addData(dataset);
 	}
 }
