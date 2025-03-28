@@ -8,20 +8,21 @@
 	<acme:input-checkbox code="manager.flight.form.label.indication" path="indication" />
 	<acme:input-money code="manager.flight.form.label.cost" path="cost" />
 	<acme:input-textarea code="manager.flight.form.label.description" path="description" />
-	<acme:input-checkbox code="manager.flight.form.label.draftMode" path="draftMode" />
-	<acme:input-textarea code="manager.flight.form.label.scheduledDeparture" path="scheduledDeparture" />
-	<acme:input-textarea code="manager.flight.form.label.scheduledArrival" path="scheduledArrival" />
-	<acme:input-textarea code="manager.flight.form.label.departureCity" path="departureCity" />
-	<acme:input-textarea code="manager.flight.form.label.arrivalCity" path="arrivalCity" />
-	<acme:input-textarea code="manager.flight.form.label.layovers" path="layovers" />
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+		<acme:input-textarea code="manager.flight.form.label.scheduledDeparture" path="scheduledDeparture" readonly="true" />
+		<acme:input-textarea code="manager.flight.form.label.scheduledArrival" path="scheduledArrival" readonly="true" />
+		<acme:input-textarea code="manager.flight.form.label.departureCity" path="departureCity" readonly="true" />
+		<acme:input-textarea code="manager.flight.form.label.arrivalCity" path="arrivalCity" readonly="true" />
+		<acme:input-textarea code="manager.flight.form.label.layovers" path="layovers" readonly="true" />
+	</jstl:if>
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="manager.flight.form.button.publish" action="/manager/flight/publish"/>
 			<acme:submit code="manager.flight.form.button.delete" action="/manager/flight/delete"/>
+			<acme:submit code="manager.flight.form.button.update" action="/manager/flight/update"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:input-checkbox code="manager.flight.form.label.confirmation" path="confirmation"/>
 			<acme:submit code="manager.flight.form.button.create" action="/manager/flight/create"/> 
 		</jstl:when>		
 	</jstl:choose>	

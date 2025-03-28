@@ -1,6 +1,10 @@
 
 package acme.constraints;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +53,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				boolean rightOrder;
 
 				rightOrder = leg.getScheduledArrival() == null || leg.getScheduledDeparture() == null || leg.getScheduledArrival().after(leg.getScheduledDeparture());
-				super.state(context, rightOrder, "*", "acme.validation.leg.wrong-date-order.message");
+				super.state(context, rightOrder, "scheduledArrival", "acme.validation.leg.wrong-date-order.message");
 			}
 			{
 				boolean rightFlightNumber;
@@ -68,31 +72,41 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
 					long longDuration = leg.getScheduledArrival().getTime() - leg.getScheduledDeparture().getTime();
 					long diferenciaEnMinutos = longDuration / (1000 * 60);
-					rightDuration = (int) diferenciaEnMinutos == leg.getDuration();
+					rightDuration = (int) diferenciaEnMinutos >= 1 && (int) diferenciaEnMinutos <= 1000;
 				}
-				super.state(context, rightDuration, "duration", "acme.validation.leg.wrong-duration.message");
+				super.state(context, rightDuration, "scheduledArrival", "acme.validation.leg.wrong-duration.message");
 			}
-			//			{
-			//				boolean overlapedAircraft = true;
-			//
-			//				if (leg.getAircraft() != null) {
-			//					List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
-			//
-			//					for (Leg objetoExistente : legsWSameAircraft)
-			//						if (leg.getScheduledDeparture().before(objetoExistente.getScheduledArrival()) && leg.getScheduledDeparture().after(objetoExistente.getScheduledDeparture())
-			//							|| leg.getScheduledArrival().after(objetoExistente.getScheduledDeparture()) && leg.getScheduledArrival().before(objetoExistente.getScheduledArrival())) {
-			//							overlapedAircraft = false;
-			//							break;
-			//						}
-			//				}
-			//				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
-			//			}
+			{
+				boolean overlapedAircraft = true;
+
+				if (leg.getAircraft() != null) {
+					List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
+					legsWSameAircraft = legsWSameAircraft.stream().filter(legs -> !Objects.equals(legs.getFlightNumber(), leg.getFlightNumber())).collect(Collectors.toList());
+					overlapedAircraft = !legsWSameAircraft.stream().anyMatch(existingObject ->
+					// Case 1: Start of new object is within an existing interval
+					existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledDeparture()) >= 0 ||
+
+					// Case 2: End of new object is within an existing interval
+						existingObject.getScheduledDeparture().compareTo(leg.getScheduledArrival()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) >= 0 ||
+
+						// Case 3: New object completely contains an existing interval
+						existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) >= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) <= 0);
+
+				}
+				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");
+			}
 			{
 				boolean sameAirport;
 
 				sameAirport = leg.getDeparture() == null && leg.getArrival() == null ? true : leg.getDeparture() != leg.getArrival();
 
-				super.state(context, sameAirport, "*", "acme.validation.leg.same-airport.message");
+				super.state(context, sameAirport, "departure", "acme.validation.leg.same-airport.message");
+			}
+			{
+				boolean correctFlight;
+				correctFlight = leg.getFlight() == null ? true : leg.getFlight().getDraftMode();
+				super.state(context, correctFlight, "flight", "acme.validation.leg.published-flight.message");
+
 			}
 		}
 		result = !super.hasErrors(context);
