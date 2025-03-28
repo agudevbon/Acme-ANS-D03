@@ -10,7 +10,7 @@ import acme.entities.flights.Flight;
 import acme.realms.Manager;
 
 @GuiService
-public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight> {
+public class ManagerFlightUpdateService extends AbstractGuiService<Manager, Flight> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -30,8 +30,7 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(flightId);
 		manager = flight == null ? null : flight.getManager();
-		status = flight != null && super.getRequest().getPrincipal().hasRealm(manager);
-
+		status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && flight.getDraftMode();
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -44,6 +43,22 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		flight = this.repository.findFlightById(flightId);
 
 		super.getBuffer().addData(flight);
+	}
+
+	@Override
+	public void bind(final Flight flight) {
+
+		super.bindObject(flight, "tag", "indication", "cost", "description");
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		this.repository.save(flight);
 	}
 
 	@Override

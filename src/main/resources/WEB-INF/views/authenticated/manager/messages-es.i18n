@@ -1,0 +1,10 @@
+
+authenticated.manager.form.title = Formulario del Gerente
+
+authenticated.manager.form.label.identifier = Identificador
+authenticated.manager.form.label.experience = Experiencia
+authenticated.manager.form.label.birthDate = Fecha de Nacimiento
+authenticated.manager.form.label.picture = Imagen
+
+authenticated.manager.form.button.create = Crear
+authenticated.manager.form.button.update = Actualizar

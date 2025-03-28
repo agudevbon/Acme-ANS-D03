@@ -44,15 +44,12 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 	@Override
 	public void bind(final Flight flight) {
 
-		super.unbindObject(flight, "tag", "indication", "cost", "description");
+		super.bindObject(flight, "tag", "indication", "cost", "description");
 	}
 
 	@Override
 	public void validate(final Flight flight) {
-		boolean confirmation;
-
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
+		;
 	}
 
 	@Override

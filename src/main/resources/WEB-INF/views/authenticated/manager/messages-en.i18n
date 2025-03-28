@@ -1,0 +1,10 @@
+
+authenticated.manager.form.title = Manager Form
+
+authenticated.manager.form.label.identifier = Identifier
+authenticated.manager.form.label.experience = Experience
+authenticated.manager.form.label.birthDate = Birth Date
+authenticated.manager.form.label.picture = Picture
+
+authenticated.manager.form.button.create = Create
+authenticated.manager.form.button.update = Update

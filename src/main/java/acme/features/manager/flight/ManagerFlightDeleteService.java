@@ -1,16 +1,19 @@
 
 package acme.features.manager.flight;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.flights.Leg;
 import acme.realms.Manager;
 
 @GuiService
-public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight> {
+public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flight> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -30,8 +33,7 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(flightId);
 		manager = flight == null ? null : flight.getManager();
-		status = flight != null && super.getRequest().getPrincipal().hasRealm(manager);
-
+		status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && flight.getDraftMode();
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -44,6 +46,25 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		flight = this.repository.findFlightById(flightId);
 
 		super.getBuffer().addData(flight);
+	}
+
+	@Override
+	public void bind(final Flight flight) {
+
+		super.bindObject(flight, "tag", "indication", "cost", "description");
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		List<Leg> flightLegs = this.repository.findLegsByFlight(flight.getId());
+
+		this.repository.deleteAll(flightLegs);
+		this.repository.delete(flight);
 	}
 
 	@Override
