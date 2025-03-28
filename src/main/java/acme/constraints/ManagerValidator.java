@@ -46,12 +46,11 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 			}
 			{
 				boolean correctIdentifier = true;
-				System.out.print(manager.getIdentifier());
 
 				if (manager.getIdentifier() != null)
 					correctIdentifier = manager.getIdentifier().charAt(0) == manager.getIdentity().getName().charAt(0) && manager.getIdentifier().charAt(1) == manager.getIdentity().getSurname().charAt(0);
 
-				super.state(context, correctIdentifier, "identifier", "acme.validators.manager.correct-pattern");
+				super.state(context, correctIdentifier, "identifier", "acme.validation.manager.correct-pattern");
 			}
 		}
 
