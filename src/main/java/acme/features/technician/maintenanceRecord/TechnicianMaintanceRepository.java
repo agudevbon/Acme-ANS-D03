@@ -1,5 +1,5 @@
 
-package acme.features.maintenanceRecord;
+package acme.features.technician.maintenanceRecord;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import acme.entities.maintenanceRecords.MaintenanceRecord;
 @Repository
 public interface TechnicianMaintanceRepository extends AbstractRepository {
 
-	@Query("select m  from MaintenanceRecord m where m.id =:id")
+	@Query("select m.maintanceRecord from MaintenanceTask m where m.maintanceRecord.id =:id")
 	MaintenanceRecord findMaintenanceRecordById(Integer id);
 
-	@Query("select m from MaintenanceTask m where m.task.technician.id= :id ")
-	List<MaintenanceRecord> findMaintenanceRecordByTechnicianId(Integer id);
+	@Query("select m.maintanceRecord  from MaintenanceTask m where m.task.technician.id= :technicianId ")
+	List<MaintenanceRecord> findMaintenanceRecordByTechnicianId(Integer technicianId);
 }
