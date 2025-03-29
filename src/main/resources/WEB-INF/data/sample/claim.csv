@@ -1,0 +1,67 @@
+key,registrationDate,passengerEmail,description,type,isAccepted,key:agents,key:flightLeg
+claim-01,2000/01/01 00:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-01,leg-10
+claim-02,2022/07/30 00:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-02,leg-02
+claim-03,2000/01/01 00:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-02,leg-02
+claim-04,2022/07/29 23:59,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-01,leg-10
+claim-05,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-03,leg-01
+claim-06,2016/10/06 17:01,a@b.e,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-03,leg-03
+claim-07,2016/10/06 17:01,a@b.es,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-02,leg-02
+claim-08,2016/10/06 17:01,a@b.esx,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-01,leg-21
+claim-09,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-01,leg-22
+claim-10,2016/10/06 17:01,"lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org",Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-01,leg-04
+claim-11,2016/10/06 17:01,acme@lorem-ipsum.org,L,LUGGAGE_ISSUES,true,assistanceAgent-02,leg-12
+claim-12,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet consectetur adipiscinga,FLIGHT_ISSUES,false,assistanceAgent-02,leg-06
+claim-13,2016/10/06 17:01,acme@lorem-ipsum.org,Lo,SECURITY_INCIDENT,false,assistanceAgent-02,leg-20
+claim-14,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet consectetur adipiscing, OTHER_ISSUES,false,assistanceAgent-02,leg-12
+claim-15,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-01,leg-10
+claim-16,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-03,leg-15
+claim-17,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-01,leg-15
+claim-18,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-01,leg-07
+claim-19,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-02,leg-16
+claim-20,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,true,assistanceAgent-01,leg-04
+claim-21,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-03,leg-07
+claim-22,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-01,leg-04
+claim-23,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-03,leg-19
+claim-24,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,true,assistanceAgent-02,leg-02
+claim-25,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-03,leg-23
+claim-26,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-02,leg-19
+claim-27,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-02,leg-12
+claim-28,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-01,leg-17
+claim-29,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-03,leg-16
+claim-30,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-02,leg-09
+claim-31,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,true,assistanceAgent-03,leg-23
+claim-32,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,true,assistanceAgent-01,leg-15
+claim-33,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-03,leg-16
+claim-34,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,true,assistanceAgent-02,leg-03
+claim-35,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-03,leg-01
+claim-36,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,true,assistanceAgent-02,leg-19
+claim-37,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-03,leg-20
+claim-38,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,true,assistanceAgent-01,leg-22
+claim-39,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,true,assistanceAgent-02,leg-05
+claim-40,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-03,leg-21
+claim-41,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-01,leg-07
+claim-42,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-01,leg-18
+claim-43,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,false,assistanceAgent-03,leg-17
+claim-44,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-02,leg-08
+claim-45,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-03,leg-22
+claim-46,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-01,leg-09
+claim-47,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-03,leg-12
+claim-48,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-01,leg-02
+claim-49,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-02,leg-17
+claim-50,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-01,leg-12
+claim-51,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-02,leg-07
+claim-52,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,true,assistanceAgent-01,leg-01
+claim-53,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-02,leg-18
+claim-54,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-02,leg-21
+claim-55,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-03,leg-12
+claim-56,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,true,assistanceAgent-03,leg-17
+claim-57,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,true,assistanceAgent-02,leg-06
+claim-58,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,true,assistanceAgent-02,leg-05
+claim-59,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-02,leg-09
+claim-60,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,false,assistanceAgent-01,leg-06
+claim-61,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-03,leg-10
+claim-62,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,false,assistanceAgent-01,leg-18
+claim-63,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-03,leg-15
+claim-67,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-01,leg-17
+claim-68,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,true,assistanceAgent-01,leg-13
+claim-69,2016/10/06 17:01,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,false,assistanceAgent-01,leg-06
