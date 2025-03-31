@@ -41,7 +41,7 @@ public class TechnicianMaintenanceListService extends AbstractGuiService<Technic
 	public void unbind(final MaintenanceRecord maintenanceRecord) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "notes", "draftMode");
+		dataset = super.unbindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "draftMode");
 		if (maintenanceRecord.getDraftMode())
 			dataset.put("draftMode", "✔");
 		else
