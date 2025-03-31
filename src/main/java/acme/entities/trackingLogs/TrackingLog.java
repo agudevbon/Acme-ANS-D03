@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -16,6 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
+import acme.entities.claims.AcceptedStatus;
 import acme.entities.claims.Claim;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,18 +51,31 @@ public class TrackingLog extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				isAccepted;
+	private AcceptedStatus		isAccepted;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	@Optional
 	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				resolution;
 
+	// Derived attributes
+
+
+	@Transient
+	public boolean isResolutionValid() {
+		return this.resolution != null && !this.resolution.trim().isEmpty();
+	}
+
 	// Relationships
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Claim				claim;
+	private Claim claim;
 
 }
