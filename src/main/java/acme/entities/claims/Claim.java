@@ -57,14 +57,18 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				isAccepted;
+	private AcceptedStatus		isAccepted;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	// Relationships
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private AssistanceAgent		agents;
+	private AssistanceAgent		agent;
 
 	@Optional
 	@Valid
