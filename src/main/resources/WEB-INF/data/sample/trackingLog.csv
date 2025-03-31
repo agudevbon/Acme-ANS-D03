@@ -1,0 +1,70 @@
+key,lastUpdate,step,resolutionPercentage,isAccepted,resolution,key:claim
+trackingLog-01,2000/01/01 00:00,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-12
+trackingLog-02,2022/07/30 00:00,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-11
+trackingLog-03,2000/01/01 00:01,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-07
+trackingLog-04,2022/07/29 23:59,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-05
+trackingLog-05,2017/11/29 14:43,L,27.38,false,Lorem ipsum dolor sit,claim-06
+trackingLog-06,2017/11/29 14:43,Lorem ipsum dolor sit amet consectetur adipiscinga,27.38,false,Lorem ipsum dolor sit,claim-08
+trackingLog-07,2017/11/29 14:43,Lo,27.38,false,Lorem ipsum dolor sit,claim-14
+trackingLog-08,2017/11/29 14:43,Lorem ipsum dolor sit amet consectetur adipiscing,27.38,false,Lorem ipsum dolor sit,claim-10
+trackingLog-09,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-07
+trackingLog-10,2017/11/29 14:43,โลเร็ม อิปซัม,27.38,false,Lorem ipsum dolor sit,claim-10
+trackingLog-11,2017/11/29 14:43,لوريم إيبسوم,27.38,false,Lorem ipsum dolor sit,claim-14
+trackingLog-12,2017/11/29 14:43,洛伦·伊普森,27.38,false,Lorem ipsum dolor sit,claim-08
+trackingLog-13,2017/11/29 14:43,<marquee>Hacked</marquee>,27.38,false,Lorem ipsum dolor sit,claim-10
+trackingLog-14,2017/11/29 14:43,<script>alert(‘Hacked!’);</script>,27.38,false,Lorem ipsum dolor sit,claim-14
+trackingLog-15,2017/11/29 14:43,' or 'A' = 'A,27.38,false,Lorem ipsum dolor sit,claim-14
+trackingLog-16,2017/11/29 14:43,Lorem ipsum dolor sit,0.00,false,Lorem ipsum dolor sit,claim-10
+trackingLog-17,2017/11/29 14:43,Lorem ipsum dolor sit,100.00,false,Lorem ipsum dolor sit,claim-10
+trackingLog-18,2017/11/29 14:43,Lorem ipsum dolor sit,0.01,false,Lorem ipsum dolor sit,claim-06
+trackingLog-19,2017/11/29 14:43,Lorem ipsum dolor sit,99.99,false,Lorem ipsum dolor sit,claim-12
+trackingLog-20,2017/11/29 14:43,Lorem ipsum dolor sit,69.21,false,Lorem ipsum dolor sit,claim-03
+trackingLog-21,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-09
+trackingLog-22,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-03
+trackingLog-23,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-11
+trackingLog-24,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-10
+trackingLog-25,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-15
+trackingLog-26,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-11
+trackingLog-27,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-12
+trackingLog-28,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-09
+trackingLog-29,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-04
+trackingLog-30,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-06
+trackingLog-31,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-03
+trackingLog-32,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-15
+trackingLog-33,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-08
+trackingLog-34,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-01
+trackingLog-35,2017/11/29 14:43,Lorem ipsum dolor sit,27.38,false,Lorem ipsum dolor sit,claim-09
+trackingLog-36,2017/11/29 14:43,Lorem ipsum dolor sit,99.29,false,Lorem ipsum dolor sit,claim-10
+trackingLog-37,2017/11/29 14:43,Lorem ipsum dolor sit,09.60,false,Lorem ipsum dolor sit,claim-15
+trackingLog-38,2017/11/29 14:43,Lorem ipsum dolor sit,95.41,false,Lorem ipsum dolor sit,claim-12
+trackingLog-39,2017/11/29 14:43,Lorem ipsum dolor sit,36.63,false,Lorem ipsum dolor sit,claim-05
+trackingLog-40,2017/11/29 14:43,Lorem ipsum dolor sit,59.64,false,Lorem ipsum dolor sit,claim-15
+trackingLog-41,2017/11/29 14:43,Lorem ipsum dolor sit,77.27,false,Lorem ipsum dolor sit,claim-15
+trackingLog-42,2017/11/29 14:43,Lorem ipsum dolor sit,51.31,false,Lorem ipsum dolor sit,claim-04
+trackingLog-43,2017/11/29 14:43,Lorem ipsum dolor sit,68.74,false,Lorem ipsum dolor sit,claim-10
+trackingLog-44,2017/11/29 14:43,Lorem ipsum dolor sit,37.49,false,Lorem ipsum dolor sit,claim-10
+trackingLog-45,2017/11/29 14:43,Lorem ipsum dolor sit,66.79,false,Lorem ipsum dolor sit,claim-01
+trackingLog-46,2017/11/29 14:43,Lorem ipsum dolor sit,30.33,false,Lorem ipsum dolor sit,claim-11
+trackingLog-47,2017/11/29 14:43,Lorem ipsum dolor sit,15.61,false,Lorem ipsum dolor sit,claim-09
+trackingLog-48,2017/11/29 14:43,Lorem ipsum dolor sit,75.08,false,Lorem ipsum dolor sit,claim-14
+trackingLog-49,2017/11/29 14:43,Lorem ipsum dolor sit,57.74,false,Lorem ipsum dolor sit,claim-15
+trackingLog-50,2017/11/29 14:43,Lorem ipsum dolor sit,70.16,false,Lorem ipsum dolor sit,claim-08
+trackingLog-51,2017/11/29 14:43,Lorem ipsum dolor sit,95.45,false,Lorem ipsum dolor sit,claim-02
+trackingLog-52,2017/11/29 14:43,Lorem ipsum dolor sit,09.02,false,Lorem ipsum dolor sit,claim-05
+trackingLog-53,2017/11/29 14:43,Lorem ipsum dolor sit,98.33,false,Lorem ipsum dolor sit,claim-11
+trackingLog-54,2017/11/29 14:43,Lorem ipsum dolor sit,80.81,false,Lorem ipsum dolor sit,claim-07
+trackingLog-55,2017/11/29 14:43,Lorem ipsum dolor sit,94.68,false,Lorem ipsum dolor sit,claim-06
+trackingLog-56,2017/11/29 14:43,Lorem ipsum dolor sit,95.81,false,Lorem ipsum dolor sit,claim-12
+trackingLog-57,2017/11/29 14:43,Lorem ipsum dolor sit,62.24,false,Lorem ipsum dolor sit,claim-09
+trackingLog-58,2017/11/29 14:43,Lorem ipsum dolor sit,46.92,false,Lorem ipsum dolor sit,claim-12
+trackingLog-59,2017/11/29 14:43,Lorem ipsum dolor sit,41.32,false,Lorem ipsum dolor sit,claim-15
+trackingLog-60,2017/11/29 14:43,Lorem ipsum dolor sit,01.03,false,Lorem ipsum dolor sit,claim-10
+trackingLog-61,2017/11/29 14:43,Lorem ipsum dolor sit,22.28,false,Lorem ipsum dolor sit,claim-10
+trackingLog-62,2017/11/29 14:43,Lorem ipsum dolor sit,23.97,false,Lorem ipsum dolor sit,claim-06
+trackingLog-63,2017/11/29 14:43,Lorem ipsum dolor sit,80.31,false,Lorem ipsum dolor sit,claim-01
+trackingLog-64,2017/11/29 14:43,Lorem ipsum dolor sit,82.60,false,Lorem ipsum dolor sit,claim-04
+trackingLog-65,2017/11/29 14:43,Lorem ipsum dolor sit,100.00,true,Lorem ipsum dolor sit,claim-10
+trackingLog-66,2017/11/29 14:43,Lorem ipsum dolor sit,100.00,false,Lorem ipsum dolor sit,claim-01
+trackingLog-67,2017/11/29 14:43,Lorem ipsum dolor sit,100.00,true,Lorem ipsum dolor sit,claim-04
+trackingLog-68,2017/11/29 14:43,Lorem ipsum dolor sit,100.00,true,Lorem ipsum dolor sit,claim-11
+trackingLog-69,2017/11/29 14:43,Lorem ipsum dolor sit,100.00,false,Lorem ipsum dolor sit,claim-05
