@@ -17,6 +17,12 @@ master.menu.anonymous.favourite-link-juanma = 54182499L: Romero Ruiz, Juan Manue
 master.menu.anonymous.favourite-link-fabrobher = 30261414S: Robledo Hermoso, Fabián
 master.menu.anonymous.favourite-link-ra = Y1270652P: Petre, Rares Nicolae
 
+# master.menu.manager  ########################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-legs = Legs listing
+master.menu.manager.list-flights = Flights listing
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

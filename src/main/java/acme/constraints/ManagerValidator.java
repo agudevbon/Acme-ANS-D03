@@ -45,13 +45,13 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 				super.state(context, uniqueManager, "ticker", "acme.validation.manager.duplicated-identifier.message");
 			}
 			{
-				boolean firstCharacter;
-				boolean secondCharacter;
+				boolean correctIdentifier = true;
+				System.out.print(manager.getIdentifier());
 
-				firstCharacter = manager.getIdentifier().charAt(0) == manager.getIdentity().getName().charAt(0);
-				secondCharacter = manager.getIdentifier().charAt(1) == manager.getIdentity().getSurname().charAt(0);
+				if (manager.getIdentifier() != null)
+					correctIdentifier = manager.getIdentifier().charAt(0) == manager.getIdentity().getName().charAt(0) && manager.getIdentifier().charAt(1) == manager.getIdentity().getSurname().charAt(0);
 
-				super.state(context, firstCharacter && secondCharacter, "identifier", "acme.validators.manager.correct-pattern");
+				super.state(context, correctIdentifier, "identifier", "acme.validators.manager.correct-pattern");
 			}
 		}
 
