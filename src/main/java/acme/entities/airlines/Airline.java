@@ -1,13 +1,15 @@
 
 package acme.entities.airlines;
 
-import java.sql.Date;
+
+import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Pattern;
+
 
 import org.hibernate.validator.constraints.Length;
 
@@ -17,6 +19,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,6 +41,7 @@ public class Airline extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
+	@ValidString(pattern = "^[A-Z]{3}")
 	@Column(unique = true)
 	private String				iataCode;
 
@@ -61,7 +65,7 @@ public class Airline extends AbstractEntity {
 	private String				email;
 
 	@Optional
-	@Pattern(regexp = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				phoneNumber;
 }
