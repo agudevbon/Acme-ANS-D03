@@ -16,7 +16,7 @@ public class TechnicianMaintenanceListService extends AbstractGuiService<Technic
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
-	private TechnicianMaintanceRepository repository;
+	private TechnicianMaintenanceRepository repository;
 
 	// AbstractGuiService interface -------------------------------------------
 
