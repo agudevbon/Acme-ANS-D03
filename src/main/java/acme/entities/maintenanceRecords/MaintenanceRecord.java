@@ -18,6 +18,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.entities.aircraft.Aircraft;
+import acme.realms.Technician;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -52,27 +53,24 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Automapped
 	private Money				estimatedCost;
 
-
-	public Double getTotalEstimatedCost() {
-		String eC = this.estimatedCost.getCurrency().replace("EUR", "");
-		Double estiCost = Double.parseDouble(eC);
-		return this.estimatedCost.getAmount() * estiCost;
-	}
-
-
 	@Optional
 	@ValidString(max = 255)
 	@Automapped
-	private String		notes;
+	private String				notes;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean		draftMode;
+	private Boolean				draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft	aircraft;
+	private Aircraft			aircraft;
+
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Technician			technician;
 
 }
