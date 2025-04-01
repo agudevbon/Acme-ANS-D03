@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -17,6 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidClaim;
 import acme.entities.assistanceAgents.AssistanceAgent;
 import acme.entities.flights.Leg;
 import lombok.Getter;
@@ -25,7 +25,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "claim")
+@ValidClaim
 public class Claim extends AbstractEntity {
 
 	// Serialisation version
