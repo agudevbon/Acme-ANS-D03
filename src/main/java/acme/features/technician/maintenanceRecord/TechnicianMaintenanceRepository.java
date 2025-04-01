@@ -17,7 +17,7 @@ public interface TechnicianMaintenanceRepository extends AbstractRepository {
 	@Query("select m from MaintenanceRecord m where m.id =:id")
 	MaintenanceRecord findMaintenanceRecordById(Integer id);
 
-	@Query("select m from MaintenanceRecord m inner join MaintenanceTask mt on m.id =mt.maintanceRecord.id where mt.task.technician.id = :technicianId ")
+	@Query("select m from MaintenanceRecord m where m.technician.id =:technicianId ")
 	List<MaintenanceRecord> findMaintenanceRecordByTechnicianId(Integer technicianId);
 
 	@Query("select mt from MaintenanceTask mt where mt.maintanceRecord.id =:maintenanceRid")
