@@ -1,0 +1,25 @@
+# member.assignment.list ####################################################
+
+member.assignment.list.title = Lista de asignaciones de vuelo
+
+member.assignment.list.label.duty = Rol
+member.assignment.list.label.leg = Tramo de vuelo
+member.assignment.list.label.status = Estado
+member.assignment.list.label.member = Miembro asignado
+
+member.assignment.form.button.create = Crear
+
+# member.assignment.form ####################################################
+
+member.assignment.form.title = Formulario de asignación de vuelo
+
+member.assignment.form.label.duty = Rol
+member.assignment.form.label.leg = Tramo de vuelo
+member.assignment.form.label.member = Miembro
+member.assignment.form.label.remarks = Observaciones
+member.assignment.form.label.status = Estado
+member.assignment.form.label.lastUpdateMoment = Última actualización
+
+member.assignment.form.button.create = Crear
+member.assignment.form.button.update = Actualizar
+member.assignment.form.button.publish = Publicar
