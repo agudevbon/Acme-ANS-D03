@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.entities.aircraft.AircraftStatus;
 import acme.entities.flights.Leg;
 import acme.entities.flights.LegRepository;
 
@@ -56,9 +57,10 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				super.state(context, rightOrder, "scheduledArrival", "acme.validation.leg.wrong-date-order.message");
 			}
 			{
-				boolean rightFlightNumber;
+				boolean rightFlightNumber = true;
 
-				rightFlightNumber = leg.getFlightNumber() != null ? true : leg.getFlightNumber().substring(0, 3).equals(leg.getAircraft().getAirline().getIataCode());
+				if (leg.getFlightNumber() != null && leg.getFlightNumber().length() > 3 && leg.getAircraft() != null)
+					rightFlightNumber = leg.getFlightNumber().substring(0, 3).equals(leg.getAircraft().getAirline().getIataCode());
 				super.state(context, rightFlightNumber, "flightNumber", "acme.validation.leg.wrong-iata.message");
 			}
 			{
@@ -102,6 +104,13 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 				super.state(context, sameAirport, "departure", "acme.validation.leg.same-airport.message");
 			}
+			{
+				boolean correctAircraft = true;
+
+				correctAircraft = leg.getAircraft() == null ? true : leg.getAircraft().getStatus() == AircraftStatus.ACTIVE_SERVICE;
+				super.state(context, correctAircraft, "departure", "acme.validation.leg.maintenance-aircraft.message");
+			}
+
 		}
 		result = !super.hasErrors(context);
 
