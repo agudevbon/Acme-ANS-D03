@@ -68,7 +68,7 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		int arrivalId = super.getRequest().getData("arrival", int.class);
 		Airport arrival = this.repository.findAirportById(arrivalId);
 
-		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "duration", "status");
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
 
 		leg.setFlight(flight);
 		leg.setAircraft(aircraft);
@@ -106,8 +106,9 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		SelectChoices statusChoices;
 		statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "duration", "status");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode");
 
+		dataset.put("duration", leg.getDuration());
 		dataset.put("statuss", statusChoices);
 		dataset.put("flights", flightChoices);
 		dataset.put("flight", flightChoices.getSelected().getKey());

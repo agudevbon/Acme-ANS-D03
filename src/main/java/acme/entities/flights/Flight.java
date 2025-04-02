@@ -137,7 +137,7 @@ public class Flight extends AbstractEntity {
 
 		List<Leg> legs = repository.findLegsByFlight(this.getId());
 
-		result = legs.size();
+		result = legs.size() - 1;
 
 		return result;
 	}
