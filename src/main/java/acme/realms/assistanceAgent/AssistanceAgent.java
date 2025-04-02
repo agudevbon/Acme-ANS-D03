@@ -1,12 +1,11 @@
 
-package acme.entities.assistanceAgents;
+package acme.realms.assistanceAgent;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -20,6 +19,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidAssistanceAgent;
 import acme.constraints.ValidIdentifier;
 import acme.entities.airlines.Airline;
 import lombok.Getter;
@@ -28,7 +28,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "assistanceAgent")
+@ValidAssistanceAgent
 public class AssistanceAgent extends AbstractRole {
 
 	// Serialisation version 
@@ -38,7 +38,7 @@ public class AssistanceAgent extends AbstractRole {
 	// Attributes
 
 	@Mandatory
-  @ValidIdentifier
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				code;
 
@@ -46,11 +46,6 @@ public class AssistanceAgent extends AbstractRole {
 	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				languages;
-
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private Airline				airline;
 
 	@Mandatory
 	@ValidMoment(past = true)
@@ -63,14 +58,20 @@ public class AssistanceAgent extends AbstractRole {
 	private String				bio;
 
 	@Optional
-	@ValidMoney(min = 1, max = 10000)
+	@ValidMoney
 	@Automapped
 	private Money				salary;
 
 	@Optional
 	@ValidUrl
 	@Automapped
-	@Column(columnDefinition = "TEXT")
 	private String				photoLink;
+
+	// Relationships
+
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Airline				airline;
 
 }
