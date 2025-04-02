@@ -14,10 +14,11 @@ import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenanceRecords.MaintenanceRecord;
 import acme.entities.maintenanceRecords.MaintenanceStatus;
+import acme.entities.task.Task;
 import acme.realms.Technician;
 
 @GuiService
-public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Technician, MaintenanceRecord> {
+public class TechnicianMaintenancePublishService extends AbstractGuiService<Technician, MaintenanceRecord> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -69,11 +70,29 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 
 	@Override
 	public void validate(final MaintenanceRecord maintenanceRecord) {
-		;
+		{
+			boolean hasTasks;
+
+			List<Task> maintenanceRecordTasks = this.repository.findTasksByMaintenanceRecord(maintenanceRecord.getId());
+
+			hasTasks = !maintenanceRecordTasks.isEmpty();
+
+			super.state(hasTasks, "*", "acme.validation.maintenance-record.no-tasks.message");
+		}
+		{
+			boolean publishedTasks;
+
+			List<Task> maintenanceRecordTasks = this.repository.findTasksByMaintenanceRecord(maintenanceRecord.getId());
+
+			publishedTasks = maintenanceRecordTasks.stream().allMatch(t -> !t.getDraftMode());
+
+			super.state(publishedTasks, "*", "acme.validation.maintenance-record.unpublished-tasks.message");
+		}
 	}
 
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
+		maintenanceRecord.setDraftMode(false);
 		this.repository.save(maintenanceRecord);
 	}
 
@@ -97,5 +116,4 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 		super.getResponse().addData(dataset);
 
 	}
-
 }

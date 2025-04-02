@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenanceRecords.MaintenanceRecord;
-import acme.entities.maintenanceRecords.MaintenanceTask;
+import acme.entities.task.Task;
 
 @Repository
 public interface TechnicianMaintenanceRepository extends AbstractRepository {
@@ -20,8 +20,8 @@ public interface TechnicianMaintenanceRepository extends AbstractRepository {
 	@Query("select m from MaintenanceRecord m where m.technician.id =:technicianId ")
 	List<MaintenanceRecord> findMaintenanceRecordByTechnicianId(Integer technicianId);
 
-	@Query("select mt from MaintenanceTask mt where mt.maintanceRecord.id =:maintenanceRid")
-	List<MaintenanceTask> findMaintenanceTaskByMaintenanceId(Integer maintenanceRid);
+	@Query("select m.task from MaintenanceTask m where m.maintanceRecord.id =:maintanceRecordId ")
+	List<Task> findTasksByMaintenanceRecord(Integer maintanceRecordId);
 
 	@Query("select a from Aircraft a")
 	List<Aircraft> findAircrafts();

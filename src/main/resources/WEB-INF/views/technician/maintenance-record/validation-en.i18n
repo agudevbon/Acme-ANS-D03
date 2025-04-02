@@ -1,0 +1,2 @@
+acme.validation.maintenance-record.no-tasks.message = There are no tasks in this Maintenance Record
+acme.validation.maintenance-record.unpublished-tasks.message = The are no tasks published in this Maintenance Record
