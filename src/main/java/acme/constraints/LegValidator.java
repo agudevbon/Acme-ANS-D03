@@ -102,12 +102,6 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 				super.state(context, sameAirport, "departure", "acme.validation.leg.same-airport.message");
 			}
-			{
-				boolean correctFlight;
-				correctFlight = leg.getFlight() == null ? true : leg.getFlight().getDraftMode();
-				super.state(context, correctFlight, "flight", "acme.validation.leg.published-flight.message");
-
-			}
 		}
 		result = !super.hasErrors(context);
 
