@@ -23,3 +23,6 @@ technician.maintenance-record.form.label.estimatedCost = Estimated Cost
 technician.maintenance-record.form.label.notes = Notes
 technician.maintenance-record.form.label.draftMode = Draft Mode
 technician.maintenance-record.form.label.aircraft = Aircraft
+technician.maintenance-record.form.label.moment = Moment
+
+technician.maintenance-record.form.button.update = Update
