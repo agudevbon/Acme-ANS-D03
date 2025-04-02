@@ -32,7 +32,7 @@ public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight
 		manager = flight == null ? null : flight.getManager();
 		status = flight != null && super.getRequest().getPrincipal().hasRealm(manager);
 
-		super.getResponse().setAuthorised(true);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

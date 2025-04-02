@@ -1,0 +1,30 @@
+
+
+# manager.leg.list  ########################################################
+
+manager.leg.list.title = Listado de escalas
+manager.leg.list.label.flightNumber = Número de Vuelo
+manager.leg.list.label.scheduledDeparture = Salida Prevista
+manager.leg.list.label.scheduledArrival = Llegada Prevista
+manager.leg.list.label.draftMode = Modo Borrador
+
+manager.leg.form.button.create = Crear
+
+# manager.leg.form  ########################################################
+
+manager.leg.form.title = Formulario de Escala
+manager.leg.form.title = Listado de escalas
+manager.leg.form.label.flightNumber = Número de Vuelo
+manager.leg.form.label.scheduledDeparture = Salida Prevista
+manager.leg.form.label.scheduledArrival = Llegada Prevista
+manager.leg.form.label.draftMode = Modo Borrador
+manager.leg.form.label.duration = Duracion
+manager.leg.form.label.status = Estado
+manager.leg.form.label.departure = Aeropuerto de Salida
+manager.leg.form.label.arrival = Aeropuerto de Llegada
+manager.leg.form.label.aircraft = Aeronave
+manager.leg.form.label.flight = Vuelo
+
+manager.leg.form.button.delete = Borrar
+manager.leg.form.button.publish = Publicar
+manager.leg.form.button.update = Actualizar

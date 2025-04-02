@@ -1,0 +1,67 @@
+key,registrationDate,passengerEmail,description,type,isAccepted,draftMode,key:agent,key:flightLeg
+claim-01,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-02,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-03,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-02,leg-06
+claim-04,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-05,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-06,2020/07/07 05:11,"a@b.e",Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-07,2020/07/07 05:11,"a@b.es",Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-02,leg-06
+claim-08,2020/07/07 05:11,"a@b.esx",Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-09,2020/07/07 05:11,"lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu",Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-10,2020/07/07 05:11,"lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org",Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-11,2020/07/07 05:11,"acme@lorem-ipsum.org",L,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-12,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet consectetur adipiscinga,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-13,2020/07/07 05:11,"acme@lorem-ipsum.org",Lo,SECURITY_INCIDENT,PENDING,true,assistanceAgent-02,leg-06
+claim-14,2020/07/07 05:11,"acme@lorem-ipsum.org",Lorem ipsum dolor sit amet consectetur adipiscing,OTHER_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-15,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,ACCEPTED,true,assistanceAgent-01,leg-06
+claim-16,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,ACCEPTED,true,assistanceAgent-03,leg-06
+claim-17,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-18,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-19,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-20,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-21,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-22,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-23,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-24,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-25,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-03,leg-06
+claim-26,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-27,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-28,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-29,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-30,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-31,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-32,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-33,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-34,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-35,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-36,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-37,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-38,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-39,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-40,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-03,leg-06
+claim-41,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-42,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-43,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-44,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-45,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-03,leg-06
+claim-46,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-47,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-48,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-49,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-50,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-51,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-52,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-53,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-02,leg-06
+claim-54,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-55,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-56,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-57,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-02,leg-06
+claim-58,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-02,leg-06
+claim-59,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-02,leg-06
+claim-60,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,FLIGHT_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-61,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-62,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,SECURITY_INCIDENT,PENDING,true,assistanceAgent-01,leg-06
+claim-63,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-03,leg-06
+claim-67,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-68,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,OTHER_ISSUES,PENDING,true,assistanceAgent-01,leg-06
+claim-69,2020/07/07 05:11,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet,LUGGAGE_ISSUES,PENDING,true,assistanceAgent-01,leg-06

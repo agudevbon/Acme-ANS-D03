@@ -73,8 +73,9 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 		SelectChoices statusChoices;
 		statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "duration", "status", "draftMode");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode");
 
+		dataset.put("duration", leg.getDuration());
 		dataset.put("statuss", statusChoices);
 		dataset.put("flights", flightChoices);
 		dataset.put("flight", flightChoices.getSelected().getKey());
