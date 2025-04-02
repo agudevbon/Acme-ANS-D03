@@ -1,7 +1,7 @@
-<%@page contentType="text/html;charset=UTF-8" %>
+<%@page%>
 
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="acme" uri="http://acme-framework.org/" %>
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
 	<acme:list-column code="member.assignment.list.label.duty" path="duty" width="25%"/>
