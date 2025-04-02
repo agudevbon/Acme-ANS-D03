@@ -11,3 +11,4 @@
 	<acme:list-column code="technician.maintenance-record.list.label.draftMode" path="draftMode" width="25%"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
+<acme:button code="technician.maintenance-record.form.button.create" action="/technician/maintenance-record/create"/>
