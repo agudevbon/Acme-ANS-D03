@@ -1,4 +1,4 @@
-key,FullName,email,passportNumber,dateOfBirth,specialNeeds
+key,FullName,email,passportNumber,dateOfBirth,specialNeeds,isPublished
 passenger-01,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,
 passenger-02,Lorem ipsum dolor sit amet consectetur adipiscingu,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,
 passenger-03,Lorem ipsum dolor sit amet consectetur adipiscing,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,
@@ -16,7 +16,7 @@ passenger-14,Lorem ipsum dolor sit amet,"lorem-ipsum@dolor.sit.amet.consectetur.
 passenger-15,Lorem ipsum dolor sit amet,"a@b.esx",KITYNV,2012/07/02 23:49,
 passenger-16,Lorem ipsum dolor sit amet,"a@b.es",KITYNV,2012/07/02 23:49,
 passenger-17,Lorem ipsum dolor sit amet,"a@b.e",KITYNV,2012/07/02 23:49,
-passenger-18,Lorem ipsum dolor sit amet,"acme:password@lorem-ipsum.org",KITYNV,2012/07/02 23:49,
+passenger-18,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,
 passenger-19,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",ZWR92FW3,2012/07/02 23:49,
 passenger-20,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",6K7VX0A49,2012/07/02 23:49,
 passenger-21,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",X8UR0UV,2012/07/02 23:49,
@@ -28,8 +28,8 @@ passenger-39,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2000/01/01
 passenger-26,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2022/07/29 23:59,
 passenger-27,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2022/01/01 0:00,
 passenger-28,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,Lorem ipsum dolor sit amet
-passenger-29,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,Lorem ipsum dolor sit amet consectetur adipiscingu
-passenger-30,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,Lorem ipsum dolor sit amet consectetur adipiscing
+passenger-29,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,Lorem ipsum dolor sit amet consectetur adipiscingu,false
+passenger-30,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,Lorem ipsum dolor sit amet consectetur adipiscing,true
 passenger-31,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,L
 passenger-32,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,Lo
 passenger-33,Lorem ipsum dolor sit amet,"acme@lorem-ipsum.org",KITYNV,2012/07/02 23:49,โลเร็ม อิปซัม
