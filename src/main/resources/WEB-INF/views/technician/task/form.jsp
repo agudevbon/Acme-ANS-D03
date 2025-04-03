@@ -16,7 +16,7 @@
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish') && draftMode == true}">
 			<acme:submit code="technician.maintenance-record.form.button.publish" action="/technician/maintenance-record/publish"/>
-			<acme:submit code="technician.maintenance-record.form.button.update" action="/technician/maintenance-record/update"/>
+			<acme:submit code="technician.task.form.button.update" action="/technician/task/update"/>
 			
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">

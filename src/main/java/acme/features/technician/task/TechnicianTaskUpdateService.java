@@ -12,7 +12,7 @@ import acme.entities.task.TaskType;
 import acme.realms.Technician;
 
 @GuiService
-public class TechnicianTaskCreateService extends AbstractGuiService<Technician, Task> {
+public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, Task> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -24,8 +24,17 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void authorise() {
+		boolean status;
+		int taskId;
+		Task task;
+		Technician technician;
 
-		super.getResponse().setAuthorised(true);
+		taskId = super.getRequest().getData("id", int.class);
+		task = this.repository.findTaskById(taskId);
+		technician = task == null ? null : task.getTechnician();
+		status = task != null && super.getRequest().getPrincipal().hasRealm(technician);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -40,7 +49,6 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		task.setTechnician(technician);
 
 		super.getBuffer().addData(task);
-
 	}
 
 	@Override

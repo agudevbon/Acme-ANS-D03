@@ -26,5 +26,5 @@ technician.task.form.label.estimated-duration = Estimated duration
 technician.task.form.label.description = Description
 
 
-technician.maintenance-record.form.button.update = Update
+technician.task.form.button.update = Update
 technician.maintenance-record.form.button.publish = Publish
