@@ -60,7 +60,7 @@ public class MemberAssignmentUpdateService extends AbstractGuiService<Member, Fl
 		super.state(isSelfAssignment, "member", "Solo puedes modificar asignaciones tuyas.");
 		super.state(isDutyLeadAttendant, "duty", "Solo puedes asignarte como LEAD_ATTENDANT.");
 
-		boolean isAvailable = "AVAILABLE".equals(assignment.getMember().getAvailabilityStatus());
+		boolean isAvailable = "AVAILABLE".equals(assignment.getMember().getAvailabilityStatus().toString());
 		boolean notAlreadyAssigned = !this.repository.existsAssignmentForLeg(assignment.getMember().getId(), assignment.getLeg().getId());
 
 		super.state(isAvailable, "member", "El miembro debe estar disponible.");
