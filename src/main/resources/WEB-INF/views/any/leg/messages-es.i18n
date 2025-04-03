@@ -1,0 +1,24 @@
+
+
+# any.leg.list  ########################################################
+
+any.leg.list.title = Listado de Tramos
+any.leg.list.label.flightNumber = Número de Vuelo
+any.leg.list.label.scheduledDeparture = Salida Prevista
+any.leg.list.label.scheduledArrival = Llegada Prevista
+any.leg.list.label.draftMode = Modo Borrador
+
+# any.leg.form  ########################################################
+
+any.leg.form.title = Formulario de Tramo
+any.leg.form.title = Listado de escalas
+any.leg.form.label.flightNumber = Número de Vuelo
+any.leg.form.label.scheduledDeparture = Salida Prevista
+any.leg.form.label.scheduledArrival = Llegada Prevista
+any.leg.form.label.draftMode = Modo Borrador
+any.leg.form.label.duration = Duracion
+any.leg.form.label.status = Estado
+any.leg.form.label.departure = Aeropuerto de Salida
+any.leg.form.label.arrival = Aeropuerto de Llegada
+any.leg.form.label.aircraft = Aeronave
+any.leg.form.label.flight = Vuelo
