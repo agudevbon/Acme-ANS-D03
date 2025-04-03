@@ -6,6 +6,7 @@
 <acme:list>
 	<acme:list-column code="technician.task.list.label.priority" path="priority" width="15%"/>
 	<acme:list-column code="technician.task.list.label.type" path="type" width="35%"/>
-	<acme:list-column code="technician.task.list.label.description" path="description" width="25%"/>
+	<acme:list-column code="technician.task.list.label.draftMode" path="draftMode" width="25%"/>
+	
 	<acme:list-payload path="payload"/>
 </acme:list>

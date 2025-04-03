@@ -2,26 +2,24 @@
 
 # technician.task.list ########################################################
 
-technician.task.list.title = Tasks listing
+technician.task.list.title = Listado de Tareas
 
-technician.task.list.label.priority = Priority
-technician.task.list.label.type = Type
-technician.task.list.label.description = Description
+technician.task.list.label.priority = Priorridad
+technician.task.list.label.type = Tipo
+technician.task.list.label.description = Descripción
 
 
-technician.task.form.button.create = Create
+technician.task.form.button.create =  Crear
 
-#technician.maintenance-record.form ########################################################
+#technician.task.form ########################################################
 
-technician.maintenance-record.form.title = Formulario de Registro de Mantenimiento
+technician.task.form.title =  Formulario de Tarea
 
-technician.maintenance-record.form.label.status = Estado
-technician.maintenance-record.form.label.inspectionDueDate = Próxima Inspección
-technician.maintenance-record.form.label.estimatedCost = Coste Estimado
-technician.maintenance-record.form.label.notes = Notas
-technician.maintenance-record.form.label.draftMode = Modo Borrador
-technician.maintenance-record.form.label.aircraft = Aeronave
-technician.maintenance-record.form.label.moment = Momento
+technician.task.form.label.technician = Técnico
+technician.task.form.label.type = Tipo
+technician.task.form.label.priority = Prioridad
+technician.task.form.label.estimated-duration = Duracion Estimada
+technician.task.form.label.description = Descripción
 
 
 technician.maintenance-record.form.button.update = Actualizar
