@@ -28,6 +28,12 @@ master.menu.manager = Manager
 master.menu.manager.list-legs = Legs listing
 master.menu.manager.list-flights = Flights listing
 
+# master.menu.member  ########################################################
+
+master.menu.member = Member
+member.assignment.menu.list-planned = Planned assignments listing
+member.assignment.menu.list-completed = Completed assignments listing
+master.menu.member.list-logs = Logs listing
 
 # master.menu.technician  ########################################################
 

@@ -1,0 +1,33 @@
+# member.assignment.list ####################################################
+
+member.assignment.list.title = Lista de asignaciones de vuelo
+
+member.assignment.list.label.duty = Rol
+member.assignment.list.label.leg = Tramo
+member.assignment.list.label.status = Estado
+member.assignment.list.label.completed = Asignaciones completadas
+member.assignment.list.label.planned = Asignaciones planificadas
+
+member.assignment.form.button.create = Crear
+
+# member.assignment.form ####################################################
+
+member.assignment.form.title = Formulario de asignación de vuelo
+
+member.assignment.form.label.duty = Rol
+member.assignment.form.label.leg = Tramo
+member.assignment.form.label.member = Miembro
+member.assignment.form.label.remarks = Observaciones
+member.assignment.form.label.status = Estado
+member.assignment.form.label.lastUpdateMoment = Última modificación
+member.assignment.form.label.scheduledDeparture = Salida programada
+member.assignment.form.label.scheduledArrival = Llegada programada
+member.assignment.form.label.departureAirport = Aeropuerto de salida
+member.assignment.form.label.arrivalAirport = Aeropuerto de llegada
+member.assignment.form.label.crew-members = Miembros de la tripulación
+
+member.assignment.form.button.create = Crear
+member.assignment.form.button.update = Actualizar
+member.assignment.form.button.publish = Publicar
+member.assignment.form.button.edit = Editar
+

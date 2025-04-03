@@ -36,6 +36,13 @@ master.menu.manager = Manager
 master.menu.manager.list-legs = Listado de tramos
 master.menu.manager.list-flights = Listado de vuelos
 
+# master.menu.member  ########################################################
+
+master.menu.member = Miembro
+member.assignment.menu.list-planned = Listado de asignaciones planificadas
+member.assignment.menu.list-completed = Listado de asignaciones completadas
+master.menu.member.list-logs = Listado de registros
+
 # master.menu.technician  ########################################################
 
 master.menu.technician = Technician
