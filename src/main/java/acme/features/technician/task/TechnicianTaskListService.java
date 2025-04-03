@@ -42,13 +42,13 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 	public void unbind(final Task task) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(task, "type", "description", "priority");
+		dataset = super.unbindObject(task, "id", "type", "estimatedDuration", "description", "priority");
 		if (task.getDraftMode())
 			dataset.put("draftMode", "✔");
 		else
 			dataset.put("draftMode", "✖");
 
-		super.addPayload(dataset, task, "estimatedDuration", "technician.identity.name");
+		super.addPayload(dataset, task, "technician.licenseNumber");
 		super.getResponse().addData(dataset);
 	}
 

@@ -4,6 +4,8 @@
 
 technician.task.list.title = Listado de Tareas
 
+technician.task.list.label.task = Tarea
+technician.task.list.label.estimatedDuration = Duración estimada
 technician.task.list.label.priority = Priorridad
 technician.task.list.label.type = Tipo
 technician.task.list.label.description = Descripción

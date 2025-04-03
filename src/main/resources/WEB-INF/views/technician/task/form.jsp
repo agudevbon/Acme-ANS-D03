@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>	
-	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
-		<acme:input-textbox code="technician.task.form.label.technician" path="technician.identity.name" readonly="true"/>	
+	<jstl:if test="${acme:anyOf(_command, 'show|update|publish')}">
+		<acme:input-textbox code="technician.task.form.label.technician" path="technician.licenseNumber" readonly="true"/>	
 	</jstl:if>
 	<acme:input-select code="technician.task.form.label.type" path="type" choices="${types}"/>
 	<acme:input-integer code="technician.task.form.label.priority" path="priority"/>
