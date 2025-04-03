@@ -41,8 +41,10 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.member" access="hasRealm('Member')">
-			<acme:menu-suboption code="master.menu.member.list-assignments" action="/member/assignment/list"/>
+			<acme:menu-suboption code="member.assignment.menu.list-planned" action="/member/flight-assignment/list-planned"/>
+			<acme:menu-suboption code="member.assignment.menu.list-completed" action="/member/flight-assignment/list-completed"/>
 		</acme:menu-option>
+
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>

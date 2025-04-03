@@ -10,6 +10,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightAssignments.AssignmentStatus;
+import acme.entities.flightAssignments.DutyType;
 import acme.entities.flightAssignments.FlightAssignment;
 import acme.realms.Member;
 
@@ -17,38 +18,38 @@ import acme.realms.Member;
 @Service
 public class MemberAssignmentPublishService extends AbstractGuiService<Member, FlightAssignment> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private MemberAssignmentRepository repository;
-
-	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
-		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment assignment = this.repository.findAssignmentById(id);
+		int currentMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean isAuthorised = assignment != null && assignment.getMember().getId() == memberId && assignment.getDuty().name().equals("LEAD_ATTENDANT") && assignment.getStatus() != AssignmentStatus.CONFIRMED;
+		boolean isAuthorised = assignment != null && assignment.getMember().getId() == currentMemberId && assignment.getStatus() != AssignmentStatus.CONFIRMED && assignment.getDuty().equals(DutyType.LEAD_ATTENDANT);
 
 		super.getResponse().setAuthorised(isAuthorised);
 	}
 
 	@Override
 	public void load() {
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findAssignmentById(assignmentId);
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment assignment = this.repository.findAssignmentById(id);
 		super.getBuffer().addData(assignment);
+	}
+
+	@Override
+	public void bind(final FlightAssignment assignment) {
+		super.bindObject(assignment, "remarks");
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
 		Date now = new Date();
-		Date departure = assignment.getLeg().getScheduledDeparture();
-
-		super.state(departure.after(now), "leg", "No puedes publicar una asignación cuyo vuelo ya haya comenzado.");
+		boolean legIsUpcoming = assignment.getLeg().getScheduledDeparture().after(now);
+		super.state(legIsUpcoming, "leg", "No se puede publicar una asignación de un tramo ya pasado.");
 	}
 
 	@Override
@@ -60,10 +61,7 @@ public class MemberAssignmentPublishService extends AbstractGuiService<Member, F
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-		Dataset dataset = super.unbindObject(assignment, "duty", "leg", "member", "remarks");
-		dataset.put("status", assignment.getStatus().toString());
-		dataset.put("lastUpdateMoment", assignment.getLastUpdateMoment());
-
+		Dataset dataset = super.unbindObject(assignment, "remarks", "status", "lastUpdateMoment");
 		super.getResponse().addData(dataset);
 	}
 }

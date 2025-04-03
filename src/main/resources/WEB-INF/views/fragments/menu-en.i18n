@@ -26,7 +26,9 @@ master.menu.manager.list-flights = Flights listing
 # master.menu.member  ########################################################
 
 master.menu.member = Member
-master.menu.member.list-assignments = Assignments listing
+member.assignment.menu.list-planned = Planned assignments listing
+member.assignment.menu.list-completed = Completed assignments listing
+
 
 # master.menu.administrator ###################################################
 
