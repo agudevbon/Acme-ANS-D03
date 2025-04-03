@@ -1,0 +1,10 @@
+# messages-ger.i18n
+
+
+customer.booking-passenger.list.title = Liste der Buchungspassagiere
+customer.booking-passenger.form.title = Erstelle einen Buchungspassagier
+
+customer.booking-passenger.list.label.passenger = Passagier
+customer.booking-passenger.list.label.booking = Buchung
+
+acme.validation.confirmation.message.booking-passenger.create = Diese Beziehung wurde bereits erstellt
