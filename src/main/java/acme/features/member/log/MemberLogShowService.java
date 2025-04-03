@@ -14,12 +14,8 @@ import acme.realms.Member;
 @Service
 public class MemberLogShowService extends AbstractGuiService<Member, ActivityLog> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private MemberLogRepository repository;
-
-	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
@@ -41,12 +37,11 @@ public class MemberLogShowService extends AbstractGuiService<Member, ActivityLog
 
 	@Override
 	public void unbind(final ActivityLog log) {
-		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel", "flightAssignment");
+		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel");
 		dataset.put("registrationMoment", log.getRegistrationMoment());
-
-		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		dataset.put("flightAssignments", this.repository.findAvailableAssignmentsByMember(memberId));
+		dataset.put("flightAssignment", log.getFlightAssignment());
 
 		super.getResponse().addData(dataset);
 	}
+
 }

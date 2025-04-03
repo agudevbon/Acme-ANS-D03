@@ -1,6 +1,6 @@
 # member.log.list ##########################################################
 
-member.log.list.title = Registros de actividad
+member.activity-log.list.title = Registros de actividad
 
 member.log.list.label.incident-type = Tipo de incidente
 member.log.list.label.severity-level = Nivel de severidad
@@ -10,7 +10,7 @@ member.log.form.button.create = Crear
 
 # member.log.form ##########################################################
 
-member.log.form.title = Formulario de registro de actividad
+member.activity-log.form.title = Formulario de registro de actividad
 
 member.log.form.label.incident-type = Tipo de incidente
 member.log.form.label.description = Descripción
@@ -22,3 +22,4 @@ member.log.form.button.create = Crear
 member.log.form.button.update = Actualizar
 member.log.form.button.delete = Eliminar
 member.log.form.button.publish = Publicar
+member.log.form.button.edit = Editar

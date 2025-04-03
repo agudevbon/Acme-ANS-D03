@@ -10,4 +10,4 @@
 	<acme:list-payload path="payload"/>
 </acme:list>
 
-<acme:button code="member.log.form.button.create" action="/member/log/create"/>
+<acme:button code="member.log.form.button.create" action="/member/activity-log/create"/>

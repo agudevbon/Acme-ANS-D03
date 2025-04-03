@@ -1,3 +1,0 @@
-member.log.validation.only-own-assignments = You can only register logs for your own assignments.
-member.log.validation.cannot-modify-confirmed = You cannot modify a log from a confirmed assignment.
-member.log.validation.cannot-publish-unconfirmed = You cannot publish a log unless the assignment is confirmed.

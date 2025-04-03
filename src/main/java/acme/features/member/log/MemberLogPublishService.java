@@ -16,12 +16,8 @@ import acme.realms.Member;
 @Service
 public class MemberLogPublishService extends AbstractGuiService<Member, ActivityLog> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private MemberLogRepository repository;
-
-	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
@@ -30,7 +26,7 @@ public class MemberLogPublishService extends AbstractGuiService<Member, Activity
 		ActivityLog log = this.repository.findOneById(id);
 		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean isAuthorised = log != null && log.getFlightAssignment().getMember().getId() == memberId;
+		boolean isAuthorised = log != null && log.getFlightAssignment().getMember().getId() == memberId && log.getFlightAssignment().getStatus().toString().equals("CONFIRMED");
 
 		super.getResponse().setAuthorised(isAuthorised);
 	}
@@ -43,27 +39,29 @@ public class MemberLogPublishService extends AbstractGuiService<Member, Activity
 	}
 
 	@Override
-	public void validate(final ActivityLog log) {
-		String assignmentStatus = this.repository.findAssignmentStatusByLogId(log.getId());
+	public void bind(final ActivityLog log) {
+		super.bindObject(log, "incidentType", "description", "severityLevel");
+	}
 
-		boolean canPublish = assignmentStatus.equals("CONFIRMED");
-		super.state(canPublish, "*", "No puedes publicar un registro si la asignación aún no está publicada.");
+	@Override
+	public void validate(final ActivityLog log) {
+		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean isOwner = log.getFlightAssignment().getMember().getId() == memberId;
+
+		super.state(isOwner, "flightAssignment", "No puedes publicar logs de asignaciones ajenas.");
 	}
 
 	@Override
 	public void perform(final ActivityLog log) {
-
 		log.setRegistrationMoment(new Date());
 		this.repository.save(log);
 	}
 
 	@Override
 	public void unbind(final ActivityLog log) {
-		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel", "flightAssignment");
+		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel");
 		dataset.put("registrationMoment", log.getRegistrationMoment());
-
-		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		dataset.put("flightAssignments", this.repository.findAvailableAssignmentsByMember(memberId));
+		dataset.put("flightAssignment", log.getFlightAssignment());
 
 		super.getResponse().addData(dataset);
 	}

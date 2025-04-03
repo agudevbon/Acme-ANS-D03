@@ -26,14 +26,10 @@ master.menu.manager.list-flights = Flights listing
 # master.menu.member  ########################################################
 
 master.menu.member = Member
-<<<<<<< HEAD
-master.menu.member.list-assignments = Assignments listing
-master.menu.member.list-logs = Logs listing
-=======
 member.assignment.menu.list-planned = Planned assignments listing
 member.assignment.menu.list-completed = Completed assignments listing
+master.menu.member.list-logs = Logs listing
 
->>>>>>> refs/heads/task/student#3-M-8
 
 # master.menu.administrator ###################################################
 

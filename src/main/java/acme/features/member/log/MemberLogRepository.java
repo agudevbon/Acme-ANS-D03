@@ -1,7 +1,7 @@
 
 package acme.features.member.log;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -14,7 +14,7 @@ import acme.entities.flightAssignments.FlightAssignment;
 public interface MemberLogRepository extends AbstractRepository {
 
 	@Query("SELECT al FROM ActivityLog al WHERE al.flightAssignment.member.id = :memberId")
-	Collection<ActivityLog> findAllByMemberId(int memberId);
+	List<ActivityLog> findAllByMemberId(int memberId);
 
 	@Query("SELECT al FROM ActivityLog al WHERE al.id = :id")
 	ActivityLog findOneById(int id);
@@ -23,5 +23,9 @@ public interface MemberLogRepository extends AbstractRepository {
 	String findAssignmentStatusByLogId(int id);
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.member.id = :memberId AND fa.status != acme.entities.flightAssignments.AssignmentStatus.CONFIRMED")
-	Collection<FlightAssignment> findAvailableAssignmentsByMember(int memberId);
+	List<FlightAssignment> findAvailableAssignmentsByMember(int memberId);
+
+	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.member.id = :memberId AND fa.status = acme.entities.flightAssignments.AssignmentStatus.CONFIRMED")
+	List<FlightAssignment> findConfirmedAssignmentsByMember(int memberId);
+
 }

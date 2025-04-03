@@ -1,6 +1,6 @@
 # member.log.list ##########################################################
 
-member.log.list.title = Activity Logs
+member.activity-log.list.title = Activity Logs
 
 member.log.list.label.incident-type = Incident Type
 member.log.list.label.severity-level = Severity Level
@@ -10,15 +10,16 @@ member.log.form.button.create = Create
 
 # member.log.form ##########################################################
 
-member.log.form.title = Activity Log Form
+member.activity-log.form.title = Activity Log Form
 
-member.log.form.label.incident-type = Incident Type
+member.log.form.label.incident-type = Incident type
 member.log.form.label.description = Description
-member.log.form.label.severity-level = Severity Level
-member.log.form.label.flight-assignment = Flight Assignment
-member.log.form.label.registration-moment = Registration Moment
+member.log.form.label.severity-level = Severity level
+member.log.form.label.flight-assignment = Flight assignment
+member.log.form.label.registration-moment = Registration moment
 
 member.log.form.button.create = Create
 member.log.form.button.update = Update
 member.log.form.button.delete = Delete
 member.log.form.button.publish = Publish
+member.log.form.button.edit = Edit

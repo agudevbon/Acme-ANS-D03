@@ -31,7 +31,6 @@ public class MemberLogListService extends AbstractGuiService<Member, ActivityLog
 
 	@Override
 	public void load() {
-		System.out.println(">> Cargando logs del miembro...");
 		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		Collection<ActivityLog> logs = this.repository.findAllByMemberId(memberId);
 		super.getBuffer().addData(logs);

@@ -14,12 +14,8 @@ import acme.realms.Member;
 @Service
 public class MemberLogDeleteService extends AbstractGuiService<Member, ActivityLog> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private MemberLogRepository repository;
-
-	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
@@ -41,11 +37,13 @@ public class MemberLogDeleteService extends AbstractGuiService<Member, ActivityL
 	}
 
 	@Override
-	public void validate(final ActivityLog log) {
-		String assignmentStatus = this.repository.findAssignmentStatusByLogId(log.getId());
+	public void bind(final ActivityLog log) {
+		// No binding in delete
+	}
 
-		boolean isNotConfirmed = !assignmentStatus.equals("CONFIRMED");
-		super.state(isNotConfirmed, "*", "No puedes eliminar un registro publicado.");
+	@Override
+	public void validate(final ActivityLog log) {
+		// No additional validation needed
 	}
 
 	@Override
@@ -55,11 +53,9 @@ public class MemberLogDeleteService extends AbstractGuiService<Member, ActivityL
 
 	@Override
 	public void unbind(final ActivityLog log) {
-		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel", "flightAssignment");
+		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel");
 		dataset.put("registrationMoment", log.getRegistrationMoment());
-
-		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		dataset.put("flightAssignments", this.repository.findAvailableAssignmentsByMember(memberId));
+		dataset.put("flightAssignment", log.getFlightAssignment());
 
 		super.getResponse().addData(dataset);
 	}

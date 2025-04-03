@@ -1,3 +1,0 @@
-member.log.validation.only-own-assignments = Solo puedes registrar actividades en tus propias asignaciones.
-member.log.validation.cannot-modify-confirmed = No puedes modificar un registro si su asignación está confirmada.
-member.log.validation.cannot-publish-unconfirmed = No puedes publicar un registro si la asignación aún no está confirmada.
