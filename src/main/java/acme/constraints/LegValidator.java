@@ -83,7 +83,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 				if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
 					List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
-					legsWSameAircraft = legsWSameAircraft.stream().filter(legs -> !Objects.equals(legs.getFlightNumber(), leg.getFlightNumber())).collect(Collectors.toList());
+					legsWSameAircraft = legsWSameAircraft.stream().filter(legs -> !Objects.equals(legs.getId(), leg.getId())).collect(Collectors.toList());
 					overlapedAircraft = !legsWSameAircraft.stream().anyMatch(existingObject ->
 					// Case 1: Start of new object is within an existing interval
 					existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledDeparture()) >= 0 ||
