@@ -1,0 +1,4 @@
+acme.validation.flight.no-legs.message = No hay tramos asociados a este vuelo
+acme.validation.flight.unpublished-legs.message = Todas las legs tienen que estar publicadas
+acme.validation.flight.valid-tag.message = La longitud de la tag debe estar entre 1 y 50 caracteres
+acme.validation.flight.valid-description.message = La longitud de la descripcion no puede ser mayor a 250 caracteres

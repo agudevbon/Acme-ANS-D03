@@ -17,6 +17,11 @@ master.menu.anonymous.favourite-link-juanma = 54182499L: Romero Ruiz, Juan Manue
 master.menu.anonymous.favourite-link-fabrobher = 30261414S: Robledo Hermoso, Fabián
 master.menu.anonymous.favourite-link-ra = Y1270652P: Petre, Rares Nicolae
 
+# master.menu.any #######################################################
+
+master.menu.any = Cualquiera
+master.menu.any.list-flights = Listado de Vuelos
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -24,6 +29,25 @@ master.menu.administrator.list-user-accounts = Ver cuentas de usuario
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
+
+# master.menu.manager  ########################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-legs = Listado de tramos
+master.menu.manager.list-flights = Listado de vuelos
+
+# master.menu.member  ########################################################
+
+master.menu.member = Miembro
+member.assignment.menu.list-planned = Listado de asignaciones planificadas
+member.assignment.menu.list-completed = Listado de asignaciones completadas
+master.menu.member.list-logs = Listado de registros
+
+# master.menu.technician  ########################################################
+
+master.menu.technician = Technician
+master.menu.technician.list-maintenance-records= Listado de los Registros de Mantenimiento
+master.menu.technician.list-tasks= Listado de las Tareas
 
 # master.menu.provider ########################################################
 
@@ -35,6 +59,12 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.assistanceAgent ##########################################################
+
+master.menu.assistance-agent = Agente de Asistencia
+master.menu.assistance-agent.list-completed-claims = Listado de Reclamaciones Completadas
+master.menu.assistance-agent.list-undergoing-claims = Listado de Reclamaciones en curso
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -43,3 +73,5 @@ master.menu.user-account.become-provider = Hacerse proveedor
 master.menu.user-account.provider-profile = Perfil de proveedor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
+master.menu.user-account.become-manager = Hazte Gerente
+master.menu.user-account.manager-profile = Perfil de gerente

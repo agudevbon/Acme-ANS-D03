@@ -1,0 +1,28 @@
+
+
+# technician.task.list ########################################################
+
+technician.task.list.title = Listado de Tareas
+
+technician.task.list.label.task = Tarea
+technician.task.list.label.estimatedDuration = Duración estimada
+technician.task.list.label.priority = Priorridad
+technician.task.list.label.type = Tipo
+technician.task.list.label.description = Descripción
+
+
+technician.task.form.button.create =  Crear
+
+#technician.task.form ########################################################
+
+technician.task.form.title =  Formulario de Tarea
+
+technician.task.form.label.technician = Técnico
+technician.task.form.label.type = Tipo
+technician.task.form.label.priority = Prioridad
+technician.task.form.label.estimated-duration = Duracion Estimada
+technician.task.form.label.description = Descripción
+
+
+technician.task.form.button.update = Actualizar
+technician.task.form.button.publish = Publicar

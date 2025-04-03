@@ -1,0 +1,29 @@
+customer.booking.form.title = Buchungsformular
+customer.booking.list.title = Buchungsliste
+
+customer.booking.form.label.locatorCode = Buchungscode
+customer.booking.form.label.purchaseMoment = Kaufzeitpunkt
+customer.booking.form.label.travelClass = Reiseklasse
+customer.booking.form.label.price = Preis
+customer.booking.form.label.lastCreditCardNibble = Letzte 4 Ziffern der Kreditkarte
+
+customer.booking.form.button.duties = Pflichten
+customer.booking.form.button.update = Aktualisieren
+customer.booking.form.button.delete = Löschen
+customer.booking.form.button.publish = Veröffentlichen
+customer.booking.form.button.create = Erstellen
+
+customer.booking.list.label.locatorCode = Buchungscode
+customer.booking.list.label.purchaseMoment = Kaufzeitpunkt
+customer.booking.list.label.travelClass = Reiseklasse
+customer.booking.list.label.price = Preis
+customer.booking.list.label.lastCreditCardNibble = Letzte 4 Ziffern der Kreditkarte
+customer.booking.list.label.flight = Flug
+customer.booking.list.label.isPublished = Ist veröffentlicht?
+customer.booking.list.label.passenger = Passagiere
+
+customer.booking.list.button.create = Erstellen
+
+acme.validation.confirmation.message.lastCreditCardNibble = Die letzten 4 Ziffern sind erforderlich, wenn die Buchung veröffentlicht ist
+acme.validation.confirmation.message.update = Eine Buchung kann nicht aktualisiert werden, wenn sie veröffentlicht ist
+acme.validation.confirmation.message.booking.locator-code = Dieser Buchungscode ist bereits einer anderen Buchung zugeordnet

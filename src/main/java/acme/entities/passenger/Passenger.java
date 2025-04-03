@@ -3,11 +3,12 @@ package acme.entities.passenger;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -16,6 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.realms.Customer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,7 +30,7 @@ public class Passenger extends AbstractEntity {
 	//-------------------------------------------------------------------------------------
 	private static final long	serialVersionUID	= 1L;
 	//-------------------------------------------------------------------------------------
-	// RELACIONARLO CON BOOKING 
+	// RELACIONARLO CON Customer  
 	@Mandatory
 	@ValidString(max = 255)
 	@Automapped
@@ -38,7 +40,6 @@ public class Passenger extends AbstractEntity {
 	@ValidEmail
 	//@ValidString(pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z]{2,}$")
 	@Automapped
-	@Column(length = 255)
 	private String				email;
 
 	@Mandatory
@@ -48,7 +49,7 @@ public class Passenger extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				dateOfBirth;
 
 	@Optional
@@ -56,13 +57,22 @@ public class Passenger extends AbstractEntity {
 	@Automapped
 	private String				specialNeeds;
 
-	/*
-	 * @Mandatory
-	 * 
-	 * @Valid
-	 * 
-	 * @ManyToOne(optional = false)
-	 * private Booking booking;
-	 * 
-	 */
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Customer			customer;
+
+	@Optional
+	@Valid
+	@Automapped
+	private Boolean				isPublished;
+
 }
+/*
+ * @Mandatory
+ * 
+ * @Valid
+ * 
+ * @ManyToOne(optional = false)
+ * private Booking booking;
+ */
