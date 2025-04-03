@@ -12,3 +12,4 @@
 	
 	<acme:list-payload path="payload"/>
 </acme:list>
+<acme:button code="technician.task.form.button.create" action="/technician/task/create"/>
