@@ -1,0 +1,30 @@
+assistance-agent.claim.list.title = Claim list
+assistance-agent.claim.form.title = Claim data
+
+assistance-agent.claim.list.label.registrationDate = Registration Moment
+assistance-agent.claim.list.label.passengerEmail = Passenger Email
+assistance-agent.claim.list.label.description = Description
+assistance-agent.claim.list.label.type = Type
+assistance-agent.claim.list.label.isAccepted = Is Accepted
+assistance-agent.claim.list.label.flightLeg = Leg
+assistance-agent.claim.list.label.draftMode = DraftMode
+
+assistance-agent.claim.form.label.registrationDate = Registration Moment
+assistance-agent.claim.form.label.passengerEmail = Passenger Email
+assistance-agent.claim.form.label.description = Description
+assistance-agent.claim.form.label.type = Type
+assistance-agent.claim.form.label.isAccepted = Indicator
+assistance-agent.claim.form.label.flightLeg = Leg
+assistance-agent.claim.form.label.draftMode = DraftMode
+
+
+assistance-agent.claim.list.button.create = Create claim
+assistance-agent.claim.list.button.listAll = List All Claims
+assistance-agent.claim.list.button.listCompleted = List Completed Claims
+assistance-agent.claim.list.button.listPending = List Pending Claims
+assistance-agent.claim.form.button.create = Create claim
+assistance-agent.claim.form.button.update = Edit
+assistance-agent.claim.form.button.delete = Delete
+assistance-agent.claim.form.button.publish = Publish
+
+assistance-agent.claim.form.error.publishingWithoutAnyLeg = It is not possible to publish a claim without any leg
