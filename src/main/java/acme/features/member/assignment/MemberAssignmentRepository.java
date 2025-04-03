@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.flightAssignments.FlightAssignment;
+import acme.entities.flights.Leg;
+import acme.realms.Member;
 
 @Repository
 public interface MemberAssignmentRepository extends AbstractRepository {
@@ -28,10 +30,19 @@ public interface MemberAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.member.id = :memberId")
 	List<FlightAssignment> findAllByMemberId(int memberId);
 
+	@Query("SELECT m FROM Member m WHERE m.availabilityStatus = 'AVAILABLE'")
+	List<Member> findAllAvailableMembers();
+
 	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.leg.id = :legId AND fa.duty = 'PILOT'")
 	boolean isPilotAssigned(int legId);
 
 	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.leg.id = :legId AND fa.duty = 'COPILOT'")
 	boolean isCopilotAssigned(int legId);
+
+	@Query("SELECT l FROM Leg l")
+	List<Leg> findAllLegs();
+
+	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.id = :legId")
+	List<FlightAssignment> findCrewByLegId(int legId);
 
 }
