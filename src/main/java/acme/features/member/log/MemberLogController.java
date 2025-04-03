@@ -34,6 +34,7 @@ public class MemberLogController extends AbstractGuiController<Member, ActivityL
 
 	@PostConstruct
 	protected void initialise() {
+		System.out.println(">> Inicializando MemberLogController");
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);

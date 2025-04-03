@@ -63,6 +63,9 @@ public class MemberLogCreateService extends AbstractGuiService<Member, ActivityL
 		Dataset dataset = super.unbindObject(log, "incidentType", "description", "severityLevel", "flightAssignment");
 		dataset.put("registrationMoment", log.getRegistrationMoment());
 
+		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		dataset.put("flightAssignments", this.repository.findAvailableAssignmentsByMember(memberId));
+
 		super.getResponse().addData(dataset);
 	}
 }

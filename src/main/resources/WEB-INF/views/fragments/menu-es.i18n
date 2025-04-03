@@ -31,6 +31,12 @@ master.menu.manager = Manager
 master.menu.manager.list-legs = Listado de escalas
 master.menu.manager.list-flights = Listado de vuelos
 
+# master.menu.member  ########################################################
+
+master.menu.member = Miembro
+master.menu.member.list-assigments = Listado de asignaciones
+master.menu.member.list-logs = Listado de registro
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

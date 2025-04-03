@@ -31,10 +31,9 @@ public class MemberLogListService extends AbstractGuiService<Member, ActivityLog
 
 	@Override
 	public void load() {
-		Collection<ActivityLog> logs;
+		System.out.println(">> Cargando logs del miembro...");
 		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-
-		logs = this.repository.findAllByMemberId(memberId);
+		Collection<ActivityLog> logs = this.repository.findAllByMemberId(memberId);
 		super.getBuffer().addData(logs);
 	}
 
@@ -42,7 +41,12 @@ public class MemberLogListService extends AbstractGuiService<Member, ActivityLog
 	public void unbind(final ActivityLog log) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(log, "registrationMoment", "incidentType", "severityLevel");
+		dataset = super.unbindObject(log, "incidentType", "description", "severityLevel", "flightAssignment");
+		dataset.put("registrationMoment", log.getRegistrationMoment());
+
+		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		dataset.put("flightAssignments", this.repository.findAvailableAssignmentsByMember(memberId));
+
 		super.getResponse().addData(dataset);
 	}
 }

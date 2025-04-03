@@ -23,6 +23,12 @@ master.menu.manager = Manager
 master.menu.manager.list-legs = Legs listing
 master.menu.manager.list-flights = Flights listing
 
+# master.menu.member  ########################################################
+
+master.menu.member = Member
+master.menu.member.list-assignments = Assignments listing
+master.menu.member.list-logs = Logs listing
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
