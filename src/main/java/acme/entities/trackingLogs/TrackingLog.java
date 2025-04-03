@@ -1,5 +1,5 @@
 
-package acme.entities.claims;
+package acme.entities.trackingLogs;
 
 import java.util.Date;
 
@@ -7,26 +7,25 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
-import acme.constraints.ValidClaim;
-import acme.entities.flights.Leg;
-import acme.realms.assistanceAgent.AssistanceAgent;
+import acme.entities.claims.AcceptedStatus;
+import acme.entities.claims.Claim;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@ValidClaim
-public class Claim extends AbstractEntity {
+public class TrackingLog extends AbstractEntity {
 
 	// Serialisation version
 
@@ -37,22 +36,17 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				registrationDate;
+	private Date				lastUpdate;
 
 	@Mandatory
-	@ValidEmail
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private String				passengerEmail;
+	private String				step;
 
 	@Mandatory
-	@ValidString(min = 1, max = 255)
+	@ValidScore
 	@Automapped
-	private String				description;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private ClaimType			type;
+	private Double				resolutionPercentage;
 
 	@Mandatory
 	@Valid
@@ -63,16 +57,25 @@ public class Claim extends AbstractEntity {
 	@Automapped
 	private boolean				draftMode;
 
+	@Optional
+	@ValidString(min = 1, max = 255)
+	@Automapped
+	private String				resolution;
+
+	// Derived attributes
+
+
+	@Transient
+	public boolean isResolutionValid() {
+		return this.resolution != null && !this.resolution.trim().isEmpty();
+	}
+
 	// Relationships
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private AssistanceAgent		agent;
-
-	@Optional
-	@Valid
-	@ManyToOne
-	private Leg					flightLeg;
+	private Claim claim;
 
 }

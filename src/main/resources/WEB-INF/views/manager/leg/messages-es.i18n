@@ -2,7 +2,7 @@
 
 # manager.leg.list  ########################################################
 
-manager.leg.list.title = Listado de escalas
+manager.leg.list.title = Listado de Tramos
 manager.leg.list.label.flightNumber = Número de Vuelo
 manager.leg.list.label.scheduledDeparture = Salida Prevista
 manager.leg.list.label.scheduledArrival = Llegada Prevista
@@ -12,7 +12,7 @@ manager.leg.form.button.create = Crear
 
 # manager.leg.form  ########################################################
 
-manager.leg.form.title = Formulario de Escala
+manager.leg.form.title = Formulario de Tramo
 manager.leg.form.title = Listado de escalas
 manager.leg.form.label.flightNumber = Número de Vuelo
 manager.leg.form.label.scheduledDeparture = Salida Prevista

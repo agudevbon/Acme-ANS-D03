@@ -28,7 +28,7 @@ master.menu.administrator.shut-system-down = Parar el sistema
 # master.menu.manager  ########################################################
 
 master.menu.manager = Manager
-master.menu.manager.list-legs = Listado de escalas
+master.menu.manager.list-legs = Listado de tramos
 master.menu.manager.list-flights = Listado de vuelos
 
 # master.menu.provider ########################################################

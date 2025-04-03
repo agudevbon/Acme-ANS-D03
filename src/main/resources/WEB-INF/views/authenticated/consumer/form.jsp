@@ -26,3 +26,4 @@
 		<acme:submit code="authenticated.consumer.form.button.update" action="/authenticated/consumer/update"/>
 	</jstl:if>
 </acme:form>
+
