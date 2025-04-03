@@ -17,6 +17,11 @@ master.menu.anonymous.favourite-link-juanma = 54182499L: Romero Ruiz, Juan Manue
 master.menu.anonymous.favourite-link-fabrobher = 30261414S: Robledo Hermoso, Fabián
 master.menu.anonymous.favourite-link-ra = Y1270652P: Petre, Rares Nicolae
 
+# master.menu.any #######################################################
+
+master.menu.any = Any
+master.menu.any.list-flights = Flight List
+
 # master.menu.manager  ########################################################
 
 master.menu.manager = Manager
@@ -30,6 +35,11 @@ member.assignment.menu.list-planned = Planned assignments listing
 member.assignment.menu.list-completed = Completed assignments listing
 master.menu.member.list-logs = Logs listing
 
+# master.menu.technician  ########################################################
+
+master.menu.technician = Technician
+master.menu.technician.list-maintenance-records= MaintenanceRecords listing
+master.menu.technician.list-tasks= Tasks listing
 
 # master.menu.administrator ###################################################
 
@@ -57,3 +67,5 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.provider-profile = Provider profile
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
+master.menu.user-account.become-manager = Become a manager
+master.menu.user-account.manager-profile = Consumer manager

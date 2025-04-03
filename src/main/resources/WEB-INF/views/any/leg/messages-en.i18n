@@ -1,0 +1,24 @@
+
+
+# any.leg.list  ########################################################
+
+any.leg.list.title = Legs Listing
+any.leg.list.label.flightNumber = Flight Number
+any.leg.list.label.scheduledDeparture = Scheduled Departure
+any.leg.list.label.scheduledArrival = Scheduled Arrival
+any.leg.list.label.draftMode = Draft Mode
+
+
+# any.leg.form  ########################################################
+
+any.leg.form.title = Leg Form
+any.leg.form.label.flightNumber = Flight Number
+any.leg.form.label.scheduledDeparture = Scheduled Departure
+any.leg.form.label.scheduledArrival = Scheduled Arrival
+any.leg.form.label.draftMode = Draft Mode
+any.leg.form.label.duration = Duration
+any.leg.form.label.status = Status
+any.leg.form.label.departure = Departure Airport
+any.leg.form.label.arrival = Arrival Airport
+any.leg.form.label.aircraft = Aircraft
+any.leg.form.label.flight = Flight

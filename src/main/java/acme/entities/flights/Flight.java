@@ -41,7 +41,6 @@ public class Flight extends AbstractEntity {
 	private String				tag;
 
 	@Mandatory
-	@Valid
 	@Automapped
 	private boolean				indication;
 
@@ -139,7 +138,7 @@ public class Flight extends AbstractEntity {
 
 		List<Leg> legs = repository.findLegsByFlight(this.getId());
 
-		result = legs.size();
+		result = legs.size() > 0 ? legs.size() - 1 : 0;
 
 		return result;
 	}

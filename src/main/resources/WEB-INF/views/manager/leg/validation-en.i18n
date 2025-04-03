@@ -1,8 +1,11 @@
 acme.validation.leg.duplicated-flight-number.message = This flight number already exists
-acme.validation.leg.wrong-date-order.message = The departure date must be earlier than the return date
+acme.validation.leg.wrong-date-order.message = The departure date must be earlier than the arrival date
 acme.validation.leg.wrong-iata.message = The flight number does not match the airline's IATA code
 acme.validation.leg.diferent-manager.message = It must be the same manager as the associated flight
 acme.validation.leg.wrong-duration.message = The flight duration must be greater than 1 and less than 1000
 acme.validation.leg.overlaped-aircraft.message = This aircraft is already in use during this time period
 acme.validation.leg.same-airport.message = The departure and arrival airports cannot be the same
 acme.validation.leg.published-flight.message = This flight is already published
+acme.validation.leg.past-date.message = The departure date must be in the future
+
+acme.validation.manager.identifier.message = The identifier must follow the pattern ^[A-Z]{2,3}\\d{6}$

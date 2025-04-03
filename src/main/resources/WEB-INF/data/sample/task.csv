@@ -1,13 +1,13 @@
-key,key:technician,type,description,priority,estimatedDuration
-task-01,technician-01,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",0,0
-task-02,technician-01,MAINTENANCE,L,1,23
-task-03,technician-01,SYSTEM_CHECK,Lo,2,12
-task-04,technician-01,MAINTENANCE,"洛伦·伊普森",0,20
-task-05,technician-01,INSPECTION,<script>alert(‘Hacked!’);</script>,3,50
-task-06,technician-02,REPAIR,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",4,80
-task-07,technician-02,MAINTENANCE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo",5,90
-task-08,technician-01,REPAIR,โลเร็ม อิปซัม,6,120
-task-09,technician-02,INSPECTION,"โลเร็ม อิปซัม",9,999
-task-10,technician-01,MAINTENANCE,<marquee>Hacked</marquee> ,7,1000
-task-11,technician-02,SYSTEM_CHECK,<script>alert(‘Hacked!’);</script>,8,300
-task-12,technician-01,MAINTENANCE,"' or 'A' = 'A ",10,999
+key,key:technician,type,description,priority,estimatedDuration,draftMode
+task-01,technician-01,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",0,0,false
+task-02,technician-01,MAINTENANCE,L,1,23,false
+task-03,technician-01,SYSTEM_CHECK,Lo,2,12,false
+task-04,technician-01,MAINTENANCE,"洛伦·伊普森",0,20,true
+task-05,technician-01,INSPECTION,<script>alert(‘Hacked!’);</script>,3,50,false
+task-06,technician-02,REPAIR,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",4,80,false
+task-07,technician-02,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo",5,90,true
+task-08,technician-01,REPAIR,โลเร็ม อิปซัม,6,120,false
+task-09,technician-02,INSPECTION,"โลเร็ม อิปซัม",9,999,true
+task-10,technician-01,MAINTENANCE,<marquee>Hacked</marquee> ,7,1000,false
+task-11,technician-02,SYSTEM_CHECK,<script>alert(‘Hacked!’);</script>,8,300,true
+task-12,technician-01,MAINTENANCE,"' or 'A' = 'A ",10,999,false
