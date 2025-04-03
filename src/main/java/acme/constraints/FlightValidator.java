@@ -66,7 +66,7 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 			{
 				boolean validDescription;
 
-				validDescription = flight.getDescription().length() >= 0 && flight.getDescription().length() <= 250;
+				validDescription = flight.getDescription().length() > 250;
 				super.state(context, validDescription, "description", "acme.validation.flight.valid-description.message");
 			}
 		}
