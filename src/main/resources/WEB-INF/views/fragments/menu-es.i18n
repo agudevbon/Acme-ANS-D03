@@ -36,6 +36,11 @@ master.menu.manager = Manager
 master.menu.manager.list-legs = Listado de tramos
 master.menu.manager.list-flights = Listado de vuelos
 
+# master.menu.technician  ########################################################
+
+master.menu.technician = Technician
+master.menu.technician.list-maintenance-records= Listado de los Registros de Mantenimiento
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

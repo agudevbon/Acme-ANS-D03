@@ -44,6 +44,11 @@
 			<acme:menu-suboption code="master.menu.manager.list-legs" action="/manager/leg/list"/>
 			<acme:menu-suboption code="master.menu.manager.list-flights" action="/manager/flight/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.technician" access="hasRealm('Technician')">
+			<acme:menu-suboption code="master.menu.technician.list-maintenance-records" action="/technician/maintenance-record/list"/>
+		</acme:menu-option>
+		
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
