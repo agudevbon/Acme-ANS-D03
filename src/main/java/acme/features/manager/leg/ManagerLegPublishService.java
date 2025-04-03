@@ -1,12 +1,14 @@
 
 package acme.features.manager.leg;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -78,7 +80,33 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		{
+			boolean futureDeparture = true;
+
+			Date present = MomentHelper.getBaseMoment();
+
+			if (leg.getScheduledDeparture() != null)
+				futureDeparture = leg.getScheduledDeparture().after(present);
+
+			super.state(futureDeparture, "scheduleDeparture", "acme.validation.leg.past-date.message");
+		}
+		{
+			boolean futureDeparture = true;
+
+			Date present = MomentHelper.getBaseMoment();
+
+			if (leg.getScheduledArrival() != null)
+				futureDeparture = leg.getScheduledArrival().after(present);
+
+			super.state(futureDeparture, "scheduledArrival", "acme.validation.leg.past-date.message");
+		}
+		{
+			boolean correctFlight;
+
+			correctFlight = leg.getFlight() == null || leg.getFlight().getDraftMode();
+
+			super.state(correctFlight, "flight", "acme.validation.leg.published-flight.message");
+		}
 	}
 
 	@Override
@@ -107,7 +135,7 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		SelectChoices statusChoices;
 		statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode");
 
 		dataset.put("duration", leg.getDuration());
 		dataset.put("statuss", statusChoices);

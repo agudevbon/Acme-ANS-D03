@@ -28,3 +28,4 @@ manager.flight.form.label.layovers = Escalas
 manager.flight.form.button.update = Actualizar
 manager.flight.form.button.publish = Publicar
 manager.flight.form.button.delete = Eliminar
+manager.flight.form.button.list-legs = Tramos del Vuelo
