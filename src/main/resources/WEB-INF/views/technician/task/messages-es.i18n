@@ -25,4 +25,4 @@ technician.task.form.label.description = Descripción
 
 
 technician.task.form.button.update = Actualizar
-technician.maintenance-record.form.button.publish = Publicar
+technician.task.form.button.publish = Publicar
