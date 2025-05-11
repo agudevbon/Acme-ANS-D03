@@ -27,6 +27,7 @@ master.menu.any.list-flights = Flight List
 master.menu.manager = Manager
 master.menu.manager.list-legs = Legs listing
 master.menu.manager.list-flights = Flights listing
+master.menu.manager.dashboard = Manager Dashboard
 
 # master.menu.member  ########################################################
 

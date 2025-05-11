@@ -1,0 +1,18 @@
+manager.manager-dashboard.form.title = Manager Dashboard
+manager.manager-dasboard.form.title.manager-data = Manager Data
+
+manager.manager-dashboard.form.label.ranking = Ranking
+manager.manager-dashboard.form.label.retire = Years to Retire
+manager.manager-dashboard.form.label.ratio = Ratio
+
+manager.manager-dasboard.form.title.total-legs = Legs Data
+manager.manager-dashboard.form.label.total-time = on Time
+manager.manager-dashboard.form.label.total-delayed = Delayed
+manager.manager-dashboard.form.label.total-canceled = Cancelled
+manager.manager-dashboard.form.label.total-landed = Landed
+
+manager.manager-dasboard.form.title.flight-EUR-cost = Flight Cost (EUR)
+manager.manager-dashboard.form.label.flight-average = Average
+manager.manager-dashboard.form.label.flight-deviation = Deviation
+manager.manager-dashboard.form.label.flight-minimum = Minimum
+manager.manager-dashboard.form.label.flight-maximum = Maximum
