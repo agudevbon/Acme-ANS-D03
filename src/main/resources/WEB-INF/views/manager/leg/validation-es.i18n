@@ -7,5 +7,3 @@ acme.validation.leg.overlaped-aircraft.message = Esta aeronave ya esta en uso du
 acme.validation.leg.same-airport.message = El aeropuerto de salida y el de llegada no pueden ser el mismo
 acme.validation.leg.published-flight.message = Este vuelo ya esta publicado
 acme.validation.leg.past-date.message = La fecha de salida debe ser futura
-
-acme.validation.manager.identifier.message = El identificador debe seguir el patron ^[A-Z]{2,3}\\d{6}$
