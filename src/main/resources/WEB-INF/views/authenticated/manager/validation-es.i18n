@@ -1,3 +1,5 @@
-acme.validation.manager.identifier.message = El identificador debe seguir el patrón "^[A-Z]{2,3}\\d{6}$"
 acme.validation.manager.duplicated-identifier.message = Ya existe un manager con este identificador
-acme.validation.manager.correct-pattern = Las primeras letras del identificador deben coincidir con tus iniciales
+acme.validation.manager.identifier.message = El identificador debe seguir el patron ^[A-Z]{2,3}\\d{6}$
+acme.validators.manager.correct-experience = Debe ser un número entre 0 y 75
+acme.validators.manager.correct-pattern = Los dos primeros caracteres deben coincidir con sus iniciales
+acme.validators.manager.past-birth-date = Debe ser una fecha en el pasado

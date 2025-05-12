@@ -1,6 +1,7 @@
 
 package acme.entities.services;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Positive;
@@ -30,6 +31,7 @@ public class Service extends AbstractEntity {
 	// Attributes ---------------------------------------------------------------
 	@Mandatory
 	@ValidString(max = 50, min = 1)
+	@Column(unique = true)
 	@Automapped
 	private String				name;
 

@@ -1,0 +1,32 @@
+# member.flight-assignment.list ####################################################
+
+member.flight-assignment.list.title = Flight Assignments Listing
+
+member.assignment.list.label.duty = Duty
+member.assignment.list.label.leg = Leg
+member.assignment.list.label.status = Status
+member.assignment.list.label.completed = Completed assignments
+member.assignment.list.label.planned = Planned assignments
+
+member.assignment.form.button.create = Create
+
+# member.flight-assignment.form ####################################################
+
+member.flight-assignment.form.title = Flight Assignment Form
+
+member.assignment.form.label.duty = Duty
+member.assignment.form.label.leg = Leg
+member.assignment.form.label.member = Member
+member.assignment.form.label.remarks = Remarks
+member.assignment.form.label.status = Status
+member.assignment.form.label.lastUpdateMoment = Last Update
+member.assignment.form.label.scheduledDeparture = Scheduled Departure
+member.assignment.form.label.scheduledArrival = Scheduled Arrival
+member.assignment.form.label.departureAirport = Departure Airport
+member.assignment.form.label.arrivalAirport = Arrival Airport
+member.assignment.form.label.crew-members = Flight Crew Members
+
+member.assignment.form.button.create = Create
+member.assignment.form.button.update = Update
+member.assignment.form.button.publish = Publish
+member.assignment.form.button.edit = Edit

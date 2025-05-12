@@ -28,3 +28,4 @@ manager.flight.form.label.layovers = Lay Overs
 manager.flight.form.button.update = Update
 manager.flight.form.button.publish = Publish
 manager.flight.form.button.delete = Delete
+manager.flight.form.button.list-legs = Flight Legs

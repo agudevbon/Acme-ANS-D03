@@ -23,6 +23,7 @@ group requirements, only one link to the shared board will be provided. Every ta
 
 D01 planning dashboard link: https://github.com/users/agudevbon/projects/2/views/1
 D02 planning dashboard link: https://github.com/users/agudevbon/projects/3/views/1?system_template=kanban
+D03 planning dashboard link: https://github.com/users/agudevbon/projects/5/views/1
 
 - **/fragments/**
  

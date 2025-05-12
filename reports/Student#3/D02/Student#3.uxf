@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>126</y>
+      <w>585</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Member
+--
++ employeeCode: String {Mandatory, ValidIdentifier, unique}
++ phoneNumber: String {Mandatory, Pattern}
++ languageSkills: String {Mandatory, max=255}
++ availabilityStatus: ENUM {Mandatory} // AVAILABLE, ON VACATION, ON LEAVE
++ salary: Double {Mandatory}
++ yearsOfExperience: Integer {Optional}
+--
++ airline: Airline {Mandatory}
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1125</x>
+      <y>126</y>
+      <w>585</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airline
+--
++ name: String {Mandatory, max=50}
++ iataCode: String {Mandatory, Pattern, unique}
++ website: String {Mandatory, URL}
++ type: Enum {Mandatory} // LUXURY, STANDARD, LOW-COST
++ foundationMoment: Date {Mandatory, Past}
++ email: String {Optional}
++ phoneNumber: String {Optional, Pattern}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>198</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=*
+works for &gt;</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>351</y>
+      <w>585</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+FlightAssignment
+--
++ duty: ENUM {Mandatory} // PILOT, CO-PILOT, LEAD ATTENDANT, CABIN ATTENDANT
++ lastUpdateMoment: Date {Mandatory, Past}
++ status: ENUM {Mandatory} // CONFIRMED, PENDING, CANCELED
++ remarks: String {Optional, max=255}
+--
++ member: Member {Mandatory}
++ leg: Leg {Mandatory}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1134</x>
+      <y>351</y>
+      <w>585</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+ActivityLog
+--
++ registrationMoment: Date {Mandatory, Past}
++ incidentType: String {Mandatory, max=50}
++ description: String {Mandatory, max=255}
++ severityLevel: Integer [0..10] {Mandatory}
+--
++ flightAssignment: FlightAssignment {Mandatory}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>567</y>
+      <w>585</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>279</y>
+      <w>108</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=*
+m2=1
+assigned to &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>414</y>
+      <w>171</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=*
+m2=1
+incident in &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>477</y>
+      <w>72</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=*
+m2=1
+for leg &gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

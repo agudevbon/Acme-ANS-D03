@@ -9,7 +9,7 @@ review-07,لوريم إيبسوم,2021/03/11 16:58,testing subject,test test tes
 review-08,洛伦·伊普森,2021/03/11 16:58,testing subject,test test testing text,5.8,false
 review-09,<marquee>Hacked</marquee>,2021/03/11 16:58,testing subject,test test testing text,5.8,true
 review-10,<script>alert(‘Hacked!’);</script>,2021/03/11 16:58,testing subject,test test testing text,5.8,false
-review-11,' or 'A' = 'A,2021/03/11 16:58,testing subject,test test testing text,5.8,true
+review-11,'' or 'A' = 'A,2021/03/11 16:58,testing subject,test test testing text,5.8,true
 review-12,Lorem ipsum dolor sit,2000/01/01 00:00,testing subject,test test testing text,5.8,false
 review-13,Lorem ipsum dolor sit,2022/07/30 00:00,testing subject,test test testing text,5.8,false
 review-14,Lorem ipsum dolor sit,2000/01/01 00:01,testing subject,test test testing text,5.8,false
@@ -26,7 +26,7 @@ review-24,Lorem ipsum dolor sit,2021/03/11 16:58,لوريم إيبسوم,test te
 review-25,Lorem ipsum dolor sit,2021/03/11 16:58,洛伦·伊普森,test test testing text,5.8,true
 review-26,Lorem ipsum dolor sit,2021/03/11 16:58,<marquee>Hacked</marquee>,test test testing text,5.8,true
 review-27,Lorem ipsum dolor sit,2021/03/11 16:58,<script>alert(‘Hacked!’);</script>,test test testing text,5.8,true
-review-28,Lorem ipsum dolor sit,2021/03/11 16:58,' or 'A' = 'A,test test testing text,5.8,false
+review-28,Lorem ipsum dolor sit,2021/03/11 16:58,'' or 'A' = 'A,test test testing text,5.8,false
 review-29,Lorem ipsum dolor sit,2021/03/11 16:58,Esto es un asunto de prueba,test test testing text,5.8,true
 review-30,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,L,5.8,false
 review-31,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,Lorem ipsum dolor sit amet consectetur adipiscinga,5.8,true
@@ -38,7 +38,7 @@ review-36,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,لوريم إي
 review-37,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,洛伦·伊普森,5.8,false
 review-38,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,<marquee>Hacked</marquee>,5.8,false
 review-39,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,<script>alert(‘Hacked!’);</script>,5.8,false
-review-40,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,' or 'A' = 'A,5.8,true
+review-40,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,'' or 'A' = 'A,5.8,true
 review-41,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,Esto es una descripcion de prueba,5.8,false
 review-42,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,test test testing text,0.00,true
 review-43,Lorem ipsum dolor sit,2021/03/11 16:58,testing subject,test test testing text,10.00,false
