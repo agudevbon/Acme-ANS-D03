@@ -24,7 +24,7 @@ public @interface ValidIdentifier {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.manager.identifier.message}";
+	String message() default "acme.validation.manager.identifier.message";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
