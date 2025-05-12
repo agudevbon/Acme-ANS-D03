@@ -45,12 +45,11 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 				existingManager = this.repository.findManagerByIdentifier(manager.getIdentifier());
 				uniqueManager = existingManager == null || existingManager.equals(manager);
 
-				super.state(context, uniqueManager, "ticker", "acme.validation.manager.duplicated-identifier.message");
+				super.state(context, uniqueManager, "identifier", "acme.validation.manager.duplicated-identifier.message");
 			}
 			{
 
 				boolean correctIdentifier;
-
 
 				correctIdentifier = manager.getIdentifier() == "" || manager.getIdentifier().charAt(0) == manager.getIdentity().getName().charAt(0) && manager.getIdentifier().charAt(1) == manager.getIdentity().getSurname().charAt(0);
 
@@ -60,14 +59,14 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 				boolean correctExperience;
 
 				correctExperience = manager.getExperience() == null || manager.getExperience() >= 0 && manager.getExperience() <= 75;
-				super.state(context, correctExperience, "experience", "acme.validators.manager.correct-experience");
+				super.state(context, correctExperience, "experience", "acme.validation.manager.correct-experience");
 			}
 			{
 				boolean pastDate;
 				Date present = MomentHelper.getBaseMoment();
 
 				pastDate = manager.getBirthDate().before(present);
-				super.state(context, pastDate, "birthDate", "acme.validators.manager.past-birth-date");
+				super.state(context, pastDate, "birthDate", "acme.validation.manager.past-birth-date");
 			}
 		}
 
