@@ -15,7 +15,7 @@ public class ManagerDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	String						ranking;
+	int							ranking;
 	int							retire;
 	double						ratio;
 	String						mostPopularAirport;
@@ -27,15 +27,6 @@ public class ManagerDashboard extends AbstractForm {
 	int							totalOfCancelledLegs;
 	int							totalOfLandedLegs;
 
-	//Flight Cost (USD)
-	double						averageFlightCostUSD;
-
-	double						deviationOfFlightCostUSD;
-
-	double						minimumFlightCostUSD;
-
-	double						maximumFlightCostUSD;
-
 	//Flight Cost (EUR)
 	double						averageFlightCostEUR;
 
@@ -44,13 +35,4 @@ public class ManagerDashboard extends AbstractForm {
 	double						minimumFlightCostEUR;
 
 	double						maximumFlightCostEUR;
-
-	//Flight Cost (GBP)
-	double						averageFlightCostGBP;
-
-	double						deviationOfFlightCostGBP;
-
-	double						minimumFlightCostGBP;
-
-	double						maximumFlightCostGBP;
 }

@@ -62,11 +62,10 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 				validTag = flight.getTag().length() >= 1 && flight.getTag().length() <= 50;
 				super.state(context, validTag, "tag", "acme.validation.flight.valid-tag.message");
 			}
-
 			{
 				boolean validDescription;
 
-				validDescription = flight.getDescription().length() > 250;
+				validDescription = flight.getDescription().length() <= 250;
 				super.state(context, validDescription, "description", "acme.validation.flight.valid-description.message");
 			}
 		}
