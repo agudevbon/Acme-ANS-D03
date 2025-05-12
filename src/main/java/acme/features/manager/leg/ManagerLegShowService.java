@@ -1,6 +1,7 @@
 
 package acme.features.manager.leg;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,11 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 	public void unbind(final Leg leg) {
 		Dataset dataset;
 		SelectChoices flightChoices;
-		List<Flight> managerFlights = this.repository.findDraftingFlightByManagerId(leg.getManager().getId());
+		List<Flight> managerFlights = new ArrayList<>();
+		if (leg.getDraftMode())
+			managerFlights = this.repository.findDraftingFlightByManagerId(leg.getManager().getId());
+		else
+			managerFlights = this.repository.findFlightByManagerId(leg.getManager().getId());
 		flightChoices = SelectChoices.from(managerFlights, "tag", leg.getFlight());
 
 		SelectChoices aircraftChoices;
