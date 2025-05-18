@@ -66,10 +66,13 @@ public class Leg extends AbstractEntity {
 
 	@Transient
 	public Integer getDuration() {
-		long longDuration = this.getScheduledArrival().getTime() - this.getScheduledDeparture().getTime();
-		long diferenciaEnMinutos = longDuration / (1000 * 60);
+		long diferenciaEnMinutos = 0;
+		if (this.getScheduledArrival() != null && this.getScheduledDeparture() != null) {
+			long longDuration = this.getScheduledArrival().getTime() - this.getScheduledDeparture().getTime();
+			diferenciaEnMinutos = longDuration / (1000 * 60);
+		}
 
-		return (int) diferenciaEnMinutos;
+		return diferenciaEnMinutos == 0 ? null : (int) diferenciaEnMinutos;
 	}
 
 	// Relationships ----------------------------------------------------------

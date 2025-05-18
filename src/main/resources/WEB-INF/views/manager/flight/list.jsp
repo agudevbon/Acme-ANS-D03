@@ -5,7 +5,7 @@
 
 <acme:list>
 	<acme:list-column code="manager.flight.list.label.tag" path="tag" width="25%"/>
-	<acme:list-column code="manager.flight.list.label.indication" path="indication" width="25%"/>
+	<acme:list-column code="manager.flight.list.label.description" path="description" width="25%"/>
 	<acme:list-column code="manager.flight.list.label.cost" path="cost" width="25%"/>
 	<acme:list-column code="manager.flight.list.label.draftMode" path="draftMode" width="25%"/>
 	<acme:list-payload path="payload"/>

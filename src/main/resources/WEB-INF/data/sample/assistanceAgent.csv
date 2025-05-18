@@ -26,12 +26,12 @@ assistanceAgent-24,user-account-agent-02,WI243091,"English, Spanish, Polish",air
 assistanceAgent-25,user-account-agent-03,WY890896,"English, Spanish, Polish",airline-04,2012/08/28 18:39,'' or 'A' = 'A,EUR 4679.00,https://www.google.com
 assistanceAgent-26,user-account-agent-03,SW403830,"English, Spanish, Polish",airline-34,2012/08/28 18:39,,EUR 4679.00,https://www.google.com
 assistanceAgent-27,user-account-agent-02,KZB875455,"English, Spanish, Polish",airline-32,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 1.00,http://lorem.com/ipsum
-assistanceAgent-28,user-account-agent-03,DR707044,"English, Spanish, Polish",airline-06,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 10000.00,ftp://a
-assistanceAgent-29,user-account-agent-03,EQA866763,"English, Spanish, Polish",airline-34,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 1.01,ftp://a.b
+assistanceAgent-28,user-account-agent-03,DR707044,"English, Spanish, Polish",airline-06,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 10000.00,
+assistanceAgent-29,user-account-agent-03,EQA866763,"English, Spanish, Polish",airline-34,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 1.01,
 assistanceAgent-30,user-account-agent-01,KF065561,"English, Spanish, Polish",airline-05,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 9999.99,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/"
 assistanceAgent-31,user-account-agent-01,BD152759,"English, Spanish, Polish",airline-21,2012/08/28 18:39,Lorem ipsum dolor sit amet,,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X"
 assistanceAgent-32,user-account-agent-01,HM190420,"English, Spanish, Polish",airline-11,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,https://www.lorem-ipsum.org
-assistanceAgent-33,user-account-agent-02,RDZ331280,"English, Spanish, Polish",airline-38,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,ftp://www.lorem-ipsum.org
+assistanceAgent-33,user-account-agent-02,RDZ331280,"English, Spanish, Polish",airline-38,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,
 assistanceAgent-34,user-account-agent-03,JA050795,"English, Spanish, Polish",airline-09,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,http://www.lorem-ipsum.org/dolor/sit.html
 assistanceAgent-35,user-account-agent-01,BFO298915,"English, Spanish, Polish",airline-38,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,http://www.lorem-ipsum.org/dolor/sit.html#dolor
 assistanceAgent-36,user-account-agent-01,EUT931582,"English, Spanish, Polish",airline-08,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,http://example.org?a=1&b=2
@@ -43,6 +43,6 @@ assistanceAgent-41,user-account-agent-03,WW073221,"English, Spanish, Polish",air
 assistanceAgent-42,user-account-agent-03,EK225716,"English, Spanish, Polish",airline-29,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,http://example.org/a/b
 assistanceAgent-43,user-account-agent-03,EUZ532881,"English, Spanish, Polish",airline-45,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,http://example.org/a/b?
 assistanceAgent-44,user-account-agent-03,LWE193812,"English, Spanish, Polish",airline-07,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,http://example.org/a/b?a&b
-assistanceAgent-45,user-account-agent-01,EWL838026,"English, Spanish, Polish",airline-42,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,ftp://
+assistanceAgent-45,user-account-agent-01,EWL838026,"English, Spanish, Polish",airline-42,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,
 assistanceAgent-46,user-account-agent-02,TV405466,"English, Spanish, Polish",airline-23,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,
 assistanceAgent-47,user-account-agent-01,FNP853431,"English, Spanish, Polish",airline-17,2012/08/28 18:39,Lorem ipsum dolor sit amet,EUR 4679.00,

@@ -1,41 +1,41 @@
 key,name,pictureUrl,averageDwellTime,promotionCode,discountAmount
-service-01,Lorem isum dolor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-02,Lorem psum dolor sit amet consectetur adipiscingu,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-03,Lorem ipsu dolor sit amet consectetur adipiscing,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-04,L,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-05,Lo,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-06,โลเร็ม อิปซัม,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-07,لوريم إيبسوم,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-08,洛伦·伊普森,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-09,<marquee>Hacked</marquee>,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-10,<script>alert(‘Hacked!’);</script>,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-11,'' or 'A' = 'A,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-12,Lorem ipsuamdd dolor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-13,Lorem ipsumad dolor sit amet,"ftp://a",50,IXLO-85,EUR 500000.00
-service-14,Lorem ipsumdd adolor sit amet,"ftp://a.b",50,IXLO-85,EUR 500000.00
+service-01,Lorem isum dolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-02,Lorem psum dolor sit amet consectetur adipiscingu,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-03,Lorem ipsu dolor sit amet consectetur adipiscing,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-04,L,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-05,Lo,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-06,โลเร็ม อิปซัม,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-07,لوريم إيبسوم,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-08,洛伦·伊普森,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-09,<marquee>Hacked</marquee>,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-10,<script>alert(‘Hacked!’);</script>,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-11,'' or 'A' = 'A,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-12,Lorem ipsuamdd dolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-13,Lorem ipsumad dolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-14,Lorem ipsumdd adolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
 service-15,Lorem ipsssum daolor sit amet,"http://www.lorem-ipsum.org/dolor/sit/amet,/consecteur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",50,IXLO-85,EUR 500000.00
-service-16,Lorem ipsdadum doalor sit amet,"https://www.lorem-ipsum.org",50,IXLO-85,EUR 500000.00
-service-17,Lorem ipsumasdasd dolaor sit amet,"ftp://www.lorem-ipsum.org",50,IXLO-85,EUR 500000.00
-service-18,Lorem ipsum fasfdolgsdgoar sit amet,"http://www.lorem-ipsum.org/dolor/sit.html",50,IXLO-85,EUR 500000.00
-service-19,Lorem ipsum dolora sit gsdgamet,"http://www.lorem-ipsum.org/dolor/sit.html#dolor",50,IXLO-85,EUR 500000.00
-service-20,Lorem ipsum dofsdgdlor asit amet,"http://example.org?a=1&b=2",50,IXLO-85,EUR 500000.00
-service-21,Lorem ipsum dolor saisdgt amet,"http://example.org?",50,IXLO-85,EUR 500000.00
-service-22,Lorem ipsum dolor siat sgdamet,"http://example.org?a",50,IXLO-85,EUR 500000.00
-service-23,Lorem ipsum dolor sita adamet,"http://example.org?a&b",50,IXLO-85,EUR 500000.00
-service-24,Lorem ipsum dolor sit asdasafmet,"http://example.org/",50,IXLO-85,EUR 500000.00
-service-25,Lorem ipsum dolor sit asdasdaamet,"http://example.org/a",50,IXLO-85,EUR 500000.00
-service-26,Lorem ipsum dolor sit aaasdamaet,"http://example.org/a/b",50,IXLO-85,EUR 500000.00
-service-27,Lorem ipsum dolor sit adadadsadameat,"http://example.org/a/b?",50,IXLO-85,EUR 500000.00
-service-28,Lorem ipsum dolor sit asdadasdameta,"http://example.org/a/b?a&b",50,IXLO-85,EUR 500000.00
-service-29,Lorema ipsum dolor sit asdasdasdamet,"http://lorem.com/ipsum",0.01,IXLO-85,EUR 500000.00
-service-30,Lorem aipsum dolor sit asdasdamet,"http://lorem.com/ipsum",0.02,IXLO-85,EUR 500000.00
-service-31,Ladsaorem iapsum dolor sit amet,"http://lorem.com/ipsum",100.0,IXLO-85,EUR 500000.00
-service-32,Loasdsadrem ipasum dolor sit amet,"http://lorem.com/ipsum",99.99,IXLO-85,EUR 500000.00
-service-33,Loremasdasd ipsaum dolor sit amet,"http://lorem.com/ipsum",50,AAAA-00,EUR 500000.00
-service-34,Lorsssddadem ipsuam dolor sit amet,"http://lorem.com/ipsum",50,ZZZZ-99,EUR 500000.00
-service-35,Lorsssdadadasdem ipsuma dolor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
-service-36,Lorasdadasdasdadsem ipsum adolor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 0.01
-service-37,Lorasdasdasdasdem ipsum daolor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 1000000.00
-service-38,Loreasdadasdasdadadasm ipsum doalor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 99999.99
-service-39,Loreaaaaaaadm ipsum dolaor sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 0.00
-service-40,Loreeeeeeeeeeedem ipsum doloar sit amet,"http://lorem.com/ipsum",50,IXLO-85,EUR 500000.00
+service-16,Lorem ipsdadum doalor sit amet,https://www.lorem-ipsum.org,50,IXLO-85,EUR 500000.00
+service-17,Lorem ipsumasdasd dolaor sit amet,https://www.lorem-ipsum.org,50,IXLO-85,EUR 500000.00
+service-18,Lorem ipsum fasfdolgsdgoar sit amet,http://www.lorem-ipsum.org/dolor/sit.html,50,IXLO-85,EUR 500000.00
+service-19,Lorem ipsum dolora sit gsdgamet,http://www.lorem-ipsum.org/dolor/sit.html#dolor,50,IXLO-85,EUR 500000.00
+service-20,Lorem ipsum dofsdgdlor asit amet,http://example.org?a=1&b=2,50,IXLO-85,EUR 500000.00
+service-21,Lorem ipsum dolor saisdgt amet,http://example.org?,50,IXLO-85,EUR 500000.00
+service-22,Lorem ipsum dolor siat sgdamet,http://example.org?a,50,IXLO-85,EUR 500000.00
+service-23,Lorem ipsum dolor sita adamet,http://example.org?a&b,50,IXLO-85,EUR 500000.00
+service-24,Lorem ipsum dolor sit asdasafmet,http://example.org/,50,IXLO-85,EUR 500000.00
+service-25,Lorem ipsum dolor sit asdasdaamet,http://example.org/a,50,IXLO-85,EUR 500000.00
+service-26,Lorem ipsum dolor sit aaasdamaet,http://example.org/a/b,50,IXLO-85,EUR 500000.00
+service-27,Lorem ipsum dolor sit adadadsadameat,http://example.org/a/b?,50,IXLO-85,EUR 500000.00
+service-28,Lorem ipsum dolor sit asdadasdameta,http://example.org/a/b?a&b,50,IXLO-85,EUR 500000.00
+service-29,Lorema ipsum dolor sit asdasdasdamet,http://lorem.com/ipsum,0.01,IXLO-85,EUR 500000.00
+service-30,Lorem aipsum dolor sit asdasdamet,http://lorem.com/ipsum,0.02,IXLO-85,EUR 500000.00
+service-31,Ladsaorem iapsum dolor sit amet,http://lorem.com/ipsum,100.0,IXLO-85,EUR 500000.00
+service-32,Loasdsadrem ipasum dolor sit amet,http://lorem.com/ipsum,99.99,IXLO-85,EUR 500000.00
+service-33,Loremasdasd ipsaum dolor sit amet,http://lorem.com/ipsum,50,AAAA-00,EUR 500000.00
+service-34,Lorsssddadem ipsuam dolor sit amet,http://lorem.com/ipsum,50,ZZZZ-99,EUR 500000.00
+service-35,Lorsssdadadasdem ipsuma dolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00
+service-36,Lorasdadasdasdadsem ipsum adolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 0.01
+service-37,Lorasdasdasdasdem ipsum daolor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 1000000.00
+service-38,Loreasdadasdasdadadasm ipsum doalor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 99999.99
+service-39,Loreaaaaaaadm ipsum dolaor sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 0.00
+service-40,Loreeeeeeeeeeedem ipsum doloar sit amet,http://lorem.com/ipsum,50,IXLO-85,EUR 500000.00

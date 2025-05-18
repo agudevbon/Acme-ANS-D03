@@ -88,17 +88,17 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 			if (leg.getScheduledDeparture() != null)
 				futureDeparture = leg.getScheduledDeparture().after(present);
 
-			super.state(futureDeparture, "scheduleDeparture", "acme.validation.leg.past-date.message");
+			super.state(futureDeparture, "scheduledDeparture", "acme.validation.leg.past-date.message");
 		}
 		{
-			boolean futureDeparture = true;
+			boolean futureArrival = true;
 
 			Date present = MomentHelper.getBaseMoment();
 
 			if (leg.getScheduledArrival() != null)
-				futureDeparture = leg.getScheduledArrival().after(present);
+				futureArrival = leg.getScheduledArrival().after(present);
 
-			super.state(futureDeparture, "scheduledArrival", "acme.validation.leg.past-date.message");
+			super.state(futureArrival, "scheduledArrival", "acme.validation.leg.past-date.message");
 		}
 		{
 			boolean correctFlight;

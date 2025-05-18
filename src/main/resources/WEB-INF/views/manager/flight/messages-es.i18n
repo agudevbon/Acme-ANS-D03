@@ -5,7 +5,7 @@
 manager.flight.list.title = Lista de vuelos
 
 manager.flight.list.label.tag = Etiqueta
-manager.flight.list.label.indication = Transferencia propia
+manager.flight.list.label.description = Descripción
 manager.flight.list.label.cost = Costo
 manager.flight.list.label.draftMode = Modo borrador
 

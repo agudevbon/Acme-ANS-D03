@@ -10,7 +10,7 @@ leg-08,manager-01,flight-03,airport-03,airport-04,aircraft-05,GAX0000,2010/07/09
 leg-09,manager-02,flight-04,airport-03,airport-04,aircraft-05,GAX9999,2130/07/07 01:10,2130/07/07 05:10,DELAYED,false
 leg-10,manager-02,flight-04,airport-03,airport-04,aircraft-02,LAX6574,2130/07/08 01:10,2130/07/08 05:10,LANDED,false
 leg-12,manager-02,flight-04,airport-03,airport-04,aircraft-06,LEX7896,2130/07/09 01:10,2130/07/09 05:10,ON_TIME,false
-leg-13,manager-01,flight-05,airport-03,airport-04,aircraft-06,LEX7006,2024/07/07 01:10,2024/07/07 05:10,DELAYED,true
+leg-13,manager-01,flight-05,airport-03,airport-04,aircraft-06,LEX7006,2024/07/07 01:10,2024/07/07 05:10,DELAYED,false
 leg-14,manager-01,flight-07,airport-01,airport-02,aircraft-05,GAX7634,2200/12/31 22:58,2200/12/31 23:59,CANCELLED,false
 leg-15,manager-01,flight-07,airport-03,airport-04,aircraft-07,MIX1200,2200/12/31 23:58,2200/12/31 23:59,ON_TIME,true
 leg-16,manager-02,flight-08,airport-03,airport-04,aircraft-05,GAX9789,2000/01/01 00:00,2000/01/01 03:10,DELAYED,true
@@ -21,3 +21,5 @@ leg-20,manager-02,flight-06,airport-03,airport-04,aircraft-06,LEX8896,2066/07/09
 leg-21,manager-02,flight-06,airport-03,airport-04,aircraft-06,LEX5096,2166/07/09 01:10,2166/07/09 04:30,ON_TIME,false
 leg-22,manager-01,flight-09,airport-03,airport-04,aircraft-06,LEX5296,2130/10/09 01:10,2130/10/09 17:49,LANDED,false
 leg-23,manager-01,flight-09,airport-03,airport-04,aircraft-06,LEX5396,2130/10/10 01:10,2130/10/10 17:50,LANDED,false
+leg-24,manager-02,flight-32,airport-03,airport-04,aircraft-06,LEX0096,2131/10/09 01:10,2131/10/09 17:49,ON_TIME,false
+leg-25,manager-02,flight-32,airport-03,airport-04,aircraft-06,LEX0196,2131/10/10 01:10,2131/10/10 17:50,ON_TIME,false

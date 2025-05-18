@@ -1,15 +1,12 @@
 
 package acme.constraints;
 
-import java.util.Date;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
-import acme.client.helpers.MomentHelper;
 import acme.realms.Manager;
 import acme.realms.ManagerRepository;
 
@@ -54,19 +51,6 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 				correctIdentifier = manager.getIdentifier() == "" || manager.getIdentifier().charAt(0) == manager.getIdentity().getName().charAt(0) && manager.getIdentifier().charAt(1) == manager.getIdentity().getSurname().charAt(0);
 
 				super.state(context, correctIdentifier, "identifier", "acme.validation.manager.correct-pattern");
-			}
-			{
-				boolean correctExperience;
-
-				correctExperience = manager.getExperience() == null || manager.getExperience() >= 0 && manager.getExperience() <= 75;
-				super.state(context, correctExperience, "experience", "acme.validation.manager.correct-experience");
-			}
-			{
-				boolean pastDate;
-				Date present = MomentHelper.getBaseMoment();
-
-				pastDate = manager.getBirthDate().before(present);
-				super.state(context, pastDate, "birthDate", "acme.validation.manager.past-birth-date");
 			}
 		}
 
