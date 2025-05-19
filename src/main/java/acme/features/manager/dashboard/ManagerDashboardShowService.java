@@ -42,9 +42,9 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 		String lessPopularAirport;
 
 		Integer totalOfOnTimeLegs;
-		Integer totalOfDelayed;
-		Integer totalOfCanceled;
-		Integer totalOfLanded;
+		Integer totalOfDelayedLegs;
+		Integer totalOfCancelledLegs;
+		Integer totalOfLandedLegs;
 
 		double averageFlightCostEUR;
 		double deviationOfFlightCostEUR;
@@ -62,9 +62,9 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 		}
 
 		totalOfOnTimeLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.ON_TIME).size();
-		totalOfDelayed = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.DELAYED).size();
-		totalOfCanceled = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.CANCELLED).size();
-		totalOfLanded = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.LANDED).size();
+		totalOfDelayedLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.DELAYED).size();
+		totalOfCancelledLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.CANCELLED).size();
+		totalOfLandedLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.LANDED).size();
 
 		try {
 			averageFlightCostEUR = this.repository.findAverageFlightCost(manager.getId(), "EUR");
@@ -82,9 +82,9 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 		dashboard.setRetire(retire);
 		dashboard.setRatio(ratio);
 		dashboard.setTotalOfOnTimeLegs(totalOfOnTimeLegs);
-		dashboard.setTotalOfDelayedLegs(totalOfDelayed);
-		dashboard.setTotalOfCancelledLegs(totalOfCanceled);
-		dashboard.setTotalOfLandedLegs(totalOfLanded);
+		dashboard.setTotalOfDelayedLegs(totalOfDelayedLegs);
+		dashboard.setTotalOfCancelledLegs(totalOfCancelledLegs);
+		dashboard.setTotalOfLandedLegs(totalOfLandedLegs);
 		dashboard.setAverageFlightCostEUR(averageFlightCostEUR);
 		dashboard.setDeviationOfFlightCostEUR(deviationOfFlightCostEUR);
 		dashboard.setMinimumFlightCostEUR(minimumFlightCostEUR);

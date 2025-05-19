@@ -41,6 +41,38 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		manager = leg == null ? null : leg.getManager();
 		status = leg != null && super.getRequest().getPrincipal().hasRealm(manager) && leg.getDraftMode();
 
+		if (status) {
+			String method;
+			int managerId, departureId, arrivalId, aircraftId, flightId;
+			Airport departure;
+			Airport arrival;
+			Aircraft aircraft;
+			Flight flight;
+
+			method = super.getRequest().getMethod();
+
+			if (method.equals("GET"))
+				status = true;
+			else {
+				managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				departureId = super.getRequest().getData("departure", int.class);
+				arrivalId = super.getRequest().getData("arrival", int.class);
+				aircraftId = super.getRequest().getData("aircraft", int.class);
+				flightId = super.getRequest().getData("flight", int.class);
+
+				arrival = this.repository.findAirportById(arrivalId);
+				departure = this.repository.findAirportById(departureId);
+				flight = this.repository.findFlightByIdAndManager(flightId, managerId);
+				aircraft = this.repository.findActiveAircraftById(aircraftId);
+
+				boolean departureStatus = departureId == 0 || departure != null;
+				boolean arrivalStatus = arrivalId == 0 || arrival != null;
+				boolean aircraftStatus = aircraftId == 0 || aircraft != null;
+				boolean flightStatus = flightId == 0 || flight != null;
+				status = departureStatus && arrivalStatus && aircraftStatus && flightStatus;
+			}
+		}
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -88,17 +120,17 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 			if (leg.getScheduledDeparture() != null)
 				futureDeparture = leg.getScheduledDeparture().after(present);
 
-			super.state(futureDeparture, "scheduleDeparture", "acme.validation.leg.past-date.message");
+			super.state(futureDeparture, "scheduledDeparture", "acme.validation.leg.past-date.message");
 		}
 		{
-			boolean futureDeparture = true;
+			boolean futureArrival = true;
 
 			Date present = MomentHelper.getBaseMoment();
 
 			if (leg.getScheduledArrival() != null)
-				futureDeparture = leg.getScheduledArrival().after(present);
+				futureArrival = leg.getScheduledArrival().after(present);
 
-			super.state(futureDeparture, "scheduledArrival", "acme.validation.leg.past-date.message");
+			super.state(futureArrival, "scheduledArrival", "acme.validation.leg.past-date.message");
 		}
 		{
 			boolean correctFlight;

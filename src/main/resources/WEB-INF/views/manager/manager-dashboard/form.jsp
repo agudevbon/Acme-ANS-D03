@@ -54,7 +54,7 @@
 			<acme:print code="manager.manager-dashboard.form.label.total-delayed"/>
 		</th>
 		<td>
-			<acme:print value = "${totalOfDelayed}"/>
+			<acme:print value = "${totalOfDelayedLegs}"/>
 		</td>
 	</tr>
 	<tr>
@@ -62,7 +62,7 @@
 			<acme:print code="manager.manager-dashboard.form.label.total-canceled"/>
 		</th>
 		<td>
-			<acme:print value = "${totalOfCanceled}"/>
+			<acme:print value = "${totalOfCancelledLegs}"/>
 		</td>
 	</tr>
 	<tr>
@@ -70,7 +70,7 @@
 			<acme:print code="manager.manager-dashboard.form.label.total-landed"/>
 		</th>
 		<td>
-			<acme:print value = "${totalOfLanded}"/>
+			<acme:print value = "${totalOfLandedLegs}"/>
 		</td>
 	</tr>
 

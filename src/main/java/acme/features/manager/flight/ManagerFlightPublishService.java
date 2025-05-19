@@ -34,6 +34,7 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 		flight = this.repository.findFlightById(flightId);
 		manager = flight == null ? null : flight.getManager();
 		status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && flight.getDraftMode();
+
 		super.getResponse().setAuthorised(status);
 	}
 
