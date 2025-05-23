@@ -10,9 +10,10 @@
 
 master.company.title = The company
 master.company.text = \
-	Hello World, Inc. is a fictitious company that provides a starter \
-	project for the students of the Design and Testing subject of the \
-	Software Engineering Curriculum of the University of Seville.
+	Acme AirNav Solutions, Inc.  (Acme ANS, Inc.  for short) is a fictitious company that specialises in helping airports 
+manage their resources and coordinate operations through the development of software solutions. The goal of this 
+project is to develop a WIS to assist airports in managing logistics for charter flights. This includes flight 
+scheduling, booking management, crew management, incident reporting and resolution, as well as aircraft maintenance. 
 master.company.name = Acme, Inc.
 master.company.address = 01 Acme Drive, Wondercity, Wonderland
 master.company.phone = +1 000 111 222

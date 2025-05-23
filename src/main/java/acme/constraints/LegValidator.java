@@ -2,8 +2,6 @@
 package acme.constraints;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 import javax.validation.ConstraintValidatorContext;
 
@@ -82,17 +80,17 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				boolean overlapedAircraft = true;
 
 				if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
-					List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber());
-					legsWSameAircraft = legsWSameAircraft.stream().filter(legs -> !Objects.equals(legs.getId(), leg.getId())).collect(Collectors.toList());
-					overlapedAircraft = !legsWSameAircraft.stream().anyMatch(existingObject ->
-					// Case 1: Start of new object is within an existing interval
-					existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledDeparture()) >= 0 ||
-
-					// Case 2: End of new object is within an existing interval
-						existingObject.getScheduledDeparture().compareTo(leg.getScheduledArrival()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) >= 0 ||
-
-						// Case 3: New object completely contains an existing interval
-						existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) >= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) <= 0);
+					List<Leg> legsWSameAircraft = this.repository.findLegsByAircraft(leg.getAircraft().getRegistrationNumber(), leg.getId());
+					for (Leg existingObject : legsWSameAircraft) {
+						boolean starting = existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledDeparture()) >= 0;
+						boolean finishing = existingObject.getScheduledDeparture().compareTo(leg.getScheduledArrival()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) >= 0;
+						boolean inside = existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) >= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) <= 0;
+						boolean resultado = starting || finishing || inside;
+						if (resultado) {
+							overlapedAircraft = false;
+							break;
+						}
+					}
 
 				}
 				super.state(context, overlapedAircraft, "aircraft", "acme.validation.leg.overlaped-aircraft.message");

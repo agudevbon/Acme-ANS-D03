@@ -15,6 +15,9 @@ import acme.entities.flights.Leg;
 @Repository
 public interface ManagerLegRepository extends AbstractRepository {
 
+	@Query("select l from Leg l where l.flight.id = :id and l.draftMode = false and l.id != :legId")
+	List<Leg> findLegsByFlight(Integer id, Integer legId);
+
 	@Query("select l from Leg l where l.id = :id")
 	Leg findLegById(Integer id);
 

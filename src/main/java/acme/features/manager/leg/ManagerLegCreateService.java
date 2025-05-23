@@ -125,13 +125,6 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 
 			super.state(futureArrival, "scheduledArrival", "acme.validation.leg.past-date.message");
 		}
-		{
-			boolean correctFlight;
-
-			correctFlight = leg.getFlight() == null || leg.getFlight().getDraftMode();
-
-			super.state(correctFlight, "flight", "acme.validation.leg.published-flight.message");
-		}
 	}
 
 	@Override
