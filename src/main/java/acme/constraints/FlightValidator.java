@@ -50,9 +50,9 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 			{
 				boolean publishedLegs;
 
-				List<Leg> flightLegs = this.repository.findLegsByFlight(flight.getId());
+				List<Leg> flightLegs = this.repository.findDraftingLegsByFlight(flight.getId());
 
-				publishedLegs = flight.getDraftMode() ? true : flightLegs.stream().allMatch(l -> !l.getDraftMode());
+				publishedLegs = flight.getDraftMode() ? true : flightLegs.isEmpty();
 
 				super.state(context, publishedLegs, "tag", "acme.validation.flight.unpublished-legs.message");
 			}
