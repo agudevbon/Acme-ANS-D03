@@ -1,2 +1,5 @@
 acme.validation.maintenance-record.no-tasks.message = No hay Tareas en este Registro de Mantenimiento
 acme.validation.maintenance-record.unpublished-tasks.message = No hay Tareas publicadas en este Registro de Mantenimiento
+
+acme.validation.maintenance-record.inspection-due-date-incorrect.message = La próxima inspección deberá ser después del momento del Registro de Mantenimiento
+acme.validation.maintenance-record.inspection-in-the-future.message = La próxima inspección deberá ser en una fecha en el futuro
