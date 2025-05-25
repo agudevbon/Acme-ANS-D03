@@ -50,16 +50,6 @@ master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
 master.menu.administrator.shut-system-down = Shut system down
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = Favourite link
-
 # master.menu.assistanceAgent ##########################################################
 
 master.menu.assistance-agent = Assistance Agent
@@ -70,9 +60,5 @@ master.menu.assistance-agent.list-undergoing-claims = Undergoing Claims Listing
 
 master.menu.user-account = Account
 master.menu.user-account.general-profile = General profile
-master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.provider-profile = Provider profile
-master.menu.user-account.become-consumer = Become a consumer
-master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-manager = Become a manager
 master.menu.user-account.manager-profile = Manager profile
