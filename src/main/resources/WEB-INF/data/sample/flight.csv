@@ -16,10 +16,10 @@ flight-14,manager-02,"Lorem ipsum dolor sit amet, consectetur adipiscin",True,EU
 flight-15,manager-01,"Lorem ipsum dolor sit amet, consectetur adipiscing",True,EUR 500000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 flight-16,manager-02,Lorem ipsum dolor sit ame,False,EUR 0.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 flight-17,manager-01,Lorem ipsum dolor sit ame,True,EUR 0.01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
-flight-18,manager-02,Lorem ipsum dolor sit ame,True,GBP 30.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
-flight-19,manager-01,Lorem ipsum dolor sit ame,True,GBP 12345.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
-flight-20,manager-02,Lorem ipsum dolor sit ame,True,DOL 667755.12,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
-flight-21,manager-01,Lorem ipsum dolor sit amet,True,DOL 889900.56,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-18,manager-02,Lorem ipsum dolor sit ame,True,EUR 30.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-19,manager-01,Lorem ipsum dolor sit ame,True,EUR 12345.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-20,manager-02,Lorem ipsum dolor sit ame,True,EUR 667755.12,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-21,manager-01,Lorem ipsum dolor sit amet,True,EUR 889900.56,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 flight-22,manager-02,Lorem ipsum dolor sit amet,False,EUR 999999.99,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 flight-23,manager-01,Lorem ipsum dolor sit amet,True,EUR 1000000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 flight-24,manager-02,Lorem ipsum dolor sit amet,True,EUR 475000.00,L,true

@@ -5,7 +5,7 @@
 manager.flight.list.title = Flights listing
 
 manager.flight.list.label.tag = Tag
-manager.flight.list.label.indication = Self Transfer
+manager.flight.list.label.description = Description
 manager.flight.list.label.cost = Cost
 manager.flight.list.label.draftMode = Draft Mode
 

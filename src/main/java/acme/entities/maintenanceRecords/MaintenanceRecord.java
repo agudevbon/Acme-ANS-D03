@@ -17,6 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidMaintenanceRecord;
 import acme.entities.aircraft.Aircraft;
 import acme.realms.Technician;
 import lombok.Getter;
@@ -25,6 +26,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidMaintenanceRecord
 public class MaintenanceRecord extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -44,7 +46,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	private MaintenanceStatus	status;
 
 	@Mandatory
-	@ValidMoment(past = false)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				inspectionDueDate;
 
@@ -54,12 +56,12 @@ public class MaintenanceRecord extends AbstractEntity {
 	private Money				estimatedCost;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 0, max = 255)
 	@Automapped
 	private String				notes;
 
 	@Mandatory
-	@Valid
+	// Valido por defecto
 	@Automapped
 	private Boolean				draftMode;
 

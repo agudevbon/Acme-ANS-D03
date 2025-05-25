@@ -2,3 +2,5 @@ acme.validation.flight.no-legs.message = There aren't any legs associated
 acme.validation.flight.unpublished-legs.message = All the legs  must be published
 acme.validation.flight.valid-tag.message = Tag length must be between 1 and 50 characters
 acme.validation.flight.valid-description.message =  Description length must be shorter than 250 characters
+acme.validation.flight.valid-currency.message = Currency must be EUR
+acme.validation.flight.delete-with-legs.message = You cannot delete a flight with published legs

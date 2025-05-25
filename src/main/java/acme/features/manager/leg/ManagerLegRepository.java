@@ -15,11 +15,17 @@ import acme.entities.flights.Leg;
 @Repository
 public interface ManagerLegRepository extends AbstractRepository {
 
+	@Query("select l from Leg l where l.flight.id = :id and l.draftMode = false and l.id != :legId")
+	List<Leg> findLegsByFlight(Integer id, Integer legId);
+
 	@Query("select l from Leg l where l.id = :id")
 	Leg findLegById(Integer id);
 
 	@Query("select f from Flight f where f.id = :id")
 	Flight findFlightById(Integer id);
+
+	@Query("select f from Flight f where f.id = :flightId and f.manager.id = :managerId and f.draftMode = true")
+	Flight findFlightByIdAndManager(Integer flightId, Integer managerId);
 
 	@Query("select l from Leg l where l.manager.id = :id")
 	List<Leg> findLegByManagerId(Integer id);
@@ -34,6 +40,9 @@ public interface ManagerLegRepository extends AbstractRepository {
 
 	@Query("select a from Aircraft a where a.status = 'ACTIVE_SERVICE'")
 	List<Aircraft> findAircrafts();
+
+	@Query("select a from Aircraft a where a.id = :id and a.status = 'ACTIVE_SERVICE'")
+	Aircraft findActiveAircraftById(Integer id);
 
 	@Query("select a from Aircraft a where a.id = :id")
 	Aircraft findAircraftById(Integer id);

@@ -50,23 +50,17 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 			{
 				boolean publishedLegs;
 
-				List<Leg> flightLegs = this.repository.findLegsByFlight(flight.getId());
+				List<Leg> flightLegs = this.repository.findDraftingLegsByFlight(flight.getId());
 
-				publishedLegs = flight.getDraftMode() ? true : flightLegs.stream().allMatch(l -> !l.getDraftMode());
+				publishedLegs = flight.getDraftMode() ? true : flightLegs.isEmpty();
 
 				super.state(context, publishedLegs, "tag", "acme.validation.flight.unpublished-legs.message");
 			}
 			{
-				boolean validTag;
+				boolean validCurrency;
+				validCurrency = flight.getCost() == null || flight.getCost().getCurrency().equals("EUR");
+				super.state(context, validCurrency, "cost", "acme.validation.flight.valid-currency.message");
 
-				validTag = flight.getTag().length() >= 1 && flight.getTag().length() <= 50;
-				super.state(context, validTag, "tag", "acme.validation.flight.valid-tag.message");
-			}
-			{
-				boolean validDescription;
-
-				validDescription = flight.getDescription().length() <= 250;
-				super.state(context, validDescription, "description", "acme.validation.flight.valid-description.message");
 			}
 		}
 		result = !super.hasErrors(context);

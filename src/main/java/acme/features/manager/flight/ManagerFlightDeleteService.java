@@ -56,7 +56,15 @@ public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+		{
+			boolean publishedLegs;
+
+			List<Leg> flightLegs = this.repository.findDraftingLegsByFlight(flight.getId(), false);
+
+			publishedLegs = flightLegs.isEmpty();
+
+			super.state(publishedLegs, "*", "acme.validation.flight.delete-with-legs.message");
+		}
 	}
 
 	@Override
