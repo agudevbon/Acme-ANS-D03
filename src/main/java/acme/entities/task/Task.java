@@ -49,7 +49,7 @@ public class Task extends AbstractEntity {
 	@Mandatory
 	// Válido por defecto
 	@Automapped
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	@Mandatory
 	@Valid

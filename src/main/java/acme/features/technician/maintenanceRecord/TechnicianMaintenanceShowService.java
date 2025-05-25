@@ -12,7 +12,6 @@ import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenanceRecords.MaintenanceRecord;
 import acme.entities.maintenanceRecords.MaintenanceStatus;
-import acme.entities.maintenanceRecords.MaintenanceTask;
 import acme.realms.Technician;
 
 @GuiService
@@ -29,16 +28,23 @@ public class TechnicianMaintenanceShowService extends AbstractGuiService<Technic
 	@Override
 	public void authorise() {
 		boolean status;
-		int maintenanceRId;
+		int maintenanceRecordId;
 		MaintenanceRecord maintenanceRecord;
-		List<MaintenanceTask> maintenanceTask;
 		Technician technician;
 
-		maintenanceRId = super.getRequest().getData("id", int.class);
-		maintenanceRecord = this.repository.findMaintenanceRecordById(maintenanceRId);
+		status = super.getRequest().hasData("id", int.class);
 
-		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
-		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(technician);
+		if (status) {
+			maintenanceRecordId = super.getRequest().getData("id", int.class);
+			maintenanceRecord = this.repository.findMaintenanceRecordById(maintenanceRecordId);
+
+			if (maintenanceRecord != null) {
+				technician = maintenanceRecord.getTechnician();
+
+				status = super.getRequest().getPrincipal().hasRealm(technician) || !maintenanceRecord.isDraftMode();
+			} else
+				status = false;
+		}
 
 		super.getResponse().setAuthorised(status);
 	}

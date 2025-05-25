@@ -38,7 +38,7 @@ public class TechnicianMaintenancePublishService extends AbstractGuiService<Tech
 		maintenanceRecordId = super.getRequest().getData("id", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(maintenanceRecordId);
 		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
-		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(technician) && maintenanceRecord.getDraftMode();
+		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(technician) && maintenanceRecord.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -84,7 +84,7 @@ public class TechnicianMaintenancePublishService extends AbstractGuiService<Tech
 
 			List<Task> maintenanceRecordTasks = this.repository.findTasksByMaintenanceRecord(maintenanceRecord.getId());
 
-			publishedTasks = maintenanceRecordTasks.stream().allMatch(t -> !t.getDraftMode());
+			publishedTasks = maintenanceRecordTasks.stream().allMatch(t -> !t.isDraftMode());
 
 			super.state(publishedTasks, "*", "acme.validation.maintenance-record.unpublished-tasks.message");
 		}

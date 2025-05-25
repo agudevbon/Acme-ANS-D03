@@ -43,7 +43,7 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 		Dataset dataset;
 
 		dataset = super.unbindObject(task, "id", "type", "estimatedDuration", "description", "priority");
-		if (task.getDraftMode())
+		if (task.isDraftMode())
 			dataset.put("draftMode", "✔");
 		else
 			dataset.put("draftMode", "✖");

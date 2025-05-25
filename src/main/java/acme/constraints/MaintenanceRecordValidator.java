@@ -45,7 +45,7 @@ public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenan
 				boolean rightInspectionDueDate;
 				Date minMoment;
 
-				if (maintenanceRecord.getDraftMode() && maintenanceRecord.getMoment() != null && maintenanceRecord.getInspectionDueDate() != null) {
+				if (maintenanceRecord.isDraftMode() && maintenanceRecord.getMoment() != null && maintenanceRecord.getInspectionDueDate() != null) {
 					// based on JobValidator
 					minMoment = MomentHelper.deltaFromMoment(maintenanceRecord.getMoment(), 1, ChronoUnit.MINUTES);
 					rightInspectionDueDate = MomentHelper.isAfterOrEqual(maintenanceRecord.getInspectionDueDate(), minMoment);
@@ -57,7 +57,7 @@ public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenan
 				boolean inspenctionInTheFuture;
 				Date currentMoment;
 
-				if (maintenanceRecord.getDraftMode() && maintenanceRecord.getInspectionDueDate() != null) {
+				if (maintenanceRecord.isDraftMode() && maintenanceRecord.getInspectionDueDate() != null) {
 					currentMoment = MomentHelper.deltaFromMoment(MomentHelper.getCurrentMoment(), 1, ChronoUnit.MINUTES);
 					inspenctionInTheFuture = MomentHelper.isAfterOrEqual(maintenanceRecord.getInspectionDueDate(), currentMoment);
 					super.state(context, inspenctionInTheFuture, "inspectionDueDate", "acme.validation.maintenance-record.inspection-in-the-future.message");

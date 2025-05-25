@@ -63,7 +63,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Mandatory
 	// Valido por defecto
 	@Automapped
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	@Mandatory
 	@Valid
