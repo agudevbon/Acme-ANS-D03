@@ -14,7 +14,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class MaintenanceTask extends AbstractEntity {
+public class Involves extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -25,7 +25,7 @@ public class MaintenanceTask extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private MaintenanceRecord	maintanceRecord;
+	private MaintenanceRecord	maintenanceRecord;
 
 	@Mandatory
 	@Valid

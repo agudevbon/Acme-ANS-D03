@@ -1,14 +1,12 @@
 
 package acme.features.technician.maintenanceRecord;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -56,15 +54,12 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 	@Override
 	public void bind(final MaintenanceRecord maintenanceRecord) {
 
-		Date moment = MomentHelper.getCurrentMoment();
-
 		int aircraftId = super.getRequest().getData("aircraft", int.class);
 		Aircraft aircraft = this.repository.findAircraftById(aircraftId);
 
-		super.bindObject(maintenanceRecord, "status", "inspectionDueDate", "estimatedCost", "notes");
+		super.bindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "notes");
 
 		maintenanceRecord.setAircraft(aircraft);
-		maintenanceRecord.setMoment(moment);
 	}
 
 	@Override
@@ -88,7 +83,7 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 		SelectChoices statusChoices;
 		statusChoices = SelectChoices.from(MaintenanceStatus.class, maintenanceRecord.getStatus());
 
-		dataset = super.unbindObject(maintenanceRecord, "status", "inspectionDueDate", "estimatedCost", "notes", "draftMode");
+		dataset = super.unbindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "notes", "draftMode");
 
 		dataset.put("statuss", statusChoices);
 		dataset.put("aircrafts", aircraftChoices);
