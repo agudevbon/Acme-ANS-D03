@@ -3,3 +3,4 @@ acme.validation.flight.unpublished-legs.message = Todas las legs tienen que esta
 acme.validation.flight.valid-tag.message = La longitud de la tag debe estar entre 1 y 50 caracteres
 acme.validation.flight.valid-description.message = La longitud de la descripcion no puede ser mayor a 250 caracteres
 acme.validation.flight.valid-currency.message = La moneda debe ser EUR
+acme.validation.flight.delete-with-legs.message = No puedes borrar un vuelo con tramos publicados

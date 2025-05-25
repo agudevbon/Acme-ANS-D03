@@ -42,35 +42,29 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		status = leg != null && super.getRequest().getPrincipal().hasRealm(manager) && leg.getDraftMode();
 
 		if (status) {
-			String method;
 			int managerId, departureId, arrivalId, aircraftId, flightId;
 			Airport departure;
 			Airport arrival;
 			Aircraft aircraft;
 			Flight flight;
 
-			method = super.getRequest().getMethod();
+			managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			departureId = super.getRequest().getData("departure", int.class);
+			arrivalId = super.getRequest().getData("arrival", int.class);
+			aircraftId = super.getRequest().getData("aircraft", int.class);
+			flightId = super.getRequest().getData("flight", int.class);
 
-			if (method.equals("GET"))
-				status = true;
-			else {
-				managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-				departureId = super.getRequest().getData("departure", int.class);
-				arrivalId = super.getRequest().getData("arrival", int.class);
-				aircraftId = super.getRequest().getData("aircraft", int.class);
-				flightId = super.getRequest().getData("flight", int.class);
+			arrival = this.repository.findAirportById(arrivalId);
+			departure = this.repository.findAirportById(departureId);
+			flight = this.repository.findFlightByIdAndManager(flightId, managerId);
+			aircraft = this.repository.findActiveAircraftById(aircraftId);
 
-				arrival = this.repository.findAirportById(arrivalId);
-				departure = this.repository.findAirportById(departureId);
-				flight = this.repository.findFlightByIdAndManager(flightId, managerId);
-				aircraft = this.repository.findActiveAircraftById(aircraftId);
+			boolean departureStatus = departureId == 0 || departure != null;
+			boolean arrivalStatus = arrivalId == 0 || arrival != null;
+			boolean aircraftStatus = aircraftId == 0 || aircraft != null;
+			boolean flightStatus = flightId == 0 || flight != null;
+			status = departureStatus && arrivalStatus && aircraftStatus && flightStatus;
 
-				boolean departureStatus = departureId == 0 || departure != null;
-				boolean arrivalStatus = arrivalId == 0 || arrival != null;
-				boolean aircraftStatus = aircraftId == 0 || aircraft != null;
-				boolean flightStatus = flightId == 0 || flight != null;
-				status = departureStatus && arrivalStatus && aircraftStatus && flightStatus;
-			}
 		}
 
 		super.getResponse().setAuthorised(status);
@@ -133,11 +127,22 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 			super.state(futureArrival, "scheduledArrival", "acme.validation.leg.past-date.message");
 		}
 		{
-			boolean correctFlight;
+			boolean overlapedLegs = true;
 
-			correctFlight = leg.getFlight() == null || leg.getFlight().getDraftMode();
-
-			super.state(correctFlight, "flight", "acme.validation.leg.published-flight.message");
+			if (leg.getFlight() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
+				List<Leg> flightLegs = this.repository.findLegsByFlight(leg.getFlight().getId(), leg.getId());
+				for (Leg existingObject : flightLegs) {
+					boolean starting = existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledDeparture()) >= 0;
+					boolean finishing = existingObject.getScheduledDeparture().compareTo(leg.getScheduledArrival()) <= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) >= 0;
+					boolean inside = existingObject.getScheduledDeparture().compareTo(leg.getScheduledDeparture()) >= 0 && existingObject.getScheduledArrival().compareTo(leg.getScheduledArrival()) <= 0;
+					boolean resultado = starting || finishing || inside;
+					if (resultado) {
+						overlapedLegs = false;
+						break;
+					}
+				}
+			}
+			super.state(overlapedLegs, "flight", "acme.validation.leg.overlaped-leg.message");
 		}
 	}
 

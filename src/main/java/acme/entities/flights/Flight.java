@@ -2,12 +2,13 @@
 package acme.entities.flights;
 
 import java.beans.Transient;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -26,6 +27,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "id, manager_id, draftMode"), @Index(columnList = "manager_id, draftMode")
+})
 @ValidFlight
 public class Flight extends AbstractEntity {
 
@@ -41,6 +45,7 @@ public class Flight extends AbstractEntity {
 	private String				tag;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private boolean				indication;
 
@@ -68,13 +73,9 @@ public class Flight extends AbstractEntity {
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
-		List<Leg> legs = repository.findLegsByFlight(this.getId());
+		List<Leg> legs = repository.findLegsByFlightDeparture(this.getId());
 
-		List<Date> departures = legs.stream().map(Leg::getScheduledDeparture).toList();
-
-		Date scheduledDeparture = departures.stream().min(Date::compareTo).orElse(null);
-
-		result = scheduledDeparture;
+		result = legs.isEmpty() ? null : legs.get(0).getScheduledDeparture();
 
 		return result;
 	}
@@ -85,14 +86,9 @@ public class Flight extends AbstractEntity {
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
+		List<Leg> legs = repository.findLegsByFlightArrival(this.getId());
 
-		List<Leg> legs = repository.findLegsByFlight(this.getId());
-
-		List<Date> arrivals = legs.stream().map(Leg::getScheduledArrival).toList();
-
-		Date scheduledArrival = arrivals.stream().max(Date::compareTo).orElse(null);
-
-		result = scheduledArrival;
+		result = legs.isEmpty() ? null : legs.get(0).getScheduledArrival();
 
 		return result;
 	}
@@ -103,12 +99,9 @@ public class Flight extends AbstractEntity {
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
+		List<Leg> legs = repository.findLegsByFlightDeparture(this.getId());
 
-		List<Leg> legs = repository.findLegsByFlight(this.getId());
-
-		Leg leg = legs.stream().min(Comparator.comparing(Leg::getScheduledDeparture)).orElse(null);
-
-		result = leg == null ? null : leg.getDeparture().getCity();
+		result = legs.isEmpty() ? null : legs.get(0).getDeparture().getCity();
 		return result;
 
 	}
@@ -119,12 +112,9 @@ public class Flight extends AbstractEntity {
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
+		List<Leg> legs = repository.findLegsByFlightArrival(this.getId());
 
-		List<Leg> legs = repository.findLegsByFlight(this.getId());
-
-		Leg leg = legs.stream().max(Comparator.comparing(Leg::getScheduledArrival)).orElse(null);
-
-		result = leg == null ? null : leg.getDeparture().getCity();
+		result = legs.isEmpty() ? null : legs.get(0).getArrival().getCity();
 		return result;
 
 	}
