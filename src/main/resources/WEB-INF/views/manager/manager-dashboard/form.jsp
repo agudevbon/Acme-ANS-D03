@@ -34,6 +34,22 @@
 			</jstl:if>
 		</td>
 	</tr>
+	<tr>
+		<th scope="row">
+			<acme:print code="manager.manager-dashboard.form.label.most-popular"/>
+		</th>
+		<td>
+			<acme:print value = "${mostPopularAirport}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:print code="manager.manager-dashboard.form.label.less-popular"/>
+		</th>
+		<td>
+			<acme:print value = "${lessPopularAirport}"/>
+		</td>
+	</tr>
 </table>
 
 <h2>
