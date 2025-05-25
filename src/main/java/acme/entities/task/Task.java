@@ -28,11 +28,6 @@ public class Task extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private Technician			technician;
-
-	@Mandatory
-	@Valid
 	@Automapped
 	private TaskType			type;
 
@@ -52,8 +47,13 @@ public class Task extends AbstractEntity {
 	private Integer				estimatedDuration;
 
 	@Mandatory
-	@Valid
+	// Válido por defecto
 	@Automapped
 	private Boolean				draftMode;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Technician			technician;
 
 }
