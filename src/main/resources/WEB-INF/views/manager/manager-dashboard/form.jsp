@@ -32,6 +32,9 @@
 			<jstl:if test="${ratio >= 0}">
 				<acme:print value = "${ratio}"/>
 			</jstl:if>
+			<jstl:if test="${ratio < 0}">
+				<acme:print value = "${totalOfOnTimeLegs}:${totalOfDelayedLegs}"/>
+			</jstl:if>
 		</td>
 	</tr>
 	<tr>

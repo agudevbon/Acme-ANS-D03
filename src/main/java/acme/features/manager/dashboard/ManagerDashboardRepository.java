@@ -21,19 +21,19 @@ public interface ManagerDashboardRepository extends AbstractRepository {
 	@Query("select m from Manager m")
 	List<Manager> getAllManagers();
 
-	@Query("select l from Leg l where l.manager.id = :id and l.status = :status")
+	@Query("select l from Leg l where l.manager.id = :id and l.status = :status and l.draftMode = false")
 	List<Leg> getManagerLegsByStatus(int id, LegStatus status);
 
-	@Query("select l from Leg l where l.manager.id = :id")
+	@Query("select l from Leg l where l.manager.id = :id and l.draftMode = false")
 	List<Leg> getManagerLegs(int id);
 
-	@Query("select f from Flight f where f.manager.id = :id")
+	@Query("select f from Flight f where f.manager.id = :id and f.draftMode = false")
 	List<Flight> getManagerFlights(int id);
 
-	@Query("SELECT l.departure.iataCode, COUNT(l) FROM Leg l where manager.id = :id GROUP BY l.departure")
+	@Query("SELECT l.departure.iataCode, COUNT(l) FROM Leg l where manager.id = :id and l.draftMode = false GROUP BY l.departure")
 	List<Object[]> countLegsByDepartureAirport(int id);
 
-	@Query("SELECT l.arrival.iataCode, COUNT(l) FROM Leg l where manager.id = :id GROUP BY l.arrival")
+	@Query("SELECT l.arrival.iataCode, COUNT(l) FROM Leg l where manager.id = :id and l.draftMode = false GROUP BY l.arrival")
 	List<Object[]> countLegsByArrivalAirport(int id);
 
 	@Query("select avg(f.cost.amount) FROM Flight f WHERE f.manager.id = :managerId and f.draftMode = false and f.cost.currency = :currency")

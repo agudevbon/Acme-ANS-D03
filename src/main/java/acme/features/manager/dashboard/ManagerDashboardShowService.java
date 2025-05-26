@@ -59,10 +59,6 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 		managers.sort(Comparator.comparing(Manager::getExperience));
 		ranking = managers.indexOf(manager);
 		retire = 65 - manager.getExperience();
-		ratio = (double) this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.ON_TIME).size() / (double) this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.DELAYED).size();
-
-		if (Double.isNaN(ratio))
-			ratio = -1;
 
 		List<Leg> managerLegs = this.repository.getManagerLegs(manager.getId());
 
@@ -108,6 +104,11 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 		totalOfDelayedLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.DELAYED).size();
 		totalOfCancelledLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.CANCELLED).size();
 		totalOfLandedLegs = this.repository.getManagerLegsByStatus(manager.getId(), LegStatus.LANDED).size();
+
+		if (totalOfOnTimeLegs != 0 && totalOfDelayedLegs != 0)
+			ratio = (double) totalOfOnTimeLegs / (double) totalOfDelayedLegs;
+		else
+			ratio = -1;
 
 		List<Flight> managerFlights = this.repository.getManagerFlights(manager.getId());
 
