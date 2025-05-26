@@ -48,7 +48,7 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 		else
 			dataset.put("draftMode", "✖");
 
-		super.addPayload(dataset, task, "technician.licenseNumber");
+		// super.addPayload(dataset, task, "technician.licenseNumber");
 		super.getResponse().addData(dataset);
 	}
 

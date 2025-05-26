@@ -1,0 +1,1 @@
+acme.validation.task.maintenance-record-conectado.message = A task can not be deleted if it is associated to a maintenanceRecord

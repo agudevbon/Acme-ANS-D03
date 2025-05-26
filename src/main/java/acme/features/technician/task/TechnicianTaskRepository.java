@@ -1,12 +1,14 @@
 
 package acme.features.technician.task;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.maintenanceRecords.Involves;
 import acme.entities.maintenanceRecords.MaintenanceRecord;
 import acme.entities.task.Task;
 
@@ -24,5 +26,8 @@ public interface TechnicianTaskRepository extends AbstractRepository {
 
 	@Query("select m from MaintenanceRecord m where m.technician.id =:technicianId ")
 	List<MaintenanceRecord> findMaintenanceRecordByTechnicianId(Integer technicianId);
+
+	@Query("select i from Involves i where i.task.id = :id")
+	Collection<Involves> findInvolvesByTaskId(int id);
 
 }

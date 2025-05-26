@@ -11,7 +11,6 @@ technician.task.list.label.type = Tipo
 technician.task.list.label.description = Descripción
 
 
-technician.task.form.button.create =  Crear
 
 #technician.task.form ########################################################
 
@@ -26,3 +25,5 @@ technician.task.form.label.description = Descripción
 
 technician.task.form.button.update = Actualizar
 technician.task.form.button.publish = Publicar
+technician.task.form.button.create =  Crear
+technician.task.form.button.delete = Borrar

@@ -9,15 +9,14 @@ technician.task.list.label.estimatedDuration = Estimated Duration
 technician.task.list.label.priority = Priority
 technician.task.list.label.type = Type
 technician.task.list.label.description = Description
-technician.task.list.label.draftMode = Modo borrador
+technician.task.list.label.draftMode = Draft mode
 
 
-technician.task.form.button.create = Create
 
 
 #technician.task.form ########################################################
 
-technician.task.form.title = Task Record Form
+technician.task.form.title = Task Form
 
 technician.task.form.label.technician = Technician
 technician.task.form.label.type = Type
@@ -28,3 +27,6 @@ technician.task.form.label.description = Description
 
 technician.task.form.button.update = Update
 technician.task.form.button.publish = Publish
+technician.task.form.button.create = Create
+technician.task.form.button.delete = Delete
+
