@@ -13,3 +13,8 @@
 	<acme:list-payload path="payload"/>
 </acme:list>
 <acme:button code="technician.task.form.button.create" action="/technician/task/create"/>
+
+<jstl:if test="${draftMode == true}">
+	<acme:button code="technician.task.list.button.link"  action="/technician/involves/create?maintenanceRecordId=${maintenanceRecordId}"/>
+	<acme:button code="technician.task.list.button.unlink" action="/technician/involves/delete?maintenanceRecordId=${maintenanceRecordId}"/>
+</jstl:if>

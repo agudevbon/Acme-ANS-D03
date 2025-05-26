@@ -8,4 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-acme.validation.task.maintenance-record-conectado.message = A task can not be deleted if it is associated to a maintenanceRecord
+
+
+#technician.involves.form ########################################################
+
+technician.involves.form.title = Linked tasks list
+
+technician.involves.form.label.aircraft = Associated aircraft
+technician.involves.form.label.task = Task
+
+technician.involves.form.button.link = Link tasks
+technician.involves.form.button.unlink = Unlink tasks
+technician.involves.form.task = Tasks
+

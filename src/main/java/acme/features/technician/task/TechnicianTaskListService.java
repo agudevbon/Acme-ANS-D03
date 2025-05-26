@@ -33,7 +33,7 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 		int technicianId;
 
 		technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		tasks = this.repository.findTaskByTechnicianId(technicianId);
+		tasks = this.repository.findTasksByTechnicianId(technicianId);
 
 		super.getBuffer().addData(tasks);
 	}
@@ -48,7 +48,7 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 		else
 			dataset.put("draftMode", "✖");
 
-		// super.addPayload(dataset, task, "technician.licenseNumber");
+		super.addPayload(dataset, task, "technician.licenseNumber");
 		super.getResponse().addData(dataset);
 	}
 
