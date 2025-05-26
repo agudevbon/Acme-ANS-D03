@@ -19,7 +19,7 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 	@Autowired
 	private TechnicianTaskRepository repository;
 
-	// AbstractGuiService interface --------------------------------------------
+	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
@@ -33,12 +33,15 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 			taskId = super.getRequest().getData("id", Integer.class);
 			if (taskId != null) {
 				task = this.repository.findTaskById(taskId);
-				technician = task == null ? null : task.getTechnician();
-				status = task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+				if (task != null) {
+					technician = task.getTechnician();
+					status = task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+				}
 			}
 		}
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -58,8 +61,8 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
 		super.bindObject(task, "type", "description", "priority", "estimatedDuration");
-		task.setTechnician(technician);
 
+		task.setTechnician(technician);
 	}
 
 	@Override
@@ -74,18 +77,17 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void unbind(final Task task) {
+		SelectChoices choices;
 		Dataset dataset;
 
-		SelectChoices typeChoices;
-		typeChoices = SelectChoices.from(TaskType.class, task.getType());
+		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "estimatedDuration", "description", "priority", "estimatedDuration", "draftMode");
-
+		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
 		dataset.put("technician", task.getTechnician().getIdentity().getFullName());
-		dataset.put("types", typeChoices);
-		dataset.put("type", typeChoices.getSelected().getKey());
+		dataset.put("type", choices.getSelected().getKey());
+		dataset.put("types", choices);
 
 		super.getResponse().addData(dataset);
-
 	}
+
 }

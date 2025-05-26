@@ -31,41 +31,29 @@ public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenan
 
 	@Override
 	public boolean isValid(final MaintenanceRecord maintenanceRecord, final ConstraintValidatorContext context) {
-
 		assert context != null;
 
 		boolean result;
 
-		if (maintenanceRecord == null)
-			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-		else {
+		Date minimumInspectionDueDate;
+		boolean futureInspectionDueDate;
+		Date currentMoment;
+		boolean correctInspectionDueDate;
 
-			{
+		if (maintenanceRecord.isDraftMode() && maintenanceRecord.getMoment() != null && maintenanceRecord.getInspectionDueDate() != null) {
 
-				boolean rightInspectionDueDate;
-				Date minMoment;
+			minimumInspectionDueDate = MomentHelper.deltaFromMoment(maintenanceRecord.getMoment(), 1, ChronoUnit.MINUTES);
+			correctInspectionDueDate = MomentHelper.isAfterOrEqual(maintenanceRecord.getInspectionDueDate(), minimumInspectionDueDate);
 
-				if (maintenanceRecord.isDraftMode() && maintenanceRecord.getMoment() != null && maintenanceRecord.getInspectionDueDate() != null) {
-					// based on JobValidator
-					minMoment = MomentHelper.deltaFromMoment(maintenanceRecord.getMoment(), 1, ChronoUnit.MINUTES);
-					rightInspectionDueDate = MomentHelper.isAfterOrEqual(maintenanceRecord.getInspectionDueDate(), minMoment);
-					super.state(context, rightInspectionDueDate, "inspectionDueDate", "acme.validation.maintenance-record.inspection-due-date-incorrect.message");
-				}
-
-			}
-			{
-				boolean inspenctionInTheFuture;
-				Date currentMoment;
-
-				if (maintenanceRecord.isDraftMode() && maintenanceRecord.getInspectionDueDate() != null) {
-					currentMoment = MomentHelper.deltaFromMoment(MomentHelper.getCurrentMoment(), 1, ChronoUnit.MINUTES);
-					inspenctionInTheFuture = MomentHelper.isAfterOrEqual(maintenanceRecord.getInspectionDueDate(), currentMoment);
-					super.state(context, inspenctionInTheFuture, "inspectionDueDate", "acme.validation.maintenance-record.inspection-in-the-future.message");
-				}
-
-			}
-
+			super.state(context, correctInspectionDueDate, "inspectionDueDate", "acme.validation.maintenance-record.inspection-due-date.message");
 		}
+		if (maintenanceRecord.isDraftMode() && maintenanceRecord.getInspectionDueDate() != null) {
+			currentMoment = MomentHelper.deltaFromMoment(MomentHelper.getCurrentMoment(), 1, ChronoUnit.MINUTES);
+
+			futureInspectionDueDate = MomentHelper.isAfterOrEqual(maintenanceRecord.getInspectionDueDate(), currentMoment);
+			super.state(context, futureInspectionDueDate, "inspectionDueDate", "acme.validation.maintenance-record.future-inspection-due-date.message");
+		}
+
 		result = !super.hasErrors(context);
 
 		return result;
