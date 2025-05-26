@@ -14,16 +14,20 @@ project is to develop a WIS to assist airports in managing logistics for charter
 scheduling, booking management, crew management, incident reporting and resolution, as well as aircraft maintenance.  
 
 Due to the fact that all the members in the group are sharing the same kanban board to manage both individual and 
-group requirements, only one link to the shared board will be provided. Every task is named with the same pattern
-[Group/Student]-[importance]-[Number of the task]
+group requirements, only one link per deliverable to the shared board will be provided. Every task is named with the same pattern
+[Group/Student]-[importance]-[Number of the task]-[small description]
 
 [Group/Student] -> will be either Group or Student#(1,2,3,4,5)
-[importance] -> M for mandatories requirements, S for supplementary ones
+[importance] -> M for mandatories requirements, S1 for supplementary ones or S2 for the last supplementary requirements
 [Number of the task] -> number of the task given in the requirements document
+[small description] -> At the very end a small description of the task is defined for better readability.
+
+Tasks in the "Backlog" column are requirements that were planned to do but were discarded later on.
 
 D01 planning dashboard link: https://github.com/users/agudevbon/projects/2/views/1
-D02 planning dashboard link: https://github.com/users/agudevbon/projects/3/views/1?system_template=kanban
+D02 planning dashboard link: https://github.com/users/agudevbon/projects/3/views/1
 D03 planning dashboard link: https://github.com/users/agudevbon/projects/5/views/1
+D04 planning dashboard link: https://github.com/users/agudevbon/projects/6/views/1
 
 - **/fragments/**
  

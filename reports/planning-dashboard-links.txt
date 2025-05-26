@@ -1,0 +1,14 @@
+Debido a que todos los miembros del grupo están compartiendo el mismo tablero Kanban para gestionar tanto los requisitos individuales como los grupales, solo se proporcionará un enlace por entregable al tablero compartido. Cada tarea está nombrada siguiendo el mismo patrón:
+[Grupo/Estudiante]-[importancia]-[Número de la tarea]-[breve descripción]
+
+[Grupo/Estudiante] -> será "Grupo" o "Estudiante#"(1,2,3,4,5)
+[importancia] -> M para requisitos obligatorios, S1 para los requisitos suplementarios y S2 para los últimos requisitos suplementarios
+[Número de la tarea] -> número de la tarea según el documento de requisitos
+[breve descripción] -> al final se incluye una breve descripción de la tarea para facilitar la lectura.
+
+Las tareas en la columna "Backlog" son requisitos que estaban planeados inicialmente pero que fueron descartados posteriormente.
+
+D01 planning dashboard link: https://github.com/users/agudevbon/projects/2/views/1
+D02 planning dashboard link: https://github.com/users/agudevbon/projects/3/views/1
+D03 planning dashboard link: https://github.com/users/agudevbon/projects/5/views/1
+D04 planning dashboard link: https://github.com/users/agudevbon/projects/6/views/1
