@@ -8,3 +8,4 @@ acme.validation.leg.same-airport.message = El aeropuerto de salida y el de llega
 acme.validation.leg.published-flight.message = Este vuelo ya esta publicado
 acme.validation.leg.past-date.message = La fecha de salida debe ser futura
 acme.validation.leg.overlaped-leg.message = Hay un tramo publicado que se sobrepone con este para este vuelo
+acme.validation.leg.maintenance-aircraft.message = La aeronave seleccionada debe estar en Servicio Activo

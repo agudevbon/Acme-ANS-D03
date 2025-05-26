@@ -8,3 +8,4 @@ acme.validation.leg.same-airport.message = The departure and arrival airports ca
 acme.validation.leg.published-flight.message = This flight is already published
 acme.validation.leg.past-date.message = The departure date must be in the future
 acme.validation.leg.overlaped-leg.message = There is a published leg that overlaps with this one in this flight
+acme.validation.leg.maintenance-aircraft.message = The selected aircraft must be in Active Service

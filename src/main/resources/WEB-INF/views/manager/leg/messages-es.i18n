@@ -13,7 +13,6 @@ manager.leg.form.button.create = Crear
 # manager.leg.form  ########################################################
 
 manager.leg.form.title = Formulario de Tramo
-manager.leg.form.title = Listado de escalas
 manager.leg.form.label.flightNumber = Número de Vuelo
 manager.leg.form.label.scheduledDeparture = Salida Prevista
 manager.leg.form.label.scheduledArrival = Llegada Prevista
