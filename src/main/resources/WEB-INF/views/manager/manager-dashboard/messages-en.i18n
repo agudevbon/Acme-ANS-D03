@@ -4,6 +4,8 @@ manager.manager-dasboard.form.title.manager-data = Manager Data
 manager.manager-dashboard.form.label.ranking = Ranking
 manager.manager-dashboard.form.label.retire = Years to Retire
 manager.manager-dashboard.form.label.ratio = Ratio
+manager.manager-dashboard.form.label.most-popular = Most Popular Airport
+manager.manager-dashboard.form.label.less-popular = Less Popular Airport
 
 manager.manager-dasboard.form.title.total-legs = Legs Data
 manager.manager-dashboard.form.label.total-time = on Time

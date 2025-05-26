@@ -25,7 +25,16 @@ public class AuthenticatedManagerUpdateService extends AbstractGuiService<Authen
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().hasRealmOfType(Manager.class);
+		if (super.getRequest().getMethod().equals("GET"))
+			status = super.getRequest().getPrincipal().hasRealmOfType(Manager.class);
+		else {
+			int managerId;
+			Manager manager;
+			int id = super.getRequest().getPrincipal().getAccountId();
+			managerId = super.getRequest().getData("id", int.class);
+			manager = this.repository.findManagerById(managerId);
+			status = id == manager.getUserAccount().getId();
+		}
 
 		super.getResponse().setAuthorised(status);
 	}

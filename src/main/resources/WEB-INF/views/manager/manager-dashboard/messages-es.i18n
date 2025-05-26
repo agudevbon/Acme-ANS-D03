@@ -4,6 +4,8 @@ manager.manager-dasboard.form.title.manager-data = Datos del Gerente
 manager.manager-dashboard.form.label.ranking = Ranking
 manager.manager-dashboard.form.label.retire = Años para el Retiro
 manager.manager-dashboard.form.label.ratio = Ratio
+manager.manager-dashboard.form.label.most-popular = Aeropuerto Más Popular
+manager.manager-dashboard.form.label.less-popular = Aeropuerto Menos Popular
 
 manager.manager-dasboard.form.title.total-legs = Datos de Tramos
 manager.manager-dashboard.form.label.total-time = En tiempo
