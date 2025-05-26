@@ -1,4 +1,12 @@
-
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
 
 # technician.task.list ########################################################
 
@@ -11,13 +19,11 @@ technician.task.list.label.type = Tipo
 technician.task.list.label.description = Descripción
 
 
-technician.task.form.button.create =  Crear
 
 #technician.task.form ########################################################
 
 technician.task.form.title =  Formulario de Tarea
 
-technician.task.form.label.technician = Técnico
 technician.task.form.label.type = Tipo
 technician.task.form.label.priority = Prioridad
 technician.task.form.label.estimated-duration = Duracion Estimada
@@ -26,3 +32,8 @@ technician.task.form.label.description = Descripción
 
 technician.task.form.button.update = Actualizar
 technician.task.form.button.publish = Publicar
+technician.task.form.button.create =  Crear
+technician.task.form.button.delete = Borrar
+
+technician.task.list.button.link = Asociar
+technician.task.list.button.unlink = Desasociar

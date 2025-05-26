@@ -1,14 +1,12 @@
 
 package acme.features.technician.maintenanceRecord;
 
-import java.util.Date;
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -37,7 +35,7 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 		maintenanceRecordId = super.getRequest().getData("id", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(maintenanceRecordId);
 		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
-		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(technician) && maintenanceRecord.getDraftMode();
+		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(technician) && maintenanceRecord.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -56,15 +54,12 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 	@Override
 	public void bind(final MaintenanceRecord maintenanceRecord) {
 
-		Date moment = MomentHelper.getCurrentMoment();
-
 		int aircraftId = super.getRequest().getData("aircraft", int.class);
 		Aircraft aircraft = this.repository.findAircraftById(aircraftId);
 
-		super.bindObject(maintenanceRecord, "status", "inspectionDueDate", "estimatedCost", "notes");
+		super.bindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "notes");
 
 		maintenanceRecord.setAircraft(aircraft);
-		maintenanceRecord.setMoment(moment);
 	}
 
 	@Override
@@ -79,20 +74,22 @@ public class TechnicianMaintenanceUpdateService extends AbstractGuiService<Techn
 
 	@Override
 	public void unbind(final MaintenanceRecord maintenanceRecord) {
+		Collection<Aircraft> aircrafts;
+		SelectChoices choicesAircrafts;
+		SelectChoices choicesStatus;
 		Dataset dataset;
 
-		SelectChoices aircraftChoices;
-		List<Aircraft> aircrafts = this.repository.findAircrafts();
-		aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", maintenanceRecord.getAircraft());
+		aircrafts = this.repository.findAircrafts();
 
-		SelectChoices statusChoices;
-		statusChoices = SelectChoices.from(MaintenanceStatus.class, maintenanceRecord.getStatus());
+		choicesStatus = SelectChoices.from(MaintenanceStatus.class, maintenanceRecord.getStatus());
+		choicesAircrafts = SelectChoices.from(aircrafts, "registrationNumber", maintenanceRecord.getAircraft());
 
-		dataset = super.unbindObject(maintenanceRecord, "status", "inspectionDueDate", "estimatedCost", "notes", "draftMode");
-
-		dataset.put("statuss", statusChoices);
-		dataset.put("aircrafts", aircraftChoices);
-		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
+		dataset = super.unbindObject(maintenanceRecord, "moment", "inspectionDueDate", "estimatedCost", "notes", "draftMode");
+		dataset.put("technician", maintenanceRecord.getTechnician().getIdentity().getFullName());
+		dataset.put("aircraft", choicesAircrafts.getSelected().getKey());
+		dataset.put("aircrafts", choicesAircrafts);
+		dataset.put("status", choicesStatus.getSelected().getKey());
+		dataset.put("statuses", choicesStatus);
 
 		super.getResponse().addData(dataset);
 

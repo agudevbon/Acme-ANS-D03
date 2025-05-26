@@ -4,7 +4,9 @@ package acme.entities.maintenanceRecords;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -27,6 +29,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @ValidMaintenanceRecord
+@Table(indexes = {
+	@Index(columnList = "draftMode"),//
+	@Index(columnList = "status,technician_id"),//
+	@Index(columnList = "technician_id,moment"),//
+	@Index(columnList = "technician_id,estimatedCost_currency"),//
+	@Index(columnList = "technician_id,inspectionDueDate")
+})
 public class MaintenanceRecord extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -63,7 +72,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Mandatory
 	// Valido por defecto
 	@Automapped
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	@Mandatory
 	@Valid
@@ -72,7 +81,7 @@ public class MaintenanceRecord extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Technician			technician;
 
 }

@@ -1,14 +1,12 @@
 
 package acme.features.technician.maintenanceRecord;
 
-import java.util.Date;
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -29,22 +27,31 @@ public class TechnicianMaintenanceCreateService extends AbstractGuiService<Techn
 
 	@Override
 	public void authorise() {
+		boolean status = true;
+		int aircraftId;
+		Aircraft aircraft;
 
-		super.getResponse().setAuthorised(true);
+		if (super.getRequest().hasData("aircraft", int.class)) {
+			aircraftId = super.getRequest().getData("aircraft", int.class);
+			aircraft = this.repository.findAircraftById(aircraftId);
+
+			if (aircraft == null && aircraftId != 0)
+				status = false;
+		}
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		MaintenanceRecord maintenanceRecord;
 		Technician technician;
-		Date moment = MomentHelper.getCurrentMoment();
 
 		technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
 		maintenanceRecord = new MaintenanceRecord();
 		maintenanceRecord.setDraftMode(true);
 		maintenanceRecord.setTechnician(technician);
-		maintenanceRecord.setMoment(moment);
 		super.getBuffer().addData(maintenanceRecord);
 
 	}
@@ -52,15 +59,9 @@ public class TechnicianMaintenanceCreateService extends AbstractGuiService<Techn
 	@Override
 	public void bind(final MaintenanceRecord maintenanceRecord) {
 
-		Date moment = MomentHelper.getCurrentMoment();
+		super.bindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "notes");
 
-		int aircraftId = super.getRequest().getData("aircraft", int.class);
-		Aircraft aircraft = this.repository.findAircraftById(aircraftId);
-
-		super.bindObject(maintenanceRecord, "status", "inspectionDueDate", "estimatedCost", "notes");
-
-		maintenanceRecord.setAircraft(aircraft);
-		maintenanceRecord.setMoment(moment);
+		maintenanceRecord.setAircraft(super.getRequest().getData("aircraft", Aircraft.class));
 
 	}
 
@@ -77,20 +78,22 @@ public class TechnicianMaintenanceCreateService extends AbstractGuiService<Techn
 
 	@Override
 	public void unbind(final MaintenanceRecord maintenanceRecord) {
+		Collection<Aircraft> aircrafts;
+		SelectChoices choicesAircrafts;
+		SelectChoices choicesStatus;
 		Dataset dataset;
 
-		SelectChoices aircraftChoices;
-		List<Aircraft> aircrafts = this.repository.findAircrafts();
-		aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", maintenanceRecord.getAircraft());
+		aircrafts = this.repository.findAircrafts();
 
-		SelectChoices statusChoices;
-		statusChoices = SelectChoices.from(MaintenanceStatus.class, maintenanceRecord.getStatus());
+		choicesStatus = SelectChoices.from(MaintenanceStatus.class, maintenanceRecord.getStatus());
+		choicesAircrafts = SelectChoices.from(aircrafts, "registrationNumber", maintenanceRecord.getAircraft());
 
-		dataset = super.unbindObject(maintenanceRecord, "status", "inspectionDueDate", "estimatedCost", "notes");
-
-		dataset.put("statuss", statusChoices);
-		dataset.put("aircrafts", aircraftChoices);
-		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
+		dataset = super.unbindObject(maintenanceRecord, "moment", "status", "inspectionDueDate", "estimatedCost", "notes", "draftMode");
+		dataset.put("technician", maintenanceRecord.getTechnician().getIdentity().getFullName());
+		dataset.put("aircraft", choicesAircrafts.getSelected().getKey());
+		dataset.put("aircrafts", choicesAircrafts);
+		dataset.put("status", choicesStatus.getSelected().getKey());
+		dataset.put("statuses", choicesStatus);
 
 		super.getResponse().addData(dataset);
 	}

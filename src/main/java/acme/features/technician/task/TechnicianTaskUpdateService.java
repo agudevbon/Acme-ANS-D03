@@ -19,34 +19,38 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 	@Autowired
 	private TechnicianTaskRepository repository;
 
-	// AbstractGuiService interface --------------------------------------------
+	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int taskId;
+		boolean status = false;
+		Integer taskId;
 		Task task;
 		Technician technician;
 
-		taskId = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(taskId);
-		technician = task == null ? null : task.getTechnician();
-		status = task != null && super.getRequest().getPrincipal().hasRealm(technician);
+		if (super.getRequest().hasData("id", Integer.class)) {
+			taskId = super.getRequest().getData("id", Integer.class);
+			if (taskId != null) {
+				task = this.repository.findTaskById(taskId);
+				if (task != null) {
+					technician = task.getTechnician();
+					status = task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+				}
+			}
+		}
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
 	public void load() {
+		int taskId;
 		Task task;
-		Technician technician;
 
-		technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		task = new Task();
-		task.setDraftMode(true);
-		task.setTechnician(technician);
+		taskId = super.getRequest().getData("id", int.class);
+		task = this.repository.findTaskById(taskId);
 
 		super.getBuffer().addData(task);
 	}
@@ -54,8 +58,11 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 	@Override
 	public void bind(final Task task) {
 
+		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
+
 		super.bindObject(task, "type", "description", "priority", "estimatedDuration");
 
+		task.setTechnician(technician);
 	}
 
 	@Override
@@ -70,16 +77,17 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void unbind(final Task task) {
+		SelectChoices choices;
 		Dataset dataset;
 
-		SelectChoices typeChoices;
-		typeChoices = SelectChoices.from(TaskType.class, task.getType());
+		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "technician.licenseNumber", "type", "estimatedDuration", "description", "priority", "estimatedDuration", "draftMode");
-
-		dataset.put("types", typeChoices);
+		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		dataset.put("technician", task.getTechnician().getIdentity().getFullName());
+		dataset.put("type", choices.getSelected().getKey());
+		dataset.put("types", choices);
 
 		super.getResponse().addData(dataset);
-
 	}
+
 }

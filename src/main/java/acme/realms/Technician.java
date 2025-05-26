@@ -3,7 +3,6 @@ package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -12,6 +11,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidIdentifier;
+import acme.constraints.ValidPhoneNumber;
 import acme.constraints.ValidTechnician;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,7 +34,7 @@ public class Technician extends AbstractRole {
 	private String				licenseNumber;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidPhoneNumber
 	@Automapped
 	private String				phoneNumber;
 
@@ -44,17 +44,17 @@ public class Technician extends AbstractRole {
 	private String				specialisation;
 
 	@Mandatory
-	@Valid
+	// Tiene un Valid por defecto
 	@Automapped
 	private Boolean				annualTestPassed;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0, max = 90, integer = 3)
 	@Automapped
 	private Integer				yearsExperience;
 
 	@Optional
-	@ValidString
+	@ValidString(min = 0, max = 255)
 	@Automapped
 	private String				certifications;
 }

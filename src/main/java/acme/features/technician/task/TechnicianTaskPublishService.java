@@ -24,15 +24,19 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int taskId;
+		boolean status = false;
+		Integer taskId;
 		Task task;
 		Technician technician;
 
-		taskId = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(taskId);
-		technician = task == null ? null : task.getTechnician();
-		status = task != null && super.getRequest().getPrincipal().hasRealm(technician) && task.getDraftMode();
+		if (super.getRequest().hasData("id", Integer.class)) {
+			taskId = super.getRequest().getData("id", Integer.class);
+			if (taskId != null) {
+				task = this.repository.findTaskById(taskId);
+				technician = task == null ? null : task.getTechnician();
+				status = task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+			}
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -51,7 +55,9 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 	@Override
 	public void bind(final Task task) {
 
+		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 		super.bindObject(task, "type", "description", "priority", "estimatedDuration");
+		task.setTechnician(technician);
 
 	}
 
@@ -73,9 +79,11 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 		SelectChoices typeChoices;
 		typeChoices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "technician.licenseNumber", "type", "estimatedDuration", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "type", "estimatedDuration", "description", "priority", "estimatedDuration", "draftMode");
 
+		dataset.put("technician", task.getTechnician().getIdentity().getFullName());
 		dataset.put("types", typeChoices);
+		dataset.put("type", typeChoices.getSelected().getKey());
 
 		super.getResponse().addData(dataset);
 

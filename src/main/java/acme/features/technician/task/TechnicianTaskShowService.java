@@ -28,12 +28,17 @@ public class TechnicianTaskShowService extends AbstractGuiService<Technician, Ta
 		int taskId;
 		Task task;
 		Technician technician;
+		if (!super.getRequest().hasData("id"))
+			status = false;
 
-		taskId = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(taskId);
-		technician = task == null ? null : task.getTechnician();
-		status = task != null && super.getRequest().getPrincipal().hasRealm(technician);
+		else {
 
+			taskId = super.getRequest().getData("id", int.class);
+			task = this.repository.findTaskById(taskId);
+
+			technician = task == null ? null : task.getTechnician();
+			status = task != null && (super.getRequest().getPrincipal().hasRealm(technician) || !task.isDraftMode());
+		}
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -55,9 +60,10 @@ public class TechnicianTaskShowService extends AbstractGuiService<Technician, Ta
 		SelectChoices typeChoices;
 		typeChoices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "technician.licenseNumber", "type", "estimatedDuration", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "description", "priority", "estimatedDuration", "draftMode");
 
 		dataset.put("types", typeChoices);
+		dataset.put("type", typeChoices.getSelected().getKey());
 
 		super.getResponse().addData(dataset);
 	}

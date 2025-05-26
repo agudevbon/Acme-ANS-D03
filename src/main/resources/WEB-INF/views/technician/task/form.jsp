@@ -4,9 +4,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>	
-	<jstl:if test="${acme:anyOf(_command, 'show|update|publish')}">
-		<acme:input-textbox code="technician.task.form.label.technician" path="technician.licenseNumber" readonly="true"/>	
-	</jstl:if>
+	
 	<acme:input-select code="technician.task.form.label.type" path="type" choices="${types}"/>
 	<acme:input-integer code="technician.task.form.label.priority" path="priority"/>
 	<acme:input-double code="technician.task.form.label.estimated-duration" path="estimatedDuration"/>
@@ -17,6 +15,7 @@
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish') && draftMode == true}">
 			<acme:submit code="technician.task.form.button.publish" action="/technician/task/publish"/>
 			<acme:submit code="technician.task.form.button.update" action="/technician/task/update"/>
+			<acme:submit code="technician.task.form.button.delete" action="/technician/task/delete"/>
 			
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">

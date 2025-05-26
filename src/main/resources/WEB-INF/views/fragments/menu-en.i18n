@@ -39,8 +39,12 @@ master.menu.member.list-logs = Logs listing
 # master.menu.technician  ########################################################
 
 master.menu.technician = Technician
+master.menu.technician.list-my-maintenance-records= List my maintenance records	
 master.menu.technician.list-maintenance-records= MaintenanceRecords listing
-master.menu.technician.list-tasks= Tasks listing
+master.menu.technician.list-my-tasks = List my tasks
+master.menu.technician.list-maintenance-record-catalogue = List maintenance record catalogue
+master.menu.technician.list-task-catalogue = List task catalogue
+
 
 # master.menu.administrator ###################################################
 
