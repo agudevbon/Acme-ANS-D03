@@ -2,7 +2,6 @@
 package acme.features.technician.task;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,24 +15,24 @@ import acme.entities.task.Task;
 public interface TechnicianTaskRepository extends AbstractRepository {
 
 	@Query("select t from Task t where t.id = :id")
-	Task findTaskById(Integer id);
+	Task findTaskById(int id);
 
-	@Query("select t from Task t where t.technician.id =:technicianId ")
-	List<Task> findTasksByTechnicianId(Integer technicianId);
+	@Query("select mr from MaintenanceRecord mr where mr.id = :id")
+	MaintenanceRecord findMaintenanceRecordById(int id);
 
-	@Query("select m from MaintenanceRecord m where m.id =:id")
-	MaintenanceRecord findMaintenanceRecordById(Integer id);
+	@Query("select i.task from Involves i where i.maintenanceRecord.id = :masterId")
+	Collection<Task> findTasksByMasterId(int masterId);
 
-	@Query("select m from MaintenanceRecord m where m.technician.id =:technicianId ")
-	List<MaintenanceRecord> findMaintenanceRecordByTechnicianId(Integer technicianId);
+	@Query("select i.maintenanceRecord from Involves i where i.task.id = :taskId")
+	Collection<MaintenanceRecord> findMaintenanceRecordsByTaskId(int taskId);
 
-	@Query("select i from Involves i where i.task.id = :id")
-	Collection<Involves> findInvolvesByTaskId(int id);
+	@Query("select t from Task t where t.technician.id = :technicianId")
+	Collection<Task> findTasksByTechnicianId(int technicianId);
 
-	@Query("select inv.task from Involves inv where inv.maintenanceRecord.id = :masterId")
-	Collection<Task> findTasksByMaintenanceId(int masterId);
+	@Query("select t from Task t where t.draftMode = false")
+	Collection<Task> findPublishedTasks();
 
-	@Query("select i.task from Involves i where i.maintenanceRecord = :maintenanceRecord")
-	Collection<Task> findInvolvesByMaintenanceRecord(MaintenanceRecord maintenanceRecord);
+	@Query("select i from Involves i where i.task.id = :taskId")
+	Collection<Involves> findInvolvesByTaskId(int taskId);
 
 }

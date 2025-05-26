@@ -43,14 +43,11 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void load() {
+		int taskId;
 		Task task;
-		Technician technician;
 
-		technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		task = new Task();
-		task.setDraftMode(true);
-		task.setTechnician(technician);
+		taskId = super.getRequest().getData("id", int.class);
+		task = this.repository.findTaskById(taskId);
 
 		super.getBuffer().addData(task);
 	}

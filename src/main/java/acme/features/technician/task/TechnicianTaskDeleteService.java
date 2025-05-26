@@ -91,12 +91,14 @@ public class TechnicianTaskDeleteService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void perform(final Task task) {
-
+		boolean status;
 		Collection<Involves> involves;
 
 		involves = this.repository.findInvolvesByTaskId(task.getId());
-		this.repository.deleteAll(involves);
-		this.repository.delete(task);
+
+		status = involves.isEmpty();
+		super.state(status, "*", "acme.validation.task.maintenance-record-linked.message", task);
+
 	}
 	@Override
 	public void unbind(final Task task) {

@@ -35,3 +35,6 @@ technician.task.form.button.update = Actualizar
 technician.task.form.button.publish = Publicar
 technician.task.form.button.create =  Crear
 technician.task.form.button.delete = Borrar
+
+technician.task.list.button.link = Asociar
+technician.task.list.button.unlink = Desasociar

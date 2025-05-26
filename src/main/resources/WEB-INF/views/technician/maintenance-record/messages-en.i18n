@@ -42,6 +42,6 @@ technician.maintenance-record.form.button.delete = Delete
 
 
 
-technician.maintenance-record.form.show.involves = Associated tasks
+technician.maintenance-record.form.button.tasks = Associated tasks
 
 

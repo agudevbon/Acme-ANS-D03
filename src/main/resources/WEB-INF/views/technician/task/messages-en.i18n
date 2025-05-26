@@ -20,7 +20,7 @@ technician.task.list.label.description = Description
 technician.task.list.label.draftMode = Draft mode
 
 
-technician.task.list.button.create = 
+technician.task.list.button.create = Create
 
 
 
@@ -39,4 +39,10 @@ technician.task.form.button.update = Update
 technician.task.form.button.publish = Publish
 technician.task.form.button.create = Create
 technician.task.form.button.delete = Delete
+
+
+technician.task.list.button.link = Link
+technician.task.list.button.unlink = UnLink
+
+
 

@@ -39,4 +39,4 @@ technician.maintenance-record.form.button.create = Crear
 technician.maintenance-record.form.button.delete = Eliminar
 
 
-technician.maintenance-record.form.show.involves = Tareas vinculadas
+technician.maintenance-record.form.button.tasks= Tareas vinculadas
